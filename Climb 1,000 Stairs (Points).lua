@@ -1,4 +1,9 @@
---By Foreverekk
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Credits";
+    Text = "Made by Foreverekk.#0007";
+    Duration = math.huge;
+    Button1 = "Ok"
+    })
 
 enabled = true
 
