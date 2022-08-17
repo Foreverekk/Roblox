@@ -6,7 +6,7 @@ game.StarterGui:SetCore("SendNotification", {
     })
 
 for i,v in ipairs(workspace:GetDescendants()) do
-    if v.Name == "TouchInterest" and v.Parent and v.Parent.Name == "Platform" then
+    if v.Name == "TouchInterest" and v.Parent and v.Parent.BadgeAwarderScript then
         firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
         wait(0.1)
         firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
