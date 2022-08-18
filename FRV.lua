@@ -1,11 +1,13 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = game.Name;
+    Title = game.Name.." loading..";
     Text = "Made by Foreverekk.#0007";
-    Duration = math.huge;
-    Button1 = "Ok"
-    })
+    Duration = 5;
+})
 
-if game.PlaceId == "5166670285" then-- Badge Walk (Reginald)
+loaded = false
+
+if game.GameId == 5166670285 then-- Badge Walk (Reginald)
+    loaded = true
 
     for i,v in ipairs(workspace:GetDescendants()) do
         if v.Name == "TouchInterest" and v.Parent and v.Parent.Name == "Platform" then
@@ -17,7 +19,8 @@ if game.PlaceId == "5166670285" then-- Badge Walk (Reginald)
 
 end
 
-if game.PlaceId == "148763243" then-- Player Badges (ivyrebar)
+if game.GameId == 148763243 then-- Player Badges (ivyrebar)
+    loaded = true
     
     for i,v in ipairs(workspace:GetDescendants()) do
         if v.Name == "TouchInterest" and v.Parent then
@@ -29,7 +32,8 @@ if game.PlaceId == "148763243" then-- Player Badges (ivyrebar)
 
 end
 
-if game.PlaceId == "7896264844" then-- Find the Markers (markers epic memers)
+if game.GameId == 7896264844 then-- Find the Markers (markers epic memers)
+    loaded = true
     
     for i,v in ipairs(workspace:GetDescendants()) do
         if v.Name == "TouchInterest" and v.Parent and v.Parent.Parent.Face then
@@ -41,3 +45,10 @@ if game.PlaceId == "7896264844" then-- Find the Markers (markers epic memers)
     end
 
 end
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Script: "..loaded;
+    Text = "Made by Foreverekk.#0007";
+    Duration = math.huge;
+    Button1 = "Ok"
+    })
