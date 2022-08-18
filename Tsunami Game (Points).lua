@@ -7,7 +7,7 @@ game.StarterGui:SetCore("SendNotification", {
 
 while wait(1) and Enabled do
     for i,v in ipairs(workspace.CurrentPointCoins:GetDescendants()) do
-        if v.Name == "TouchInterest" and v.Parent then
+        if v.Name == "TouchInterest" and v.Parent and v.Parent.Name == "CoinCollision" then
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
             wait(0.1)
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
