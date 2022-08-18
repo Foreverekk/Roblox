@@ -32,7 +32,7 @@ end
 if game.PlaceId == "7896264844" then-- Find the Markers (markers epic memers)
     
     for i,v in ipairs(workspace:GetDescendants()) do
-        if v.Name == "TouchInterest" and v.Parent and v.Parent.Parent["Color 1"] then
+        if v.Name == "TouchInterest" and v.Parent and v.Parent.Parent.Face then
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
             wait(0.1)
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
