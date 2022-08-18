@@ -1,5 +1,5 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Credits";
+    Title = game.Name;-- Climb 1,000 Stairs (Badges)
     Text = "Made by Foreverekk.#0007";
     Duration = math.huge;
     Button1 = "Ok"
