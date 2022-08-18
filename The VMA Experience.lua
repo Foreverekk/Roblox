@@ -5,8 +5,6 @@ game.StarterGui:SetCore("SendNotification", {
     Button1 = "Ok"
     })
 
-getgenv().Enabled = true
-
 while wait() and Enabled do
     for i,v in ipairs(workspace.Scriptable.Tokens:GetDescendants()) do
         if v.Parent and v.Parent.Name == "Token" then
