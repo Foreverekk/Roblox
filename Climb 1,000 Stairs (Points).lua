@@ -5,9 +5,10 @@ game.StarterGui:SetCore("SendNotification", {
     Button1 = "Ok"
     })
 
-while wait() and Enabled do
-    wait(0.5)
+while wait(3) and Enabled do
+    wait(0.1)
     for i,v in ipairs(workspace.Stairs:GetChildren()) do
         firetouchinterest(v, game.Players.LocalPlayer.Character.PrimaryPart, 0)
+        firetouchinterest(v, game.Players.LocalPlayer.Character.PrimaryPart, 1)
     end
 end
