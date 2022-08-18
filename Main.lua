@@ -1,7 +1,7 @@
 game.StarterGui:SetCore("SendNotification", {
     Title = "Loading..";
     Text = "Made by Foreverekk.#0007";
-    Duration = 5;
+    Duration = 1;
 })
 
 loaded = false
@@ -12,6 +12,11 @@ local f = pcall(function()
 end)
 
 if f == true then
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Loaded!";
+        Text = "Made by Foreverekk.#0007";
+        Duration = 3;
+    })
     loadstring(d)()
 else
     game.StarterGui:SetCore("SendNotification", {
