@@ -5,7 +5,10 @@ game.StarterGui:SetCore("SendNotification", {
     Button1 = "Ok"
     })
 
-for i,v in ipairs(game.ReplicatedStorage.Outside.Gold:GetChildren()) do
-    wait(0.2)
-    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Position)
+while wait() and Enabled do
+    for i,v in ipairs(game.ReplicatedStorage.Outside.Gold:GetChildren()) do
+        wait(0.2)
+        game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Position)
+    end
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Spawns.SpawnLocation)
 end
