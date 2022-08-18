@@ -3,7 +3,7 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "Made by Foreverekk.#0007";
     Duration = math.huge;
     Button1 = "Ok"
-    })
+})
 
 for i,v in ipairs(workspace.Badges:GetChildren()) do
     wait(0.2)
