@@ -13,4 +13,5 @@ while wait() and Enabled do
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
         end
     end
+    wait(1)
 end
