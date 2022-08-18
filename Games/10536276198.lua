@@ -1,10 +1,3 @@
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Credits";
-    Text = "Made by Foreverekk.#0007";
-    Duration = math.huge;
-    Button1 = "Ok"
-    })
-
 while wait(1) and Enabled do
     for i,v in ipairs(workspace.Scriptable.Tokens:GetDescendants()) do
         if v.Parent and v.Parent.Name == "Token" then

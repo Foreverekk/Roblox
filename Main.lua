@@ -1,5 +1,5 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = game.Name.." loading..";
+    Title = "Loading..";
     Text = "Made by Foreverekk.#0007";
     Duration = 5;
 })
@@ -25,3 +25,4 @@ end
 -- 148763243 Player Badges (ivyrebar)
 -- 7896264844 Find the Markers (markers epic memers)
 -- 9268384900 Find The Anime (Dream Home)
+-- 10536276198 The VMA Experience (Paramount Game Studios)
