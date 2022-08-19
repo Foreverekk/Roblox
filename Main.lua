@@ -27,24 +27,24 @@ else
     })
 end
 
--- 5166670285 Badge Walk (Reginald)
--- 148763243 Player Badges (ivyrebar)
--- 10319501620 School of Sport (DICK'S Sporting Goods)
--- 10536276198 The VMA Experience (Paramount Game Studios)
--- 4760217946 Limited Badges (Shodsleet)
--- 7918824587 Limiteds Badge Walk (The Development Productions)
--- 3587619225 Mega Easy Obby (Authentic Creations)
--- 7952502098 Impossible Glass Bridge Obby! (Squid Game)
--- 8003084678 oMega Obby Parkour (@MonkrysGhost)
--- 7378813434 Cotton Obby! (River City Entertainment)
--- 7896264844 Find the Markers (markers epic memers)
--- 9268384900 Find The Anime (Dream Home)
--- 8651851179 Find The Pandas (Zireael)
--- 8972280788 Find The Impostors! (47Studio Extra)
--- 8919650008 Find The Pop Tarts (perhapseb)
--- 9304358188 Find The Memes (MARTENALT)
--- 9296316690 Find the Milks (The BitSquid Fan Club)
--- 9094061470 Find The Piggy Morphs (Crazay Studios)
--- 8376378000 Find the Stickmen (Find the Badges!)
--- 8621928057 Find The Pou! (@klaudinos1)
--- 9247388724 Find The Cats! (Triple 6 Studio)
+-- 10319501620 School of Sport (DICK'S Sporting Goods) -> AutoFarm
+-- 10536276198 The VMA Experience (Paramount Game Studios) -> AutoFarm
+-- 5166670285 Badge Walk (Reginald) -> Collect
+-- 148763243 Player Badges (ivyrebar) -> Collect
+-- 4760217946 Limited Badges (Shodsleet) -> Collect
+-- 7918824587 Limiteds Badge Walk (The Development Productions) -> Collect
+-- 3587619225 Mega Easy Obby (Authentic Creations) -> AutoFarm
+-- 7952502098 Impossible Glass Bridge Obby! (Squid Game) -> AutoFarm
+-- 8003084678 oMega Obby Parkour (@MonkrysGhost) -> AutoFarm
+-- 7378813434 Cotton Obby! (River City Entertainment) -> Complete
+-- 7896264844 Find the Markers (markers epic memers) -> Collect
+-- 9268384900 Find The Anime (Dream Home) -> Collect
+-- 8651851179 Find The Pandas (Zireael) -> Collect
+-- 8972280788 Find The Impostors! (47Studio Extra) -> Collect
+-- 8919650008 Find The Pop Tarts (perhapseb) -> Collect
+-- 9304358188 Find The Memes (MARTENALT) -> Collect
+-- 9296316690 Find the Milks (The BitSquid Fan Club) -> Collect
+-- 9094061470 Find The Piggy Morphs (Crazay Studios) -> Collect
+-- 8376378000 Find the Stickmen (Find the Badges!) -> Collect
+-- 8621928057 Find The Pou! (@klaudinos1) -> Collect
+-- 9247388724 Find The Cats! (Triple 6 Studio) -> Collect
