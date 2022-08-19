@@ -29,6 +29,7 @@ end
 
 -- 10319501620 School of Sport (DICK'S Sporting Goods) -> AutoFarm
 -- 10536276198 The VMA Experience (Paramount Game Studios) -> AutoFarm
+-- 815405518 The Floor Is LAVA! (@TheLegendOfPyro) -> AutoFarm
 -- 5166670285 Badge Walk (Reginald) -> Collect
 -- 148763243 Player Badges (ivyrebar) -> Collect
 -- 4760217946 Limited Badges (Shodsleet) -> Collect
