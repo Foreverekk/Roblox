@@ -1,6 +1,6 @@
 for i,v in ipairs(workspace.Pou:GetDescendants()) do
     if v.Name == "BadgeID" and v.Parent then
-        wait(0.1)
+        wait(0.5)
         game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Parent.Position)
     end
 end
