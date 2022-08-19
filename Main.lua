@@ -43,3 +43,4 @@ end
 -- 9094061470 Find The Piggy Morphs (Crazay Studios)
 -- 8376378000 Find the Stickmen (Find the Badges!)
 -- 8621928057 Find The Pou! (@klaudinos1)
+-- 9247388724 Find The Cats! (Triple 6 Studio)

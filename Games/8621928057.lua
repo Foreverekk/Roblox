@@ -6,7 +6,6 @@ for i,v in ipairs(workspace.Pou:GetDescendants()) do
     end
 end
 
-
 -- Codes:
 --  Rainbow Pou: 2536124
 --  Robux: 425891
