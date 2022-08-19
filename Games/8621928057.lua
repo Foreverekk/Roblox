@@ -1,12 +1,11 @@
 for i,v in ipairs(workspace.Pou:GetDescendants()) do
     if v.Name == "BadgeID" and v.Parent then
+        firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
         wait(0.5)
-        game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Parent.Position)
+        firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
     end
 end
 
-wait(0.2)
-game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.parts.SpawnLocation.Position)
 
 -- Codes:
 --  Rainbow Pou: 2536124
