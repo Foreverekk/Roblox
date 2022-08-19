@@ -17,6 +17,7 @@ if f == true then
         Text = "Made by Foreverekk.#0007";
         Duration = 3;
     })
+    wait(5)
     loadstring(d)()
 else
     game.StarterGui:SetCore("SendNotification", {
