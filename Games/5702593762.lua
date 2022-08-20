@@ -1,5 +1,3 @@
---local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-
 function pointsS()
     wait(0.1)
     for i,v in ipairs(workspace.Stairs:GetChildren()) do
@@ -23,7 +21,6 @@ function winnerS()
 end
 
 
---local Window = Library.CreateLib("Climb 1,000 Stairs", "DarkTheme")
 local Tab1 = Window:NewTab("Main")
 local Section1 = Tab1:NewSection("AutoFarm")
 local points = nil
