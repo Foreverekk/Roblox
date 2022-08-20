@@ -15,6 +15,6 @@ end
 local T1 = Window:NewTab("Main")
 local S1 = T1:NewSection("Badges")
 
-S1:NewButton("Collect (click and wait)", "Collect all available badges", function()
+S1:NewButton("Collect", "Collect all available badges", function()
     badgesS()
 end)
