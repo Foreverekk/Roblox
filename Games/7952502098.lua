@@ -20,4 +20,3 @@ S1:NewToggle("Cash", "Autofarm cash", function(t)
     end)
 end
 end)
---
