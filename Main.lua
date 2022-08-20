@@ -21,18 +21,38 @@ if f == true then
     wait(1)
     Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     Window = Library.CreateLib(game.Name..": "..game.PlaceId.." | FRV Hub", "DarkTheme")
+
     loadstring(d)()
-    local Tab1 = Window:NewTab("Credits")
-    local Section1 = Tab1:NewSection("Scripting:")
-    Section1:NewButton("Foreverekk.#0007", "Discord", function()
+
+    local Credits = Window:NewTab("Credits")
+    local C1 = Credits:NewSection("Scripting:")
+    C1:NewButton("Foreverekk.#0007", "Discord", function()
         setclipboard("Foreverekk.#0007")
     end)
-    local Section2 = Tab1:NewSection("UI:")
-    Section2:NewButton("xHeptc", "GitHub", function()
+    local C2 = Credits:NewSection("UI:")
+    C2:NewButton("xHeptc", "GitHub", function()
         setclipboard("xHeptc")
     end)
 
-else--setclipboard("juN#0707")
+    local Game = Window:NewTab("Game")
+    local G1 = Game:NewSection("Place Version:")
+    G1:NewButton(game.PlaceVersion, "Click to copy", function()
+        setclipboard(game.PlaceVersion)
+    end)
+    local G2 = Game:NewSection("Place ID:")
+    G2:NewButton(game.PlaceId, "Click to copy", function()
+        setclipboard(game.PlaceId)
+    end)
+    local G3 = Game:NewSection("Game ID:")
+    G3:NewButton(game.GameId, "Click to copy", function()
+        setclipboard(game.GameId)
+    end)
+    local G4 = Game:NewSection("Job ID:")
+    G4:NewButton(game.JobId, "Click to copy", function()
+        setclipboard(game.JobId)
+    end)
+
+else
     game.StarterGui:SetCore("SendNotification", {
         Title = "Error!";
         Text = "Probably the wrong game/place";
