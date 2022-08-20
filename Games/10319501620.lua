@@ -30,6 +30,6 @@ S1:NewToggle("Coins", "Autofarm coins", function(t)
 end
 end)
 
-S2:NewButton("Secret", "TP to secret hideout", function()
+S2:NewButton("Secret Hideout", "TP to secret hideout", function()
     secretS()
 end)
