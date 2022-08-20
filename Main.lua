@@ -18,8 +18,6 @@ if f == true then
         Duration = 3;
     })
     wait(5)
-    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Tab2 = Window:NewTab("Credits")
     loadstring(d)()
 else
     game.StarterGui:SetCore("SendNotification", {

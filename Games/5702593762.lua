@@ -1,4 +1,4 @@
---local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
 function pointsS()
     wait(0.1)
@@ -28,8 +28,6 @@ local Tab1 = Window:NewTab("Main")
 local Section1 = Tab1:NewSection("AutoFarm")
 local points = nil
 local Section2 = Tab1:NewSection("Teleport")
-local badgesTp = nil
-local winnerTp = nil
 
 Section1:NewToggle("Steps & Points", "Will Autofarm steps and points", function(t)
     points = t
