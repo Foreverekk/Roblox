@@ -67,12 +67,12 @@ if f == true then
     end)
     local headless = nil
     function headlessS()
-        --while wait() do
+        while wait() do
             me = game:GetService("Players").LocalPlayer.Character
             if me:FindFirstChild("Head") and me:FindFirstChild("Humanoid") then
                 me.Head.MeshId = "rbxassetid://6686307858" or nil
             end
-        --end
+        end
     end
     local P4 = Player:NewSection("Client")
     P4:NewToggle("Headless", "by lobox920", function(t)
