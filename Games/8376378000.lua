@@ -18,4 +18,3 @@ local S1 = T1:NewSection("Stickmen")
 S1:NewButton("Collect", "Collect all available stickmen", function()
     stickmenS()
 end)
---
