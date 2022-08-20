@@ -29,7 +29,7 @@ if f == true then
     end)
     local Section2 = Tab1:NewSection("UI:")
     Section2:NewButton("xHeptc", "GitHub", function()
-        setclipboard("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua")
+        setclipboard("xHeptc")
     end)
 
 else--setclipboard("juN#0707")
