@@ -1,5 +1,5 @@
 function autofarmS()
-    wait(1)
+    wait(0.5)
     game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-14, 154, -15)
     tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(1, Enum.EasingStyle.Linear)
     local Tween1 = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-14, 154, -15)}):Play()
@@ -18,12 +18,12 @@ S1:NewToggle("Survivals", "Autofarm survivals and points", function(t)
     autofarm = t
     
     while autofarm do
-        --game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
         autofarmS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
         if not autofarm then
-            --game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
             return
         end
         autofarmS()
