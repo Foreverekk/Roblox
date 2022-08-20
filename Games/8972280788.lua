@@ -19,4 +19,3 @@ local S1 = T1:NewSection("Impostors")
 S1:NewButton("Collect", "Collect all available impostors", function()
     impostorsS()
 end)
---
