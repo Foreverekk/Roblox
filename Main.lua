@@ -11,23 +11,28 @@ local f = pcall(function()
     d = game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Games/"..game.PlaceId..".lua")
 end)
 
+wait(1)
 if f == true then
     game.StarterGui:SetCore("SendNotification", {
         Title = "Loaded!";
         Text = "Made by Foreverekk.#0007";
         Duration = 5;
     })
-    wait(5)
+    wait(1)
     Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     Window = Library.CreateLib(game.Name..": "..game.PlaceId.." | FRV Hub", "DarkTheme")
     loadstring(d)()
     local Tab1 = Window:NewTab("Credits")
     local Section1 = Tab1:NewSection("Scripting:")
-    Section1:NewTextBox("Foreverekk.#0007", "Discord")
+    Section1:NewButton("Foreverekk.#0007", "Discord", function()
+        setclipboard("Foreverekk.#0007")
+    end)
     local Section2 = Tab1:NewSection("UI:")
-    Section2:NewTextBox("xHeptc", "GitHub")
+    Section2:NewButton("xHeptc", "GitHub", function()
+        setclipboard("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua")
+    end)
 
-else
+else--setclipboard("juN#0707")
     game.StarterGui:SetCore("SendNotification", {
         Title = "Error!";
         Text = "Probably the wrong game/place";
