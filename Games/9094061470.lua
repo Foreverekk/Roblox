@@ -27,4 +27,3 @@ local S1 = T1:NewSection("Piggy Morphs")
 S1:NewButton("Collect EasterEggs", "Collect all available easter eggs", function()
     easterS()
 end)
---
