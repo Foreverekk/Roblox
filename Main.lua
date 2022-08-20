@@ -20,7 +20,7 @@ if f == true then
     })
     wait(1)
     Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    Window = Library.CreateLib(game.Name..": "..game.PlaceId.." | FRV Hub", "DarkTheme")
+    Window = Library.CreateLib("Hello "..game.Players.LocalPlayer.DisplayName.."! | FRV Hub", "DarkTheme")
 
     loadstring(d)()
 
@@ -50,6 +50,20 @@ if f == true then
     local G4 = Game:NewSection("Job ID:")
     G4:NewButton(game.JobId, "Click to copy", function()
         setclipboard(game.JobId)
+    end)
+
+    local Player = Window:NewTab("Player")
+    local P1 = Player:NewSection("User Name:")
+    P1:NewButton(game.Players.LocalPlayer.Name, "Click to copy", function()
+        setclipboard(game.Players.LocalPlayer.Name)
+    end)
+    local P2 = Player:NewSection("User ID:")
+    P2:NewButton(game.Players.LocalPlayer.UserId, "Click to copy", function()
+        setclipboard(game.Players.LocalPlayer.UserId)
+    end)
+    local P3 = Player:NewSection("Account Age:")
+    P3:NewButton(game.Players.LocalPlayer.AccountAge.." days", "Click to copy", function()
+        setclipboard(game.Players.LocalPlayer.AccountAge)
     end)
 
 else
