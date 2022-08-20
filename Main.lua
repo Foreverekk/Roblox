@@ -75,7 +75,7 @@ if f == true then
         end
     end
     local P4 = Player:NewSection("Client")
-    P4:NewToggle("Headless", "by lobox920", function(t)
+    P4:NewToggle("Headless", "By lobox920", function(t)
         headless = t
         
         while headless do

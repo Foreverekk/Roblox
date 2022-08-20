@@ -21,12 +21,12 @@ function winnerS()
 end
 
 
-local Tab1 = Window:NewTab("Main")
-local Section1 = Tab1:NewSection("AutoFarm")
+local T1 = Window:NewTab("Main")
+local S1 = T1:NewSection("AutoFarm")
 local points = nil
-local Section2 = Tab1:NewSection("Teleport")
+local S2 = T1:NewSection("Teleport")
 
-Section1:NewToggle("Steps & Points", "Will Autofarm steps and points", function(t)
+S1:NewToggle("Steps & Points", "Will Autofarm steps and points", function(t)
     points = t
     
     while points do
@@ -39,10 +39,10 @@ Section1:NewToggle("Steps & Points", "Will Autofarm steps and points", function(
 end
 end)
 
-Section2:NewButton("Badges", "TP to available badges", function()
+S2:NewButton("Badges", "TP to available badges", function()
     badgesS()
 end)
 
-Section2:NewButton("Winner", "TP to winners spawn", function()
+S2:NewButton("Winner", "TP to winners spawn", function()
     winnerS()
 end)
