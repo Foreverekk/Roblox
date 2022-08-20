@@ -3,7 +3,9 @@ local args = {
 }
 
 function coinsS()
-    game:GetService("ReplicatedStorage").RemoteEvents.RewardCurrencyPickup:FireServer(unpack(args))
+    while wait() do
+        game:GetService("ReplicatedStorage").RemoteEvents.RewardCurrencyPickup:FireServer(unpack(args))
+    end
 end
 
 function secretS()
