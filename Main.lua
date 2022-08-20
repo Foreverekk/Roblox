@@ -24,6 +24,8 @@ if f == true then
     local Tab1 = Window:NewTab("Credits")
     local Section1 = Tab1:NewSection("Scripting:")
     Section1:NewTextBox("Foreverekk.#0007", "Discord")
+    local Section2 = Tab1:NewSection("UI:")
+    Section2:NewTextBox("xHeptc", "GitHub")
 
 else
     game.StarterGui:SetCore("SendNotification", {
