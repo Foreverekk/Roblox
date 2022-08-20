@@ -65,6 +65,28 @@ if f == true then
     P3:NewButton(game.Players.LocalPlayer.AccountAge.." days", "Click to copy", function()
         setclipboard(game.Players.LocalPlayer.AccountAge)
     end)
+    local headless = nil
+    function headlessS()
+        while wait() do
+            me = game:GetService("Players").LocalPlayer.Character
+            if me:FindFirstChild("Head") and me:FindFirstChild("Humanoid") then
+                me.Head.MeshId = "rbxassetid://6686307858" or nil
+            end
+        end
+    end
+    local P4 = Player:NewSection("Client")
+    P4:NewToggle("Headless", "by lobox920", function(t)
+        headless = t
+        
+        while headless do
+            headlessS()
+            game.Players.LocalPlayer.CharacterAdded:Connect(function()
+            game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+            if not headless then return end
+            headlessS()
+        end)
+    end
+    end)
 
 else
     game.StarterGui:SetCore("SendNotification", {
@@ -77,6 +99,7 @@ end
 -- 10319501620 School of Sport (DICK'S Sporting Goods) -> AutoFarm
 -- 10536276198 The VMA Experience (Paramount Game Studios) -> AutoFarm
 -- 815405518 The Floor Is LAVA! (@TheLegendOfPyro) -> AutoFarm
+-- 5702593762 Climb 1,000 Stairs (VezStudios) -> AutoFarm
 -- 5166670285 Badge Walk (Reginald) -> Collect
 -- 148763243 Player Badges (ivyrebar) -> Collect
 -- 4760217946 Limited Badges (Shodsleet) -> Collect
