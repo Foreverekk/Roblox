@@ -50,4 +50,3 @@ S1:NewToggle("Complete & Prestige", "Autofarm stages & prestige", function(t)
     end)
 end
 end)
---
