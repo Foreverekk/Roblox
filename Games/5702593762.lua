@@ -22,7 +22,7 @@ function winnerS()
     end
 end
 
---.
+
 --local Window = Library.CreateLib("Climb 1,000 Stairs", "DarkTheme")
 local Tab1 = Window:NewTab("Main")
 local Section1 = Tab1:NewSection("AutoFarm")

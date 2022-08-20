@@ -21,6 +21,7 @@ if f == true then
     Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     Window = Library.CreateLib(game.Name..": "..game.PlaceId.." | FRV Hub", "DarkTheme")
     loadstring(d)()
+    local Tab1 = Window:NewTab("Credits")
 else
     game.StarterGui:SetCore("SendNotification", {
         Title = "Error!";
