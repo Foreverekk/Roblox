@@ -12,15 +12,12 @@ S1:NewToggle("Cash", "Autofarm cash", function(t)
     autofarm = t
     
     while autofarm do
-        game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
         autofarmS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-        if not autofarm then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
-            return
-        end
+        if not autofarm then return end
         autofarmS()
     end)
 end
 end)
+--
