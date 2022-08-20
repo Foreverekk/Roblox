@@ -19,4 +19,3 @@ local S1 = T1:NewSection("Pop Tarts")
 S1:NewButton("Collect", "Collect all available pop tarts", function()
     poptartsS()
 end)
---
