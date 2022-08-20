@@ -18,6 +18,8 @@ if f == true then
         Duration = 3;
     })
     wait(5)
+    Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    Window = Library.CreateLib(game.Name..": "..game.PlaceId.." | FRV Hub", "DarkTheme")
     loadstring(d)()
 else
     game.StarterGui:SetCore("SendNotification", {
