@@ -1,8 +1,8 @@
-function badgesS()
+function markersS()
     for i,v in ipairs(workspace:GetDescendants()) do
-        if v.Name == "TouchInterest" and v.Parent and v.Parent.Parent.Face then
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
+        if string.find(v.Name, "Marker") then
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Face, 0)
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Face, 1)
         end
     end
     game.StarterGui:SetCore("SendNotification", {
@@ -16,5 +16,5 @@ local T1 = Window:NewTab("Main")
 local S1 = T1:NewSection("Markers")
 
 S1:NewButton("Collect", "Collect all available markers", function()
-    badgesS()
+    markersS()
 end)
