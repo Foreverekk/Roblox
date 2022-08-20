@@ -20,4 +20,3 @@ local S1 = T1:NewSection("Anime")
 S1:NewButton("Collect", "Collect all available anime", function()
     animeS()
 end)
---
