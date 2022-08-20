@@ -10,7 +10,7 @@ function pointsS()
 end
 
 function goldS()
-    wait(5)
+    wait(10)
     for i,v in ipairs(game.ReplicatedStorage.Outside.Gold:GetChildren()) do
         wait(0.2)
         game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Position)
@@ -20,17 +20,20 @@ function goldS()
 end
 
 function crossingsS()
-    wait(3)
+    wait(15)
     game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Spawns.SpawnLocation.Position)
-    wait(1)
     tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(1, Enum.EasingStyle.Linear)
-    tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-21, 119, 853)}):Play()
-    wait(2)
+    local Tween1 = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-21, 119, 853)})
+    Tween1:Play()
+    Tween1.Completed:Wait()
     tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(8, Enum.EasingStyle.Linear)
-    tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-5, 119, -930)}):Play()
-    wait(10)
+    local Tween2 = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-5, 119, -930)})
+    Tween2:Play()
+    Tween2.Completed:Wait()
     tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(1, Enum.EasingStyle.Linear)
-    tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-9.5, 41, -1051)}):Play()
+    local Tween3 = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-9.5, 41, -1051)})
+    Tween3:Play()
+    Tween3.Completed:Wait()
 end
 
 
