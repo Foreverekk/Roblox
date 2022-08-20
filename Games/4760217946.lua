@@ -4,7 +4,6 @@ function badgesS()
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
             wait(0.1)
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
-            game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Parent.Position)
         end
     end
 end
@@ -12,6 +11,6 @@ end
 local T1 = Window:NewTab("Main")
 local S1 = T1:NewSection("Badges")
 
-S1:NewButton("Collect", "Collect all available badges", function()
+S1:NewButton("Collect (click and wait)", "Collect all available badges", function()
     badgesS()
 end)
