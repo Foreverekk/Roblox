@@ -26,7 +26,7 @@ local S1 = T1:NewSection("AutoFarm")
 local points = nil
 local S2 = T1:NewSection("Teleport")
 
-S1:NewToggle("Steps & Points", "Will Autofarm steps and points", function(t)
+S1:NewToggle("Steps & Points", "Autofarm steps and points", function(t)
     points = t
     
     while points do

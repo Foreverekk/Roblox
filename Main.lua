@@ -67,11 +67,10 @@ if f == true then
     end)
     local headless = nil
     function headlessS()
-        while wait() do
-            me = game:GetService("Players").LocalPlayer.Character
-            if me:FindFirstChild("Head") and me:FindFirstChild("Humanoid") then
-                me.Head.MeshId = "rbxassetid://6686307858" or nil
-            end
+        wait(1)
+        local me = game:GetService("Players").LocalPlayer.Character
+        if me:FindFirstChild("Head") and me:FindFirstChild("Humanoid") then
+            me.Head.MeshId = "rbxassetid://6686307858" or nil
         end
     end
     local P4 = Player:NewSection("Client")
@@ -100,6 +99,7 @@ end
 -- 10536276198 The VMA Experience (Paramount Game Studios) -> AutoFarm
 -- 815405518 The Floor Is LAVA! (@TheLegendOfPyro) -> AutoFarm
 -- 5702593762 Climb 1,000 Stairs (VezStudios) -> AutoFarm
+-- 7993293100 Tsunami Game (Virtual Valley Games) -> AutoFarm
 -- 5166670285 Badge Walk (Reginald) -> Collect
 -- 148763243 Player Badges (ivyrebar) -> Collect
 -- 4760217946 Limited Badges (Shodsleet) -> Collect
