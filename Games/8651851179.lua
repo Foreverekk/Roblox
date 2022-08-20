@@ -38,4 +38,3 @@ end)
 S1:NewButton("Collect Hidden", "Collect all available hidden pandas", function()
     hiddenS()
 end)
---
