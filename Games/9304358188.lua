@@ -19,4 +19,3 @@ local S1 = T1:NewSection("Memes")
 S1:NewButton("Collect", "Collect all available memes", function()
     memesS()
 end)
---
