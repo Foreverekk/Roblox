@@ -20,15 +20,15 @@ function goldS()
 end
 
 function crossingsS()
-    wait(1)
+    wait(5)
     game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(workspace.Spawns.SpawnLocation.Position)
     wait(1)
     tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(1, Enum.EasingStyle.Linear)
     tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-21, 119, 853)}):Play()
-    wait(10)
+    wait(2)
     tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(10, Enum.EasingStyle.Linear)
     tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-5, 119, -930)}):Play()
-    wait(1)
+    wait(20)
     tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(1, Enum.EasingStyle.Linear)
     tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-9.5, 41, -1051)}):Play()
 end
@@ -77,6 +77,4 @@ S1:NewToggle("Crossings", "Autofarm crossings", function(t)
     end)
 end
 end)
--- -21.2458, 120.766, 853.417
--- -5.13577, 121, -930.574
--- -9.66811, 41.0824, -1051.35
+
