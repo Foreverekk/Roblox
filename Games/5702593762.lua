@@ -21,7 +21,7 @@ function winnerS()
 end
 
 function rockfallS()
-    wait(1)
+    wait(3)
     fireclickdetector(workspace.RockFall.ClickBrick.ClickDetector)
 end
 
@@ -54,7 +54,7 @@ S2:NewButton("Winner", "TP to winners spawn", function()
     winnerS()
 end)
 
-S3:NewToggle("RockFall (Cost: 50)", "Rockfall every 1 second", function(t)
+S3:NewToggle("RockFall (Cost: 50)", "Rockfall every 3 seconds", function(t)
     rockfall = t
     
     while rockfall do
