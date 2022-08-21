@@ -1,9 +1,8 @@
 function slimeS()
     for i,v in ipairs(workspace:GetDescendants()) do
         if v.Name == "Slime" and v.Parent and v.Border.MiddlePartBorder.HatAttach_Slime then
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Border.MiddlePartBorder.HatAttach_Slime, 0)
-            wait(0.1)
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Border.MiddlePartBorder.HatAttach_Slime, 1)
+            wait(0.3)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Border.MiddlePartBorder.HatAttach_Slime.CFrame
         end
     end
     game.StarterGui:SetCore("SendNotification", {
