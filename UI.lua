@@ -77,7 +77,7 @@ M2:NewButton("Sit", "Just sit", function(c)
 end)
 
 M2:NewButton("AutoRotate (Character)", "Enable/Disable", function(c)
-    local ar = game.Players.LocalPlayer.Character.Humanoid.AutoRotate.Value
+    local ar = game.Players.LocalPlayer.Character.Humanoid.AutoRotate
     if ar == true then
         game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
     else
