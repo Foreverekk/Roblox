@@ -42,7 +42,7 @@ local S1 = T1:NewSection("AutoFarm")
 local points = nil
 local gold = nil
 
-S1:NewToggle("Points", "Autofarm points", function(t)
+S1:NewToggle("Points", "Sometimes stops when you die", function(t)
     points = t
     
     while points do
