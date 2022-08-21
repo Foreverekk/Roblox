@@ -1,8 +1,8 @@
 function slimeS()
     for i,v in ipairs(workspace:GetDescendants()) do
-        if v.Name == "Slime" and v.Parent and v.Border.MiddlePartBorder.HatAttach_Slime then
+        if string.find(v.Name, "Slime") and v.Slime and v.Parent and v.Slime.Border.MiddlePartBorder.HatAttach_Slime then
             wait(0.3)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Border.MiddlePartBorder.HatAttach_Slime.CFrame
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Slime.Border.MiddlePartBorder.HatAttach_Slime.CFrame
         end
     end
     game.StarterGui:SetCore("SendNotification", {
