@@ -53,6 +53,7 @@ local T1 = Window:NewTab("Main")
 local S1 = T1:NewSection("Piggy Morphs")
 
 S1:NewButton("Collect", "Collect all available piggy morphs", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
     piggyS()
 end)
 
