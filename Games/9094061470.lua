@@ -31,6 +31,7 @@ function piggyS()
         Text = "Made by Foreverekk.#0007";
         Duration = 60;
     })
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
 end
 
 
