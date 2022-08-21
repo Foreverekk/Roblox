@@ -20,8 +20,6 @@ function piggyS()
     end
     for i,v in ipairs(workspace.Piggies:GetDescendants()) do
         if v.Name == "ProximityPrompt" and v.Parent and v.Parent.difficulty then
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
-            firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
             wait(0.5)
             fireproximityprompt(v, 1, true)
