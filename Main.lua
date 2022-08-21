@@ -7,7 +7,6 @@ local f = pcall(function()
     d = game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Games/"..game.PlaceId..".lua")
 end)
 
-input = nil
 
 if input == _G.Key then
     wait(1)
