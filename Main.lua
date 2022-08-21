@@ -7,6 +7,7 @@ local f = pcall(function()
     d = game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Games/"..game.PlaceId..".lua")
 end)
 
+input = nil
 
 if _G.KeyInput == _G.Key then
     wait(1)
@@ -36,6 +37,7 @@ else
     K1:NewTextBox("Enter key here", "Join Discord for a key", function(c)
         _G.KeyInput = c
         if _G.KeyInput == _G.Key then
+            input = _G.KeyInput
             wait(1)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Main.lua"))()
         end
