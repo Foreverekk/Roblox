@@ -75,9 +75,6 @@ if f == true then
             me.Head.MeshId = "rbxassetid://6686307858" or nil
         end
     end
-    function walkspeedS()
-        game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed
-    end
     local M1 = Misc:NewSection("Player (Client)")
     local M2 = Misc:NewSection("Player")
     M1:NewToggle("Headless", "By lobox920", function(t)
@@ -91,9 +88,6 @@ if f == true then
             headlessS()
         end)
     end
-    end)
-    M2:NewSlider("WalkSpeed", "Change character walkspeed", function(t)
-        walkspeedS()
     end)
 
 else
