@@ -7,6 +7,25 @@ local f = pcall(function()
     d = game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Games/"..game.PlaceId..".lua")
 end)
 
+--_G.KeyInput = "string"
+
+if _G.KeyInput != _G.Key then
+    KeyLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    KeyWindow = Library.CreateLib("Enter Key | FRV Hub", "DarkTheme")
+    local Key = Window:NewTab("Unlock")
+    local K1 = Credits:NewSection("discord.gg/RetmyBsNAV")
+    K1:NewTextBox("Enter key here", "Join Discord for a key", function(c)
+        _G.KeyInput = c
+        if _G.KeyInput == _G.Key then
+            KeyWindow.Destroy()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Main.lua"))()
+        end
+    end)
+    K1:NewButton("Copy Discord invite", "Join Discord for a key", function()
+        setclipboard("https://discord.gg/RetmyBsNAV")
+    end)
+else
+
 wait(1)
 if f == true then
     wait(1)
@@ -18,10 +37,12 @@ if f == true then
 
 else
     game.StarterGui:SetCore("SendNotification", {
-        Title = "Error!";
+        Title = "Error! Loading without Main scripts..";
         Text = "Probably the wrong game/place";
-        Duration = 60;
+        Duration = 10;
     })
+    wait(1)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/UI.lua"))()
 end
 
 -- 10319501620 School of Sport -> AutoFarm
@@ -51,3 +72,4 @@ end
 -- 8891045283 Find The Bacons -> Collect
 -- 8850326889 Find The Slime Morphs! -> Collect
 -- 9567152264 Find The SCP -> Collect
+end
