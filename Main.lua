@@ -1,4 +1,5 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Loading.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Input.lua"))()
 
 loaded = false
 
