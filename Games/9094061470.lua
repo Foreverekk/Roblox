@@ -1,10 +1,29 @@
 function piggyS()
+    local function fireproximityprompt(Obj, Amount, Skip)
+        if Obj.ClassName == "ProximityPrompt" then 
+            Amount = Amount or 1
+            local PromptTime = Obj.HoldDuration
+            if Skip then 
+                Obj.HoldDuration = 0
+            end
+            for i = 1, Amount do 
+                Obj:InputHoldBegin()
+                if not Skip then 
+                    wait(Obj.HoldDuration)
+                end
+                Obj:InputHoldEnd()
+            end
+            Obj.HoldDuration = PromptTime
+        else 
+            error("userdata<ProximityPrompt> expected")
+        end
+    end
     for i,v in ipairs(workspace.Piggies:GetDescendants()) do
         if v.Name == "ProximityPrompt" and v.Parent and v.Parent.difficulty then
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-            wait(0.1)
+            wait(0.5)
             fireproximityprompt(v, 1, true)
         end
         wait(1)
