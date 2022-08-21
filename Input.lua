@@ -1,1 +1,0 @@
-_G.KeyInput = "string"
