@@ -122,3 +122,5 @@ end
 -- 8376378000 Find the Stickmen -> Collect
 -- 8621928057 Find The Pou! -> Collect
 -- 9247388724 Find The Cats! -> Collect
+-- 8891045283 Find The Bacons -> Collect
+-- 8850326889 Find The Slime Morphs
