@@ -8,7 +8,26 @@ local f = pcall(function()
 end)
 
 
-if _G.KeyInput ~= _G.Key then
+if _G.KeyInput == _G.Key then
+    wait(1)
+    if f == true then
+        wait(1)
+        Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        Window = Library.CreateLib("Hello! "..game.Players.LocalPlayer.DisplayName.." | FRV Hub", "DarkTheme")
+    
+        loadstring(d)()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/UI.lua"))()
+    
+    else
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Error! Loading without Main scripts..";
+            Text = "Probably the wrong game/place";
+            Duration = 10;
+        })
+        wait(1)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/UI.lua"))()
+    end
+else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Key.lua"))()
     KeyLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     KeyWindow = Library.CreateLib("Enter Key | FRV Hub", "DarkTheme")
@@ -24,26 +43,6 @@ if _G.KeyInput ~= _G.Key then
     K1:NewButton("Copy Discord invite", "Join Discord for a key", function()
         setclipboard("https://discord.gg/RetmyBsNAV")
     end)
-else
-
-wait(1)
-if f == true then
-    wait(1)
-    Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    Window = Library.CreateLib("Hello! "..game.Players.LocalPlayer.DisplayName.." | FRV Hub", "DarkTheme")
-
-    loadstring(d)()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/UI.lua"))()
-
-else
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Error! Loading without Main scripts..";
-        Text = "Probably the wrong game/place";
-        Duration = 10;
-    })
-    wait(1)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/UI.lua"))()
-end
 
 -- 10319501620 School of Sport -> AutoFarm
 -- 10536276198 The VMA Experience -> AutoFarm
