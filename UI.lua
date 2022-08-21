@@ -68,7 +68,7 @@ M2:NewSlider("WalkSpeed", "Changes player character walkspeed", 500, 16, functio
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = c
 end)
 
-M2:NewSlider("JumpPower", "Changes player character jump power", 1000, 16, function(c)
+M2:NewSlider("JumpPower", "Changes player character jump power", 1000, 50, function(c)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = c
 end)
 
