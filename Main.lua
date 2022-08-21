@@ -37,6 +37,7 @@ else
         _G.KeyInput = c
         if _G.KeyInput == _G.Key then
             KeyWindow.Destroy()
+            wait(1)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Main.lua"))()
         end
     end)
