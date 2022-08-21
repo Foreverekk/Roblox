@@ -9,6 +9,7 @@ end)
 
 
 if _G.KeyInput ~= _G.Key then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Key.lua"))()
     KeyLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     KeyWindow = Library.CreateLib("Enter Key | FRV Hub", "DarkTheme")
     local Key = Window:NewTab("Unlock")
