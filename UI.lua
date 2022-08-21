@@ -68,4 +68,21 @@ M2:NewSlider("WalkSpeed", "Changes player character walkspeed", 500, 16, functio
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = c
 end)
 
+M2:NewSlider("JumpPower", "Changes player character jump power", 300, 16, function(c)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = c
+end)
+
+M2:NewButton("Sit", "Just sit", function(c)
+    game.Players.LocalPlayer.Character.Humanoid.Sit = true
+end)
+
+M2:NewButton("AutoRotate (Character)", "Enable/Disable", function(c)
+    local ar = game.Players.LocalPlayer.Character.Humanoid.AutoRotate.Value
+    if ar == true then
+        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+    else
+        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = true
+    end
+end)
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Loaded.lua"))()
