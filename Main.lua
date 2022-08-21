@@ -9,7 +9,7 @@ end)
 
 input = nil
 
-if _G.KeyInput == _G.Key then
+if input == _G.Key then
     wait(1)
     if f == true then
         wait(1)
