@@ -20,11 +20,18 @@ function winnerS()
     end
 end
 
+function rockfallS()
+    wait(1)
+    fireclickdetector(workspace.RockFall.ClickBrick.ClickDetector)
+end
+
 
 local T1 = Window:NewTab("Main")
 local S1 = T1:NewSection("AutoFarm")
 local points = nil
 local S2 = T1:NewSection("Teleport")
+local S3 = T1:NewSection("Misc")
+local rockfall = nil
 
 S1:NewToggle("Steps & Points", "Autofarm steps and points", function(t)
     points = t
@@ -45,4 +52,17 @@ end)
 
 S2:NewButton("Winner", "TP to winners spawn", function()
     winnerS()
+end)
+
+S3:NewToggle("RockFall (Cost: 50)", "Rockfall every 1 second", function(t)
+    rockfall = t
+    
+    while rockfall do
+        rockfallS()
+        game.Players.LocalPlayer.CharacterAdded:Connect(function()
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+        if not rockfall then return end
+        rockfallS()
+    end)
+end
 end)
