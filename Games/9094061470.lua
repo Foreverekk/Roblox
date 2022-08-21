@@ -3,6 +3,7 @@ function piggyS()
         if v.Name == "ProximityPrompt" and v.Parent and v.Parent.difficulty then
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
             fireproximityprompt(v)
         end
         wait(1.5)
