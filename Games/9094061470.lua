@@ -4,9 +4,10 @@ function piggyS()
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
-            fireproximityprompt(v)
+            wait(0.1)
+            fireproximityprompt(v, 1, true)
         end
-        wait(1.5)
+        wait(1)
     end
     game.StarterGui:SetCore("SendNotification", {
         Title = "Collected!";
