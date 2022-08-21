@@ -20,7 +20,7 @@ if input == _G.Key then
     
     else
         game.StarterGui:SetCore("SendNotification", {
-            Title = "Error! Loading without Main scripts..";
+            Title = "Error!";
             Text = "Probably the wrong game/place";
             Duration = 10;
         })
