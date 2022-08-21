@@ -1,9 +1,3 @@
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Loaded!";
-    Text = "Made by Foreverekk.#0007";
-    Duration = 5;
-})
-
 local Credits = Window:NewTab("Credits")
 local C1 = Credits:NewSection("Scripting:")
 C1:NewButton("Foreverekk.#0007", "Discord", function()
@@ -69,3 +63,9 @@ M1:NewToggle("Headless", "By lobox920", function(t)
     end)
 end
 end)
+
+M2:NewSlider("WalkSpeed", "Changes player character walkspeed", 500, 16, function(c)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = c
+end)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Loaded.lua"))()

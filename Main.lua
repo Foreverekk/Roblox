@@ -1,8 +1,4 @@
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Loading..";
-    Text = "Made by Foreverekk.#0007";
-    Duration = 1;
-})
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Loading.lua"))()
 
 loaded = false
 
