@@ -36,7 +36,11 @@ else
     K1:NewTextBox("Enter key here", "Join Discord for a key", function(c)
         _G.KeyInput = c
         if _G.KeyInput == _G.Key then
-            KeyWindow.Destroy()
+            for i,v in ipairs(game:GetService("CoreGui"):GetDescendants()) do
+                if v.Name == "Main" and v.MainCorner and v.MainHeader and v.MainSide and v.pages and v.infoContainer then
+                    v.Parent.Destroy()
+                end
+            end
             wait(1)
             loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Main.lua"))()
         end
