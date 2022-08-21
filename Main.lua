@@ -7,9 +7,8 @@ local f = pcall(function()
     d = game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Games/"..game.PlaceId..".lua")
 end)
 
---_G.KeyInput = "string"
 
-if not _G.KeyInput or _G.KeyInput ~= _G.Key then
+if _G.KeyInput ~= _G.Key then
     KeyLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     KeyWindow = Library.CreateLib("Enter Key | FRV Hub", "DarkTheme")
     local Key = Window:NewTab("Unlock")
