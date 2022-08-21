@@ -123,4 +123,5 @@ end
 -- 8621928057 Find The Pou! -> Collect
 -- 9247388724 Find The Cats! -> Collect
 -- 8891045283 Find The Bacons -> Collect
--- 8850326889 Find The Slime Morphs
+-- 8850326889 Find The Slime Morphs! -> Collect
+-- 9567152264 Find The SCP -> Collect
