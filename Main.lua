@@ -65,6 +65,8 @@ if f == true then
     P3:NewButton(game.Players.LocalPlayer.AccountAge.." days", "Click to copy", function()
         setclipboard(game.Players.LocalPlayer.AccountAge)
     end)
+
+    local Misc = Window:NewTab("Misc")
     local headless = nil
     function headlessS()
         wait(1)
@@ -73,8 +75,12 @@ if f == true then
             me.Head.MeshId = "rbxassetid://6686307858" or nil
         end
     end
-    local P4 = Player:NewSection("Client")
-    P4:NewToggle("Headless", "By lobox920", function(t)
+    function walkspeedS()
+        game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed
+    end
+    local M1 = Misc:NewSection("Player (Client)")
+    local M2 = Misc:NewSection("Player")
+    M1:NewToggle("Headless", "By lobox920", function(t)
         headless = t
         
         while headless do
@@ -86,12 +92,15 @@ if f == true then
         end)
     end
     end)
+    M2:NewSlider("WalkSpeed", "Change character walkspeed", function(t)
+        walkspeedS()
+    end)
 
 else
     game.StarterGui:SetCore("SendNotification", {
         Title = "Error!";
         Text = "Probably the wrong game/place";
-        Duration = 5;
+        Duration = 60;
     })
 end
 
