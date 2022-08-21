@@ -13,11 +13,6 @@ end)
 
 wait(1)
 if f == true then
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Loaded!";
-        Text = "Made by Foreverekk.#0007";
-        Duration = 5;
-    })
     wait(1)
     Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     Window = Library.CreateLib("Hello! "..game.Players.LocalPlayer.DisplayName.." | FRV Hub", "DarkTheme")
