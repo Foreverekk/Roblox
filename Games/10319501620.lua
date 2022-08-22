@@ -9,9 +9,11 @@ local redeem = {
 }
 
 function coinsS()
-    --while wait() do
-        game:GetService("ReplicatedStorage").RemoteEvents.RewardCurrencyPickup:FireServer(unpack(args))
-    --end
+    game:GetService("ReplicatedStorage").RemoteEvents.RewardCurrencyPickup:FireServer(unpack(args))
+end
+
+function coins2S()
+    game:GetService("ReplicatedStorage").RemoteEvents.RewardCurrencyPickup:FireServer(unpack(args))
 end
 
 function secretS()
@@ -43,6 +45,7 @@ end
 local T1 = Window:NewTab("Main")
 local S1 = T1:NewSection("AutoFarm")
 local coins = nil
+local coins2 = nil
 local S2 = T1:NewSection("Teleport")
 
 S1:NewToggle("Coins", "Autofarm coins", function(t)
@@ -58,8 +61,17 @@ S1:NewToggle("Coins", "Autofarm coins", function(t)
 end
 end)
 
-S2:NewButton("Secret Hideout", "TP to secret hideout", function()
-    secretS()
+S1:NewToggle("Coins x2", "Autofarm coins x2", function(t)
+    coins2 = t
+    
+    while coins2 and wait() do
+        coinsS()
+        game.Players.LocalPlayer.CharacterAdded:Connect(function()
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+        if not coins2 then return end
+        coinsS()
+    end)
+end
 end)
 
 S1:NewButton("Promo Codes", "Send available promo codes", function()
@@ -68,4 +80,8 @@ end)
 
 S1:NewButton("Collect Stickers", "Collect available stickers", function()
     stickersS()
+end)
+
+S2:NewButton("Secret Hideout", "TP to secret hideout", function()
+    secretS()
 end)
