@@ -69,7 +69,7 @@ S1:NewToggle("Coins x2", "Autofarm coins x2", function(t)
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
         if not coins2 then return end
-        coinsS()
+        coins2S()
     end)
 end
 end)
