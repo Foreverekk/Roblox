@@ -78,7 +78,7 @@ S1:NewButton("Promo Codes", "Send available promo codes", function()
     codeS()
 end)
 
-S1:NewButton("Collect Stickers", "Collect available stickers", function()
+S2:NewButton("Stickers", "Collect available stickers", function()
     stickersS()
 end)
 
