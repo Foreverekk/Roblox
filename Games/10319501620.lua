@@ -16,10 +16,6 @@ function coins2S()
     game:GetService("ReplicatedStorage").RemoteEvents.RewardCurrencyPickup:FireServer(unpack(args))
 end
 
-function secretS()
-    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-606.352, 32.4091, -319.299)
-end
-
 function codeS()
     game.StarterGui:SetCore("SendNotification", {
         Title = "Codes:";
@@ -40,6 +36,32 @@ function stickersS()
         Text = "Made by Foreverekk.#0007";
         Duration = 60;
     })
+end
+
+function secretS()
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-606.352, 32.4091, -319.299)
+end
+
+function dripS()
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-10.985, 32.7016, -123.783)
+    wait(0.1)
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(20.1501, 32.7016, -123.224)
+    wait(0.1)
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(53.8174, 32.7016, -124.59)
+    wait(0.1)
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(83.9498, 32.7016, -123.256)
+    wait(0.1)
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(114.966, 32.7016, -124.226)
+    wait(0.1)
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(142.838, 32.7016, -125.987)
+    wait(0.1)
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(145.606, 32.7016, -81.7512)
+    wait(0.1)
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(174.715, 32.7016, -82.2747)
+    wait(0.1)
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(201.63, 32.7016, -80.9125)
+    wait(0.1)
+    game:service'Players'.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(166.713, 32.7016, -102.411)
 end
 
 local T1 = Window:NewTab("Main")
@@ -85,3 +107,9 @@ end)
 S2:NewButton("Secret Hideout", "TP to secret hideout", function()
     secretS()
 end)
+
+S2:NewButton("Drip Drops", "TP to drip drops place", function()
+    dripS()
+end)
+
+--175.040497, 32.7016182, -80.9629517, -0.982906997, -7.73639319e-10, 0.184102759, -7.55290053e-09, 1, -3.61219961e-08, -0.184102759, -3.68950737e-08, -0.982906997
