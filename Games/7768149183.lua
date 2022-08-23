@@ -14,6 +14,8 @@ end
 
 function trollarsS()
     if game:GetService("Workspace").WorldTrollars.Trollar and game:GetService("Workspace").WorldTrollars.Trollar then
+        firetouchinterest(game.Players.LocalPlayer.Character.Head, game:GetService("Workspace").WorldTrollars.Trollar, 0)
+        firetouchinterest(game.Players.LocalPlayer.Character.Head, game:GetService("Workspace").WorldTrollars.Trollar, 1)
         game:GetService("ReplicatedStorage").Events.CollectTrollar:FireServer(game:GetService("Workspace").WorldTrollars.Trollar)
         game:GetService("ReplicatedStorage").Events.AddTrollar:FireServer(game:GetService("Workspace").WorldTrollars.Trollar)
     end
