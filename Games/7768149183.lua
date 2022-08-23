@@ -33,7 +33,7 @@ end)
 S2:NewToggle("Trollars", "Autofarm trollars", function(c)
     trollars = c
     
-    while trollars and wait(0.1) do
+    while trollars and wait(2) do
         trollarsS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
