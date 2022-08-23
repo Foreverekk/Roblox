@@ -1,7 +1,8 @@
 function stagesS()
     num = game.Players.LocalPlayer.leaderstats.Stage.Value + 1
     if workspace.Stages:FindFirstChild(tostring(num)) then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Stages:FindFirstChild(tostring(num)).Spawn.CFrame
+        firetouchinterest(workspace.Stages:FindFirstChild(tostring(num)).Spawn, game.Players.LocalPlayer.Character.PrimaryPart, 0)
+        firetouchinterest(workspace.Stages:FindFirstChild(tostring(num)).Spawn, game.Players.LocalPlayer.Character.PrimaryPart, 1)
     end
 end
 
@@ -12,7 +13,7 @@ local stages = nil
 S1:NewToggle("Stages", "Autofarm stages", function(c)
     stages = c
     
-    while stages and wait(0.1) do
+    while stages and wait() do
         stagesS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
