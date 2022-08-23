@@ -43,7 +43,6 @@ end)
 local Misc = Window:NewTab("Misc")
 local headless = nil
 function headlessS()
-    wait(1)
     local me = game:GetService("Players").LocalPlayer.Character
     if me:FindFirstChild("Head") and me:FindFirstChild("Humanoid") then
         me.Head.MeshId = "rbxassetid://6686307858" or nil
@@ -54,7 +53,7 @@ local M2 = Misc:NewSection("Player")
 M1:NewToggle("Headless", "By lobox920", function(t)
     headless = t
     
-    while headless do
+    while headless and wait(1) do
         headlessS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
@@ -72,17 +71,43 @@ M2:NewSlider("JumpPower", "Changes player character jump power", 1000, 50, funct
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = c
 end)
 
+M2:NewButton("AntiKick", "By Valco. This script is used to bypass kicks when they are called from client.", function(c)
+    if getgenv().Anti == true then
+        getgenv().Anti = false
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "AntiKick";
+            Text = "Disabled!";
+            Duration = 5;
+        })        
+    else
+        getgenv().Anti = true
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "AntiKick";
+            Text = "Enabled!";
+            Duration = 5;
+        }) 
+    end
+end)
+
 M2:NewButton("Sit", "Just sit", function(c)
     game.Players.LocalPlayer.Character.Humanoid.Sit = true
 end)
 
-M2:NewButton("AutoRotate (Character)", "Enable/Disable", function(c)
+M2:NewButton("AutoRotate (Character)", "Disable/Enable", function(c)
     local ar = game.Players.LocalPlayer.Character.Humanoid.AutoRotate
     if ar == true then
         game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
     else
         game.Players.LocalPlayer.Character.Humanoid.AutoRotate = true
     end
+end)
+
+local Anti-- By Valco
+Anti = hookmetamethod(game, "__namecall", function(self, ...)
+    if self == plr and getnamecallmethod():lower() == "kick" and getgenv().Anti then
+        return warn("[ANTI-KICK] Client Tried To Call Kick Function On LocalPlayer")
+    end
+    return Anti(self, ...)
 end)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Loaded.lua"))()
