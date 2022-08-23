@@ -45,32 +45,33 @@ else
         setclipboard("https://discord.gg/RetmyBsNAV")
     end)
 
--- 10319501620 School of Sport -> AutoFarm
--- 10536276198 The VMA Experience -> AutoFarm
--- 815405518 The Floor Is LAVA! -> AutoFarm
--- 5702593762 Climb 1,000 Stairs -> AutoFarm
--- 7993293100 Tsunami Game -> AutoFarm
--- 3587619225 Mega Easy Obby -> AutoFarm
--- 7952502098 Impossible Glass Bridge Obby! (Squid Game) -> AutoFarm
--- 8003084678 oMega Obby Parkour -> AutoFarm
--- 7378813434 Cotton Obby! -> Complete
--- 5166670285 Badge Walk -> Collect
--- 148763243 Player Badges -> Collect
--- 4760217946 Limited Badges -> Collect
--- 7918824587 Limiteds Badge Walk -> Collect
--- 7896264844 Find the Markers -> Collect
--- 9268384900 Find The Anime -> Collect
--- 8651851179 Find The Pandas -> Collect
--- 8972280788 Find The Impostors! -> Collect
--- 8919650008 Find The Pop Tarts -> Collect
--- 9304358188 Find The Memes -> Collect
--- 9296316690 Find the Milks -> Collect/AutoFarm
--- 9094061470 Find The Piggy Morphs -> Collect
--- 8376378000 Find the Stickmen -> Collect
--- 8621928057 Find The Pou! -> Collect
--- 9247388724 Find The Cats! -> Collect
--- 8891045283 Find The Bacons -> Collect
--- 8850326889 Find The Slime Morphs! -> Collect
--- 9567152264 Find The SCP -> Collect
+-- 10319501620 School of Sport
+-- 10536276198 The VMA Experience
+-- 815405518 The Floor Is LAVA!
+-- 5702593762 Climb 1,000 Stairs
+-- 2396588044 Adopt and Raise
+-- 7993293100 Tsunami Game
+-- 3587619225 Mega Easy Obby
+-- 7952502098 Impossible Glass Bridge Obby! (Squid Game)
+-- 8003084678 oMega Obby Parkour
+-- 7378813434 Cotton Obby!
+-- 5166670285 Badge Walk
+-- 148763243 Player Badges
+-- 4760217946 Limited Badges
+-- 7918824587 Limiteds Badge Walk
+-- 7896264844 Find the Markers
+-- 9268384900 Find The Anime
+-- 8651851179 Find The Pandas
+-- 8972280788 Find The Impostors!
+-- 8919650008 Find The Pop Tarts
+-- 9304358188 Find The Memes
+-- 9296316690 Find the Milks
+-- 9094061470 Find The Piggy Morphs
+-- 8376378000 Find the Stickmen
+-- 8621928057 Find The Pou!
+-- 9247388724 Find The Cats!
+-- 8891045283 Find The Bacons
+-- 8850326889 Find The Slime Morphs!
+-- 9567152264 Find The SCP
 -- 5187612424 School Tycoon
 end
