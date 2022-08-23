@@ -1,6 +1,6 @@
 function coins100mS()
     local A_1 = 100000000
-    local A_2 = "o63cIPRq5Pjexevx"
+    local A_2 = "o63cIPRq5Pjexevx"-- Randomly generated player code (RemoteSpy)
     local Event = game:GetService("ReplicatedStorage").Events.DropSell
     Event:FireServer(A_1, A_2)
     
@@ -8,7 +8,7 @@ end
 
 function coins10mS()
     local A_1 = 10000000
-    local A_2 = "o63cIPRq5Pjexevx"
+    local A_2 = "o63cIPRq5Pjexevx"-- Randomly generated player code (RemoteSpy)
     local Event = game:GetService("ReplicatedStorage").Events.DropSell
     Event:FireServer(A_1, A_2)
     
@@ -16,7 +16,7 @@ end
 
 function coins1mS()
     local A_1 = 1000000
-    local A_2 = "o63cIPRq5Pjexevx"
+    local A_2 = "o63cIPRq5Pjexevx"-- Randomly generated player code (RemoteSpy)
     local Event = game:GetService("ReplicatedStorage").Events.DropSell
     Event:FireServer(A_1, A_2)
     
@@ -24,7 +24,7 @@ end
 
 function coins100kS()
     local A_1 = 100000
-    local A_2 = "o63cIPRq5Pjexevx"
+    local A_2 = "o63cIPRq5Pjexevx"-- Randomly generated player code (RemoteSpy)
     local Event = game:GetService("ReplicatedStorage").Events.DropSell
     Event:FireServer(A_1, A_2)
     
@@ -32,7 +32,7 @@ end
 
 function coins10kS()
     local A_1 = 10000
-    local A_2 = "o63cIPRq5Pjexevx"
+    local A_2 = "o63cIPRq5Pjexevx"-- Randomly generated player code (RemoteSpy)
     local Event = game:GetService("ReplicatedStorage").Events.DropSell
     Event:FireServer(A_1, A_2)
     
@@ -40,10 +40,18 @@ end
 
 function coins1kS()
     local A_1 = 1000
-    local A_2 = "o63cIPRq5Pjexevx"
+    local A_2 = "o63cIPRq5Pjexevx"-- Randomly generated player code (RemoteSpy)
     local Event = game:GetService("ReplicatedStorage").Events.DropSell
     Event:FireServer(A_1, A_2)
     
+end
+
+function collectS()
+    for i,v in ipairs(workspace.DropHolder:GetDescendants()) do
+        if v.Name == "ClickDetector" and v.Parent then
+            fireclickdetector(v)
+        end
+    end
 end
 
 function rebirthS()
@@ -66,8 +74,8 @@ local rebirth = nil
 local S2 = T1:NewSection("Add")
 local S3 = T1:NewSection("Misc")
 
-S1:NewToggle("Coins", "Autofarm coins", function(c)
-    coins = t
+S1:NewToggle("Coins (need to bypass)", "Autofarm coins", function(c)
+    coins = c
     
     while coins and wait(0.1) do
         coins100mS()
@@ -75,6 +83,19 @@ S1:NewToggle("Coins", "Autofarm coins", function(c)
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
         if not coins then return end
         coins100mS()
+    end)
+end
+end)
+
+S1:NewToggle("Collect Coins", "Autocollect coins", function(c)
+    collect = c
+    
+    while collect and wait(1) do
+        collectS()
+        game.Players.LocalPlayer.CharacterAdded:Connect(function()
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+        if not collect then return end
+        collectS()
     end)
 end
 end)
@@ -92,27 +113,27 @@ S1:NewToggle("Rebirth", "Autofarm rebirths", function(c)
 end
 end)
 
-S2:NewButton("Coins (100,000,000)", "Add coins", function(c)
+S2:NewButton("Coins (100M) (need to bypass)", "Add coins", function(c)
     coins100mS()
 end)
 
-S2:NewButton("Coins (10,000,000)", "Add coins", function(c)
+S2:NewButton("Coins (10M) (need to bypass)", "Add coins", function(c)
     coins10mS()
 end)
 
-S2:NewButton("Coins (1,000,000)", "Add coins", function(c)
+S2:NewButton("Coins (1M) (need to bypass)", "Add coins", function(c)
     coins1mS()
 end)
 
-S2:NewButton("Coins (100,000)", "Add coins", function(c)
+S2:NewButton("Coins (100K) (need to bypass)", "Add coins", function(c)
     coins100kS()
 end)
 
-S2:NewButton("Coins (10,000)", "Add coins", function(c)
+S2:NewButton("Coins (10K) (need to bypass)", "Add coins", function(c)
     coins10kS()
 end)
 
-S2:NewButton("Coins (1,000)", "Add coins", function(c)
+S2:NewButton("Coins (1K) (need to bypass)", "Add coins", function(c)
     coins1kS()
 end)
 
