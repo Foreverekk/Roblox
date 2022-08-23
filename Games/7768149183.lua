@@ -13,11 +13,13 @@ function tfS()
 end
 
 function trollarsS()
-    if game:GetService("Workspace").WorldTrollars.Trollar then
-        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(1, Enum.EasingStyle.Linear)
-        tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = game:GetService("Workspace").WorldTrollars.Trollar.CFrame}):Play()
-        game:GetService("ReplicatedStorage").Events.CollectTrollar:FireServer(game:GetService("Workspace").WorldTrollars.Trollar)
-        game:GetService("ReplicatedStorage").Events.AddTrollar:FireServer(game:GetService("Workspace").WorldTrollars.Trollar)
+    for i,v in ipairs(workspace.WorldTrollars:GetDescendants()) do
+        if v.ClassName == "Part" and v.Exists == true then
+            tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(1, Enum.EasingStyle.Linear)
+            tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = v.CFrame}):Play()
+            game:GetService("ReplicatedStorage").Events.CollectTrollar:FireServer(game:GetService("Workspace").WorldTrollars.Trollar)
+            game:GetService("ReplicatedStorage").Events.AddTrollar:FireServer(game:GetService("Workspace").WorldTrollars.Trollar)
+        end
     end
 end
 
