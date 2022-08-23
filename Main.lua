@@ -72,4 +72,5 @@ else
 -- 8891045283 Find The Bacons -> Collect
 -- 8850326889 Find The Slime Morphs! -> Collect
 -- 9567152264 Find The SCP -> Collect
+-- 5187612424 School Tycoon
 end
