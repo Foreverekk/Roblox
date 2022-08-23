@@ -71,7 +71,7 @@ M2:NewSlider("JumpPower", "Changes player character jump power", 1000, 50, funct
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = c
 end)
 
-M2:NewButton("AntiKick", "By Valco. This script is used to bypass kicks when they are called from client.", function(c)
+M2:NewButton("AntiKick", "By Valco", function(c)
     if getgenv().Anti == true then
         getgenv().Anti = false
         game.StarterGui:SetCore("SendNotification", {
