@@ -14,7 +14,7 @@ local crates = nil
 S1:NewToggle("Crates", "Autofarm crates", function(c)
     crates = c
     
-    while crates and wait(2) do
+    while crates and wait(5) do
         cratesS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
