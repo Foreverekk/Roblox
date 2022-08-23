@@ -66,7 +66,7 @@ local rebirth = nil
 local S2 = T1:NewSection("Add")
 local S3 = T1:NewSection("Misc")
 
-S1:NewToggle("Coins (100,000,000)", "Autofarm coins", function(c)
+S1:NewToggle("Coins", "Autofarm coins", function(c)
     coins = t
     
     while coins and wait(0.1) do
