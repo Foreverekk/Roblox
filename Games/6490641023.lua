@@ -42,7 +42,7 @@ end)
 S1:NewToggle("Prestige", "Autofarm prestige", function(c)
     prestige = c
     
-    while prestige and wait() do
+    while prestige and wait(1) do
         prestigeS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
