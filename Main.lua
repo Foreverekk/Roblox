@@ -52,6 +52,7 @@ else
 -- 2396588044 Adopt and Raise
 -- 7993293100 Tsunami Game
 -- 3587619225 Mega Easy Obby
+-- 6490641023 Mega Tower Obby
 -- 7952502098 Impossible Glass Bridge Obby! (Squid Game)
 -- 8003084678 oMega Obby Parkour
 -- 7378813434 Cotton Obby!
