@@ -1,8 +1,7 @@
 function completeS()
-    wait(0.1)
     num = game.Players.LocalPlayer.leaderstats.Stage.Value + 1
     if workspace.Stages:FindFirstChild(tostring(num)) then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Stages:FindFirstChild(tostring(num)).CFrame
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Stages:FindFirstChild(tostring(num)).Spawn.CFrame
     end
 end
 
@@ -13,7 +12,7 @@ local complete = nil
 S1:NewToggle("Complete", "Autofarm stages", function(c)
     complete = c
     
-    while complete do
+    while complete and wait(0.1) do
         completeS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
