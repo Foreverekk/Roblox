@@ -27,7 +27,7 @@ local S3 = T1:NewSection("Change Team")
 S1:NewToggle("Bucks", "Autofarm bucks", function(c)
     bucks = c
     
-    while bucks and wait(0.1) do
+    while bucks and wait() do
         bucksS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
