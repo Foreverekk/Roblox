@@ -7,15 +7,10 @@ function stagesS()
 end
 
 function prestigeS()
-    num = game.Players.LocalPlayer.leaderstats.Stage.Value + 1
-    if workspace.Stages:FindFirstChild(tostring(num)) then
-        return
-    else
-        for i,v in ipairs(workspace:FindFirstChild("Play Now!"):GetDescendants()) do
-            if v.Name == "TouchInterest" and v.Parent then
-                firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
-                firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
-            end
+    for i,v in ipairs(workspace:FindFirstChild("Play Now!"):GetDescendants()) do
+        if v.Name == "TouchInterest" and v.Parent then
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
+            firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
         end
     end
 end
