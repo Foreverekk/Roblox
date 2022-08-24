@@ -1,8 +1,10 @@
 function moaiS()
     for i,v in ipairs(workspace.Moais:GetDescendants()) do
         if v.Name == "TouchInterest" and v.Parent then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
+            wait(1)
         end
     end
     game.StarterGui:SetCore("SendNotification", {
