@@ -74,5 +74,6 @@ else
 -- 8891045283 Find The Bacons
 -- 8850326889 Find The Slime Morphs!
 -- 9567152264 Find The SCP
+-- 8230381734 Find the Moai
 -- 5187612424 School Tycoon
 end
