@@ -10,11 +10,10 @@ end)
 
 if input == _G.Key then
     wait(1)
+    Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    Window = Library.CreateLib("Hello! "..game.Players.LocalPlayer.DisplayName.." | FRV Hub", "DarkTheme")
     if f == true then
         wait(1)
-        Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-        Window = Library.CreateLib("Hello! "..game.Players.LocalPlayer.DisplayName.." | FRV Hub", "DarkTheme")
-    
         loadstring(d)()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/UI.lua"))()
     
