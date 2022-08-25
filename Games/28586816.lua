@@ -30,7 +30,7 @@ local points = nil
 S1:NewToggle("Points", "Autofarm points and level", function(c)
     points = c
     
-    while points and wait(1) do
+    while points and wait(5) do
         pointsS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
