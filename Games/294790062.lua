@@ -20,6 +20,6 @@ S1:NewToggle("Points", "Autofarm points", function(c)
 end
 end)
 
-S2:NewToggle("Points (10)", "Add points", function(c)
+S2:NewButton("Points (10)", "Add points", function()
     pointsS()
 end)
