@@ -19,8 +19,8 @@ local T1 = Window:NewTab("Main")
 local S1 = T1:NewSection("AutoFarm")
 local tokens = nil
 
-S1:NewToggle("Tokens", "Autofarm tokens", function(t)
-    tokens = t
+S1:NewToggle("Tokens", "Autofarm tokens", function(c)
+    tokens = c
     
     while tokens do
         tokensS()
