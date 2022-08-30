@@ -48,6 +48,7 @@ function headlessS()
         me.Head.MeshId = "rbxassetid://6686307858" or nil
     end
 end
+local esp = nil
 local fly = nil
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Fly.lua"))()
 local M1 = Misc:NewSection("Player (Client)")
@@ -63,6 +64,26 @@ M1:NewToggle("Headless", "By lobox920", function(c)
         headlessS()
     end)
 end
+end)
+
+M1:NewToggle("ESP", "By blissful4992", function(c)
+    esp = c
+    
+    while esp and wait(5) do
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/ESP.lua"))()
+        game.Players.LocalPlayer.CharacterAdded:Connect(function()
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+        if not esp then return end
+    end)
+end
+end)
+
+M1:NewButton("AK-47", "By reflections263", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/0hn40Zbc"))()
+end)
+
+M1:NewButton("Shotgun", "By reflections263", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/pLdGH4h7"))()
 end)
 
 M2:NewToggle("Fly", "By Nicuse", function(c)
