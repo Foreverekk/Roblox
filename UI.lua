@@ -68,11 +68,15 @@ end)
 M2:NewToggle("Fly", "By Nicuse", function(c)
     fly = c
     
-    while fly and wait(0.2) do
+    while fly and wait(0.5) do
         Fly(true)
-    else
-        Fly(false)
-    end
+        game.Players.LocalPlayer.CharacterAdded:Connect(function()
+        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+        if not fly then
+            Fly(false)
+        end
+    end)
+end
 end)
 
 M2:NewSlider("WalkSpeed", "Changes player character walkspeed", 500, 16, function(c)
