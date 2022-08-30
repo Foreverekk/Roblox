@@ -68,7 +68,7 @@ end)
 M2:NewToggle("Fly", "By Nicuse", function(c)
     fly = c
     
-    if fly then
+    while fly and wait(0.2) do
         Fly(true)
     else
         Fly(false)
