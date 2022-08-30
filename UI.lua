@@ -42,12 +42,7 @@ end)
 
 local Misc = Window:NewTab("Misc")
 local headless = nil
-function headlessS()
-    local me = game:GetService("Players").LocalPlayer.Character
-    if me:FindFirstChild("Head") and me:FindFirstChild("Humanoid") then
-        me.Head.MeshId = "rbxassetid://6686307858" or nil
-    end
-end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Headless.lua"))()
 local esp = nil
 local fly = nil
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Fly.lua"))()
@@ -76,6 +71,10 @@ M1:NewToggle("ESP", "By blissful4992", function(c)
         if not esp then return end
     end)
 end
+end)
+
+M1:NewButton("Amogus", "Amogus character", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Amogus.lua"))()
 end)
 
 M1:NewButton("AK-47", "By reflections263", function()
