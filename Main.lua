@@ -1,5 +1,12 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Loading.lua"))()
 
+function bench(func)
+    start = tick()
+    func()
+    a = tick() - start
+    return tostring(a)
+end
+
 loaded = false
 
 local d
@@ -11,7 +18,7 @@ end)
 if input == _G.Key then
     wait(1)
     Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    Window = Library.CreateLib("Hello! "..game.Players.LocalPlayer.DisplayName.." | FRV Hub", "DarkTheme")
+    Window = Library.CreateLib("Hello! "..game.Players.LocalPlayer.DisplayName.." | FRV Hub", "Midnight")
     if f == true then
         wait(1)
         loadstring(d)()
@@ -29,7 +36,7 @@ if input == _G.Key then
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Games/Key.lua"))()
     KeyLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    KeyWindow = KeyLibrary.CreateLib("Enter Key | FRV Hub (Badge Collectors!)", "DarkTheme")
+    KeyWindow = KeyLibrary.CreateLib("Enter Key | FRV Hub (Badge Collectors!)", "Midnight")
     local Key = KeyWindow:NewTab("Unlock")
     local K1 = Key:NewSection("discord.gg/RetmyBsNAV")
     K1:NewTextBox("Enter key here", "Join Discord for a key", function(c)
@@ -43,6 +50,14 @@ else
     K1:NewButton("Copy Discord invite", "Join Discord for a key", function()
         setclipboard("https://discord.gg/RetmyBsNAV")
     end)
+
+-- AntiKick
+-- AutoRotate
+-- Fly
+-- Headless (Client)
+-- WalkSpeed
+-- JumpPower
+-- Sit
 
 -- 28586816 Get Eaten!
 -- 294790062 Roblox Titanic
@@ -78,4 +93,6 @@ else
 -- 9567152264 Find The SCP
 -- 8230381734 Find the Moai
 -- 5187612424 School Tycoon
+-- 9284097280 Apartment Tycoon
+-- 6939849554 Cart Ride Tycoon thru a Cave 2
 end

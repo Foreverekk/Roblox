@@ -48,12 +48,14 @@ function headlessS()
         me.Head.MeshId = "rbxassetid://6686307858" or nil
     end
 end
+local fly = nil
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Fly.lua"))()
 local M1 = Misc:NewSection("Player (Client)")
 local M2 = Misc:NewSection("Player")
-M1:NewToggle("Headless", "By lobox920", function(t)
-    headless = t
+M1:NewToggle("Headless", "By lobox920", function(c)
+    headless = c
     
-    while headless and wait(1) do
+    while headless and wait(0.5) do
         headlessS()
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
@@ -61,6 +63,16 @@ M1:NewToggle("Headless", "By lobox920", function(t)
         headlessS()
     end)
 end
+end)
+
+M2:NewToggle("Fly", "By Nicuse", function(c)
+    fly = c
+    
+    if fly then
+        Fly(true)
+    else
+        Fly(false)
+    end
 end)
 
 M2:NewSlider("WalkSpeed", "Changes player character walkspeed", 500, 16, function(c)
