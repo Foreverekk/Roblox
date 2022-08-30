@@ -53,8 +53,12 @@ else
 
 -- AntiKick
 -- AutoRotate
+-- Amogus (Character)
+-- ESP
 -- Fly
 -- Headless (Client)
+-- AK-47 (Client)
+-- Shotgun (Client)
 -- WalkSpeed
 -- JumpPower
 -- Sit

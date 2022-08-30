@@ -73,10 +73,6 @@ M1:NewToggle("ESP", "By blissful4992", function(c)
 end
 end)
 
-M1:NewButton("Amogus", "Amogus character", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Amogus.lua"))()
-end)
-
 M1:NewButton("AK-47", "By reflections263", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/0hn40Zbc"))()
 end)
@@ -123,6 +119,10 @@ M2:NewButton("AntiKick", "By Valco", function(c)
             Duration = 5;
         }) 
     end
+end)
+
+M2:NewButton("Amogus", "Amogus character", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Amogus.lua"))()
 end)
 
 M2:NewButton("Sit", "Just sit", function(c)
