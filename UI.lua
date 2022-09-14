@@ -81,20 +81,6 @@ M1:NewButton("Shotgun", "By reflections263", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/pLdGH4h7"))()
 end)
 
-M2:NewToggle("Fly", "By Nicuse", function(c)
-    fly = c
-    
-    while fly and wait(0.5) do
-        Fly(true)
-        game.Players.LocalPlayer.CharacterAdded:Connect(function()
-        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-        if not fly then
-            Fly(false)
-        end
-    end)
-end
-end)
-
 M2:NewSlider("WalkSpeed", "Changes player character walkspeed", 500, 16, function(c)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = c
 end)
