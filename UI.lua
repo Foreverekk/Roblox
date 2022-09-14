@@ -44,8 +44,6 @@ local Misc = Window:NewTab("Misc")
 local headless = nil
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Headless.lua"))()
 local esp = nil
-local fly = nil
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Fly.lua"))()
 local M1 = Misc:NewSection("Player (Client)")
 local M2 = Misc:NewSection("Player")
 M1:NewToggle("Headless", "By lobox920", function(c)
