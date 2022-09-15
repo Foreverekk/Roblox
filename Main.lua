@@ -55,6 +55,7 @@ else
 -- AutoRotate
 -- Amogus (Character)
 -- ESP
+-- Better FPS
 -- Headless (Client)
 -- AK-47 (Client)
 -- Shotgun (Client)
