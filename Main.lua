@@ -74,6 +74,7 @@ else
 -- 5702593762 Climb 1,000 Stairs
 -- 2396588044 Adopt and Raise
 -- 7993293100 Tsunami Game
+-- 1001315107 RO-BOTS [BETA]
 -- 3587619225 Mega Easy Obby
 -- 6490641023 Mega Tower Obby
 -- 7952502098 Impossible Glass Bridge Obby! (Squid Game)
