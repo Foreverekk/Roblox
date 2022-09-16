@@ -114,16 +114,25 @@ M2:NewButton("Amogus", "Amogus character", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Amogus.lua"))()
 end)
 
+M2:NewButton("Neutral Team", "Changes player's team to Neutral", function()
+    local nt = game:GetService("Players")["LocalPlayer"].Neutral
+    if nt == true then
+        game:GetService("Players")["LocalPlayer"].Neutral = false
+    else
+        game:GetService("Players")["LocalPlayer"].Neutral = true
+    end
+end)
+
 M2:NewButton("Sit", "Just sit", function(c)
-    game.Players.LocalPlayer.Character.Humanoid.Sit = true
+    game:GetService("Players")["LocalPlayer"].Character.Humanoid.Sit = true
 end)
 
 M2:NewButton("AutoRotate (Character)", "Disable/Enable", function(c)
-    local ar = game.Players.LocalPlayer.Character.Humanoid.AutoRotate
+    local ar = game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutoRotate
     if ar == true then
-        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = false
+        game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutoRotate = false
     else
-        game.Players.LocalPlayer.Character.Humanoid.AutoRotate = true
+        game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutoRotate = true
     end
 end)
 
