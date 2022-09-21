@@ -50,6 +50,7 @@ else
     K1:NewButton("Copy Discord invite", "Join Discord for a key", function()
         setclipboard("https://discord.gg/RetmyBsNAV")
     end)
+    local K2 = Key:NewSection("Re-entering key is not needed until it is changed !!")
 
 -- AntiKick
 -- AutoRotate
