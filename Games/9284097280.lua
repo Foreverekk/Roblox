@@ -6,6 +6,7 @@ local clean = nil
 local T2 = Window:NewTab("Settings")
 local S1_2 = T2:NewSection("Collect")
 local collectTime = 2
+local S2_2 = T2:NewSection("Clean")
 local cleanTime = 30
 
 game:GetService("Players")["LocalPlayer"].PlayerGui:FindFirstChild("EffectsScreenGui").Enabled = false
@@ -53,11 +54,11 @@ else
 end
 
 if _G.KeyInput == _G.KeyP then
-    S1_2:NewSlider("Wait", "Autoclean all floors every (30-120) seconds", 120, 30, function(c)
+    S2_2:NewSlider("Wait", "Autoclean all floors every (30-120) seconds", 120, 30, function(c)
         collectTime = c
     end)
 else
-    S1_2:NewSlider("Premium", "You need a premium for this", 120, 30, function(c)
+    S2_2:NewSlider("Premium", "You need a premium for this", 120, 30, function(c)
         collectTime = collectTime
     end)
 end
