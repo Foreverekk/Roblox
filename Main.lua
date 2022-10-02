@@ -21,7 +21,7 @@ local f = pcall(function()
 end)
 
 
-if _G.KeyInput == _G.Key then
+if _G.KeyInput == _G.Key or _G.KeyInput == _G.KeyP then
     wait(1)
     Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     Window = Library.CreateLib("Hello! "..game:GetService("Players")["LocalPlayer"].DisplayName.." | FRV Hub", "Midnight")
