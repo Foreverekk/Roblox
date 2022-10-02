@@ -22,6 +22,12 @@ S1:NewToggle("Points", "Autofarm points and level", function(c)
 end
 end)
 
-S1_2:NewSlider("Wait", "Autofarm points every (5-120) seconds", 120, 5, function(c)
-    pointsTime = c
-end)
+if _G.KeyInput == _G.KeyP then
+    S1_2:NewSlider("Wait", "Autofarm points every (5-120) seconds", 120, 5, function(c)
+        pointsTime = c
+    end)
+else
+    S1_2:NewSlider("Premium", "You need a premium for this", 120, 5, function(c)
+        pointsTime = pointsTime
+    end)
+end

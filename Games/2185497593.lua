@@ -22,6 +22,12 @@ S1:NewToggle("Money/XP", "Autofarm money/xp", function(c)
 end
 end)
 
-S1_2:NewSlider("Wait", "Autoearn money/xp every (5-120) seconds", 120, 5, function(c)
-    moneyxpTime = c
-end)
+if _G.KeyInput == _G.KeyP then
+    S1_2:NewSlider("Wait", "Autoearn money/xp every (5-120) seconds", 120, 5, function(c)
+        moneyxpTime = c
+    end)
+else
+    S1_2:NewSlider("Premium", "You need a premium for this", 120, 5, function(c)
+        moneyxpTime = moneyxpTime
+    end)
+end

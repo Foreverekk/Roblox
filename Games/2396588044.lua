@@ -60,6 +60,12 @@ S3:NewDropdown("Select", "Choose team", teams, function(c)
     end
 end)
 
-S1_2:NewSlider("Wait", "Autoearn bucks every (0-2) seconds", 2, 0, function(c)
-    bucksTime = c
-end)
+if _G.KeyInput == _G.KeyP then
+    S1_2:NewSlider("Wait", "Autoearn bucks every (0-2) seconds", 2, 0, function(c)
+        bucksTime = c
+    end)
+else
+    S1_2:NewSlider("Premium", "You need a premium for this", 2, 0, function(c)
+        bucksTime = bucksTime
+    end)
+end
