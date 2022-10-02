@@ -42,10 +42,17 @@ local P3 = Player:NewSection("Account Age:")
 P3:NewButton(game.Players.LocalPlayer.AccountAge.." days", "Click to copy", function()
     setclipboard(game.Players.LocalPlayer.AccountAge)
 end)
+local P4 = Player:NewSection("FRV Key:")
+P4:NewButton("Change", "Click to change a key", function()
+    loadstring(game:HttpGet(mainRaw.."KeyChange.lua"))()
+end)
+P4:NewButton(readfile("FRV/key.txt"), "Click to copy", function()
+    setclipboard(readfile("FRV/key.txt"))
+end)
 
 local Misc = Window:NewTab("Misc")
 local headless = nil
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Headless.lua"))()
+loadstring(game:HttpGet(mainRaw.."Headless.lua"))()
 local esp = nil
 local M1 = Misc:NewSection("Player (Client)")
 local M2 = Misc:NewSection("Player")
@@ -66,7 +73,7 @@ M1:NewButton("ESP", "Universal", function()
     --esp = c
     
     --while esp and wait(0.5) do
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/ESP.lua"))()
+        loadstring(game:HttpGet(mainRaw.."ESP.lua"))()
         --game.Players.LocalPlayer.CharacterAdded:Connect(function()
         --game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
         --if not esp then return end
@@ -76,7 +83,7 @@ M1:NewButton("ESP", "Universal", function()
 end)
 
 M1:NewButton("Better FPS", "Makes the game look potato", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/FPS.lua"))()
+    loadstring(game:HttpGet(mainRaw.."FPS.lua"))()
 end)
 
 M1:NewButton("AK-47", "By reflections263", function()
@@ -114,7 +121,7 @@ M2:NewButton("AntiKick", "By Valco", function(c)
 end)
 
 M2:NewButton("Amogus", "Amogus character", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Amogus.lua"))()
+    loadstring(game:HttpGet(mainRaw.."Amogus.lua"))()
 end)
 
 M2:NewButton("Neutral Team", "Changes player's team to Neutral", function()
@@ -147,4 +154,4 @@ Anti = hookmetamethod(game, "__namecall", function(self, ...)
     return Anti(self, ...)
 end)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Loaded.lua"))()
+loadstring(game:HttpGet(mainRaw.."Loaded.lua"))()
