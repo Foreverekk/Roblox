@@ -4,7 +4,7 @@ local Key = KeyWindow:NewTab("Unlock")
 local K1 = Key:NewSection("discord.gg/RetmyBsNAV")
 K1:NewTextBox("Enter key here", "Join Discord for a key", function(c)
     _G.KeyInput = c
-    if _G.KeyInput == _G.Key then
+    if _G.KeyInput == _G.Key or _G.KeyInput == _G.KeyP then
         writefile("FRV/key.txt", _G.KeyInput)
         wait(1)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Main.lua"))()
