@@ -55,10 +55,10 @@ end
 
 if _G.KeyInput == _G.KeyP then
     S2_2:NewSlider("Wait", "Autoclean all floors every (30-120) seconds", 120, 30, function(c)
-        collectTime = c
+        cleanTime = c
     end)
 else
     S2_2:NewSlider("Premium", "You need a premium for this", 120, 30, function(c)
-        collectTime = collectTime
+        cleanTime = cleanTime
     end)
 end
