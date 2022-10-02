@@ -9,23 +9,23 @@ local S1_2 = T2:NewSection("Bucks")
 local bucksTime = 0
 
 function bucksS()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Scripts/"..game.PlaceId.."-bucks.lua"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-bucks.lua"))()
 end
 
 function parentS()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Scripts/"..game.PlaceId.."-parent.lua"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-parent.lua"))()
 end
 
 function teenS()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Scripts/"..game.PlaceId.."-teen.lua"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-teen.lua"))()
 end
 
 function kidS()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Scripts/"..game.PlaceId.."-kid.lua"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-kid.lua"))()
 end
 
 function babyS()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Scripts/"..game.PlaceId.."-baby.lua"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-baby.lua"))()
 end
 
 S1:NewToggle("Bucks", "Autofarm bucks", function(c)

@@ -3,7 +3,7 @@ local S1 = T1:NewSection("AutoFarm")
 local points = nil
 
 function pointsS()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Scripts/"..game.PlaceId.."-points.lua"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-points.lua"))()
 end
 
 S1:NewToggle("Survivals", "Autofarm survivals and points", function(c)

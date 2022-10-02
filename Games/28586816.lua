@@ -7,7 +7,7 @@ local S1_2 = T2:NewSection("Points")
 local pointsTime = 5
 
 function pointsS()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Scripts/"..game.PlaceId.."-points.lua"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-points.lua"))()
 end
 
 S1:NewToggle("Points", "Autofarm points and level", function(c)

@@ -7,7 +7,7 @@ local S1_2 = T2:NewSection("Money/XP")
 local moneyxpTime = 5
 
 function moneyxpS()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/Scripts/"..game.PlaceId.."-moneyxp.lua"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-moneyxp.lua"))()
 end
 
 S1:NewToggle("Money/XP", "Autofarm money/xp", function(c)
