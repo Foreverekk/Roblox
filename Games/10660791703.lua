@@ -2,7 +2,6 @@ local T1 = Window:NewTab("Main")
 local S1 = T1:NewSection("Teleport")
 local tpPlaces = { "Spawn", "Checkpoint", "Winner" }
 local S2 = T1:NewSection("Badges")
-local S3 = T1:NewSection("Misc")
 
 local T2 = Window:NewTab("Settings")
 local S1_2 = T2:NewSection("Teleport")
