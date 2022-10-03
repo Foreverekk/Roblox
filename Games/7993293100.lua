@@ -1,3 +1,8 @@
+local T1 = Window:NewTab("Main")
+local S1 = T1:NewSection("AutoFarm")
+local points = nil
+local gold = nil
+
 function pointsS()
     loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-points.lua"))()
 end
@@ -9,12 +14,6 @@ end
 function crossingsS()
     loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-crossings.lua"))()
 end
-
-
-local T1 = Window:NewTab("Main")
-local S1 = T1:NewSection("AutoFarm")
-local points = nil
-local gold = nil
 
 S1:NewToggle("Points", "Sometimes stops when you die", function(c)
     points = c
