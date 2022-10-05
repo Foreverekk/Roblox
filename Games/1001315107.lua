@@ -1,7 +1,8 @@
 local T1 = Window:NewTab("Main")
 local S1 = T1:NewSection("Armory")
 local S0 = T1:NewSection("Premium")
-local S2 = T1:NewSection("Badges")
+local S_1 = T1:NewSection("Armory")
+local S_2 = T1:NewSection("Badges")
 
 function batS()
     loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-bat.lua"))()
@@ -23,7 +24,7 @@ function badgesS()
     loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-badges.lua"))()
 end
 
-S1:NewButton("Bat/Golden Bat", "Will try to give you weapons", function()
+S_1:NewButton("Bat/Golden Bat", "Will try to give you weapons", function()
     batS()
 end)
 
@@ -39,6 +40,6 @@ S1:NewButton("Armor", "Will try to give you armor", function()
     armorS()
 end)
 
-S2:NewButton("MEET THE OWNER", "Collect", function()
+S_2:NewButton("MEET THE OWNER", "Collect", function()
     badgesS()
 end)
