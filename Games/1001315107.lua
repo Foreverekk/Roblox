@@ -24,10 +24,6 @@ function badgesS()
     loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-badges.lua"))()
 end
 
-S_1:NewButton("Bat/Golden Bat", "Will try to give you weapons", function()
-    batS()
-end)
-
 S1:NewButton("Shotgun", "Will try to give you a weapon", function()
     shotgunS()
 end)
@@ -38,6 +34,10 @@ end)
 
 S1:NewButton("Armor", "Will try to give you armor", function()
     armorS()
+end)
+
+S_1:NewButton("Bat/Golden Bat", "Will try to give you weapons", function()
+    batS()
 end)
 
 S_2:NewButton("MEET THE OWNER", "Collect", function()
