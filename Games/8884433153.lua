@@ -12,7 +12,7 @@ local teleportAreas = { "Spawn", "The Meadow", "The Forest", "The Desert", "The 
 local T2 = Window:NewTab("Settings")
 local S0_0 = T2:NewSection("Premium:")
 local S1_2 = T2:NewSection("Coins")
-local coinsTime = 1
+local coinsTime = 0.7
 local coinsMethods = { "Teleport", "Tween" }
 
 coinsMethod = "Teleport"
