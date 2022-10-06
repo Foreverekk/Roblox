@@ -10,8 +10,7 @@ local claimquest = nil
 local teleportAreas = { "Spawn", "The Meadow", "The Forest", "The Desert", "The Arctic", "The Beach", "The Mountains", "The Jungle", "The Grotto", "The Mushroom Forest" }
 
 local T2 = Window:NewTab("Settings")
-local S0_0 = T2:NewSection("Premium:")
-local S1_2 = T2:NewSection("Coins")
+local S1_2 = T2:NewSection("Coins [Premium]")
 local coinsTime = 0.7
 local coinsMethods = { "Teleport", "Tween" }
 
