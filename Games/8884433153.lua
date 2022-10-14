@@ -13,6 +13,11 @@ local T2 = Window:NewTab("Settings")
 local S1_2 = T2:NewSection("Coins [Premium]")
 local coinsTime = 0.7
 local coinsMethods = { "Teleport", "Tween" }
+local S1_3 = T2:NewSection("CompleteQuest [Premium]")
+local completequestTime = 30
+completequestStay = 30
+local S1_4 = T2:NewSection("EquipBest [Premium]")
+local equipbestTime = 30
 
 coinsMethod = "Teleport"
 questPause = true
@@ -102,7 +107,7 @@ end)
 S1:NewToggle("Equip Best", "Equip best pets", function(c)
     equipbest = c
     
-    while equipbest do
+    while equipbest and wait(equipbestTime) do
         equipbestS()
         game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
             game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
@@ -119,7 +124,7 @@ S2:NewButton("Fuse All", "Will try to unlock Fuse All Gamepass", function()
     fuseallgamepassS()
 end)
 
-S2:NewButton("Pet Equip", "Will try to unlock Pet Equip Gamepass", function()
+S2:NewButton("Pet Equip (+2)", "Will try to unlock Pet Equip Gamepass", function()
     petequipgamepassS()
 end)
 
@@ -197,11 +202,31 @@ if _G.KeyInput == _G.KeyP then
         coinsMethod = c
     end)
 else
-    S1_2:NewSlider("Premium", "Premium feature", 2, 0, function(c)
+    S1_2:NewSlider("Premium feature", "Autocollect coins every (0-2) seconds", 2, 0, function()
         coinsTime = coinsTime
     end)
     
-    S1_2:NewDropdown("Premium", "Premium feature", coinsMethods, function(c)
+    S1_2:NewDropdown("Premium feature", "Choose the method we will use", coinsMethods, function()
         coinsMethod = coinsMethod
+    end)
+end
+
+if _G.KeyInput == _G.KeyP then
+    S1_3:NewSlider("Wait", "Autoequip best every (30-120) seconds", 120, 30, function(c)
+        equipbestTime = c
+    end)
+else
+    S1_3:NewSlider("Premium feature", "Autoequip best every (0-2) seconds", 2, 0, function()
+        equipbestTime = equipbestTime
+    end)
+end
+
+if _G.KeyInput == _G.KeyP then
+    S1_3:NewSlider("Wait", "Autoequip best every (30-120) seconds", 120, 30, function(c)
+        equipbestTime = c
+    end)
+else
+    S1_3:NewSlider("Premium feature", "Autoequip best every (0-2) seconds", 2, 0, function()
+        equipbestTime = equipbestTime
     end)
 end
