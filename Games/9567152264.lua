@@ -1,5 +1,5 @@
 function scpS()
-    for i,v in ipairs(workspace.SCPs:GetDescendants()) do
+    for i,v in ipairs(game:GetService("Workspace").SCPs:GetDescendants()) do
         if v.Name == "TouchInterest" and v.Parent and v.Parent.ClassName == "Part" then
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 0)
             firetouchinterest(game.Players.LocalPlayer.Character.Head, v.Parent, 1)
@@ -13,7 +13,7 @@ function scpS()
 end
 
 function scptpS()
-    for i,v in ipairs(workspace.SCPs:GetDescendants()) do
+    for i,v in ipairs(game:GetService("Workspace").SCPs:GetDescendants()) do
         if v.Name == "TouchInterest" and v.Parent and v.Parent.ClassName == "Part" then
             wait(0.1)
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
