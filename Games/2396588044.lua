@@ -5,32 +5,32 @@ local S2 = T1:NewSection("Add")
 local S3 = T1:NewSection("Change Team")
 
 local T2 = Window:NewTab("Settings")
-local S1_2 = T2:NewSection("AutoFarm -- Bucks [Premium]")
+local S1_2 = T2:NewSection("AutoFarm - Bucks [Premium]")
 local bucksTime = 2
 
 local bucksScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-bucks.lua"))
 function bucksS()
-    loadstring(tostring(bucksScript))()
+    loadstring(bucksScript)()
 end
 
 local parentScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-parent.lua"))
 function parentS()
-    loadstring(tostring(parentScript))()
+    loadstring(parentScript)()
 end
 
 local teenScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-teen.lua"))
 function teenS()
-    loadstring(tostring(teenScript))()
+    loadstring(teenScript)()
 end
 
 local kidScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-kid.lua"))
 function kidS()
-    loadstring(tostring(kidScript))()
+    loadstring(kidScript)()
 end
 
 local babyScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-baby.lua"))
 function babyS()
-    loadstring(tostring(babyScript))()
+    loadstring(babyScript)()
 end
 
 S1:NewToggle("Bucks", "Autofarm bucks", function(c)
