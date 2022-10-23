@@ -6,7 +6,7 @@ local T2 = Window:NewTab("Settings")
 local S1_2 = T2:NewSection("Points [Premium]")
 local pointsTime = 1
 
-local pointsScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-points.lua"))()
+local pointsScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-points.lua"))
 function pointsS()
     loadstring(pointsScript)()
 end
