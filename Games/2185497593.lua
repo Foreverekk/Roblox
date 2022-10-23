@@ -3,11 +3,12 @@ local S1 = T1:NewSection("AutoFarm")
 local moneyxp = nil
 
 local T2 = Window:NewTab("Settings")
-local S1_2 = T2:NewSection("Money/XP")
+local S1_2 = T2:NewSection("AutoFarm [Premium]")
 local moneyxpTime = 5
 
+local moneyxpScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-moneyxp.lua"))
 function moneyxpS()
-    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-moneyxp.lua"))()
+    loadstring(moneyxpScript)()
 end
 
 S1:NewToggle("Money/XP", "Autofarm money/xp", function(c)
@@ -22,12 +23,14 @@ S1:NewToggle("Money/XP", "Autofarm money/xp", function(c)
 end
 end)
 
-if _G.KeyInput == _G.KeyP then
-    S1_2:NewSlider("Wait", "Autoearn money/xp every (5-120) seconds", 120, 5, function(c)
-        moneyxpTime = c
-    end)
-else
-    S1_2:NewSlider("Premium", "You need a premium for this", 120, 5, function(c)
+S1_2:NewSlider("Wait [BExec]", "Execute every (5-60) seconds", 60, 5, function(c)
+    if _G.KeyInput == _G.KeyP then
+        if c == 0 then
+            moneyxpTime = 0.05
+        else
+            moneyxpTime = c
+        end
+    else
         moneyxpTime = moneyxpTime
-    end)
-end
+    end
+end)

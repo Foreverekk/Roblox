@@ -5,27 +5,32 @@ local S2 = T1:NewSection("Add")
 local S3 = T1:NewSection("Change Team")
 
 local T2 = Window:NewTab("Settings")
-local S1_2 = T2:NewSection("Bucks")
-local bucksTime = 0
+local S1_2 = T2:NewSection("Bucks [Premium]")
+local bucksTime = 2
 
+local bucksScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-bucks.lua"))
 function bucksS()
-    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-bucks.lua"))()
+    loadstring(bucksScript)()
 end
 
+local parentScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-parent.lua"))
 function parentS()
-    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-parent.lua"))()
+    loadstring(parentScript)()
 end
 
+local teenScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-teen.lua"))
 function teenS()
-    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-teen.lua"))()
+    loadstring(teenScript)()
 end
 
+local kidScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-kid.lua"))
 function kidS()
-    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-kid.lua"))()
+    loadstring(kidScript)()
 end
 
+local babyScript = loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-baby.lua"))
 function babyS()
-    loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-baby.lua"))()
+    loadstring(babyScript)()
 end
 
 S1:NewToggle("Bucks", "Autofarm bucks", function(c)
@@ -60,12 +65,14 @@ S3:NewDropdown("Select", "Choose team", teams, function(c)
     end
 end)
 
-if _G.KeyInput == _G.KeyP then
-    S1_2:NewSlider("Wait", "Autoearn bucks every (0-2) seconds", 2, 0, function(c)
-        bucksTime = c
-    end)
-else
-    S1_2:NewSlider("Premium", "You need a premium for this", 2, 0, function(c)
-        bucksTime = bucksTime
-    end)
-end
+S1_2:NewSlider("Wait [BExec]", "Execute every (0-60) seconds", 60, 0, function(c)
+    if _G.KeyInput == _G.KeyP then
+        if c == 0 then
+            moneyxpTime = 0.05
+        else
+            moneyxpTime = c
+        end
+    else
+        moneyxpTime = moneyxpTime
+    end
+end)
