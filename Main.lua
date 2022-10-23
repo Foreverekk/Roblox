@@ -3,7 +3,10 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "Made by Foreverekk.#0007";
     Duration = 1;
 })
+
 mainRaw = "https://raw.githubusercontent.com/Foreverekk/Roblox/main/"
+loadingRaw = loadstring(game:HttpGet(mainRaw.."Loading.lua"))
+
 loadstring(game:HttpGet(mainRaw.."Loading.lua"))() -- "Main" won't work without it
 
 function bench(func)
