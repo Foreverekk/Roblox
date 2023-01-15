@@ -158,7 +158,7 @@ end)
 
 S3:NewDropdown("Teleport to", "Choose the Area", teleportAreas, function(c)
     if c == "Spawn" then
-        game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").Areas.Main.Position)
+        game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").Areas.Main.Position.X, game:GetService("Workspace").Areas.Main.Position.Y + 10, game:GetService("Workspace").Areas.Main.Position.Z)
     end
     if c == "The Meadow" then
         game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Workspace").Areas.Area1.Position.X, game:GetService("Workspace").Areas.Area1.Position.Y + 10, game:GetService("Workspace").Areas.Area1.Position.Z)
@@ -222,11 +222,11 @@ else
 end
 
 if _G.KeyInput == _G.KeyP then
-    S1_3:NewSlider("Wait", "Autoequip best every (30-120) seconds", 120, 30, function(c)
+    S1_4:NewSlider("Wait", "Autoequip best every (30-120) seconds", 120, 30, function(c)
         equipbestTime = c
     end)
 else
-    S1_3:NewSlider("Premium feature", "Autoequip best every (0-2) seconds", 2, 0, function()
+    S1_4:NewSlider("Premium feature", "Autoequip best every (0-2) seconds", 2, 0, function()
         equipbestTime = equipbestTime
     end)
 end

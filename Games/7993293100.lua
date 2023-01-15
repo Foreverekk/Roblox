@@ -1,7 +1,6 @@
 local T1 = Window:NewTab("Main")
 local S1 = T1:NewSection("AutoFarm")
-local points = nil
-local gold = nil
+local points, gold, crossings = nil
 
 function pointsS()
     loadstring(game:HttpGet(mainRaw.."Scripts/"..game.PlaceId.."-points.lua"))()
