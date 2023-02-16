@@ -92,9 +92,31 @@ Global:AddToggle({ text = "AutoJump", flag = "toggleAutoJumpEnabled", state = fa
     end
 
 end })
+Global:AddToggle({ text = "Headless", flag = "toggleHeadless", state = false, callback = function(a)
+    headlessS()
+    while a do
+        game.Players.LocalPlayer.CharacterAdded:Connect(function()
+            game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+            headlessS()
+        if not a then return end
+    end)
+
+end })
 
 Global:AddLabel({ text = "[Global] Experimental" })
-Global:AddSlider({ text = "Hitbox Height", flag = "sliderHipHeight", value = 2.72, min = 2.72, max = 100, float = 0.1, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.HipHeight = a end })
+Global:AddButton({ text = "Amogus", flag = "buttonAmogus", callback = function() 
+    loadstring(game:HttpGet(mainRaw.."Scripts/Amogus.lua"))()
+end })
+Global:AddButton({ text = "AK-47", flag = "buttonAK47", callback = function() 
+    loadstring(game:HttpGet("https://pastebin.com/raw/0hn40Zbc"))()
+end })
+Global:AddButton({ text = "Shotgun", flag = "buttonShotgun", callback = function() 
+    loadstring(game:HttpGet("https://pastebin.com/raw/pLdGH4h7"))()
+end })
+Global:AddButton({ text = "Better FPS / Optimize", flag = "buttonFPS", callback = function() 
+    loadstring(game:HttpGet(mainRaw.."Scripts/Amogus.lua"))()
+end })
+Global:AddSlider({ text = "Hitbox Height", flag = "sliderHipHeight", value = game.Players.LocalPlayer.Character.Humanoid.HipHeight, min = 2.72, max = 100, float = 0.1, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.HipHeight = a end })
 
 local Settings = Window:AddFolder("Settings")
 Settings:AddLabel({ text = "[Settings] Bind" })
