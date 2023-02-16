@@ -24,14 +24,25 @@ local func = pcall(function()
     game:HttpGet(mainRaw.."Games/"..game.PlaceId..".lua")
 end)
 
-local Window = Library:CreateWindow("Window")
-Window:AddFolder("Folder")
+local Window = Library:CreateWindow("FRV Hub V2")
 
-Window:AddLabel({ text = "Label" })
+Window:AddFolder("Game")
 
-Window:AddButton({ text = "Button", flag = "button", callback = function() print("pressed") end })
-Window:AddButton({ text = "Button1", flag = "button1", callback = function() print("pressed") end })
-Window:AddButton({ text = "Button2", flag = "button2", callback = function() print("pressed") end })
+Window:AddFolder("Global")
+
+Window:AddFolder("Settings")
+
+Window:AddFolder("Info")
+Window:AddLabel({ text = game:GetService("Players")["LocalPlayer"].DisplayName })
+Window:AddButton({ text = "Name: "..game.Players.LocalPlayer.Name, flag = "buttonCopy0", callback = function() setclipboard(game.Players.LocalPlayer.Name) end })
+Window:AddButton({ text = "ID: "..game.Players.LocalPlayer.UserId, flag = "buttonCopy1", callback = function() setclipboard(game.Players.LocalPlayer.UserId) end })
+Window:AddButton({ text = "Age: "..game.Players.LocalPlayer.AccountAge.." days", flag = "buttonCopy2", callback = function() setclipboard(game.Players.LocalPlayer.AccountAge) end })
+
+Window:AddFolder("Premium")
+
+Window:AddFolder("Credits")
+Window:AddLabel({ text = "Scripts: Foreverekk.#0007" })
+Window:AddLabel({ text = "UI: alixjaffar" })
 
 Window:AddToggle({ text = "Toggle", flag = "toggle", state = false, callback = function(a) print(a) end })
 Window:AddToggle({ text = "Toggle1", flag = "toggle1", state = true, callback = function(a) print(a) end })
