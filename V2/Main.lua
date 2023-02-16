@@ -93,11 +93,11 @@ Global:AddToggle({ text = "AutoJump", flag = "toggleAutoJumpEnabled", state = fa
 
 end })
 Global:AddToggle({ text = "Headless", flag = "toggleHeadless", state = false, callback = function(a)
-    headlessS()
+    loadstring(game:HttpGet(mainRaw.."Scripts/Headless.lua"))()
     while a do
         game.Players.LocalPlayer.CharacterAdded:Connect(function()
             game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-            headlessS()
+            loadstring(game:HttpGet(mainRaw.."Scripts/Headless.lua"))()
         if not a then return end
     end)
 
