@@ -20,7 +20,7 @@ end
 
 loaded = false
 
-local func = pcall(function()
+local f = pcall(function()
     game:HttpGet(mainRaw.."Games/"..game.PlaceId..".lua")
 end)
 
@@ -41,11 +41,69 @@ Global:AddList({ text = "List1", flag = "list1", value = "Value2", values = {"Va
 Global:AddBox({ text = "Box", flag = "box", value = "Value", callback = function(a) print(a) end })
 Global:AddBox({ text = "Box1", flag = "box1", value = "Value", callback = function(a) print(a) end })
 
-Global:AddSlider({ text = "Slider", flag = "slider", value = 100, min = 20, max = 200, float = 0.3, callback = function(a) print(a) end })
-Global:AddSlider({ text = "Slider", flag = "slider1", value = 0, min = -50, max = 100, callback = function(a) print(a) end })
+Global:AddLabel({ text = "Player" })
+Global:AddSlider({ text = "WalkSpeed", flag = "sliderWalkSpeed", value = 16, min = 0, max = 500, float = 0.5, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = a end })
+Global:AddSlider({ text = "JumpPower", flag = "sliderJumpPower", value = 50, min = 0, max = 1000, float = 0.5, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.JumpPower = a end })
+Global:AddList({ text = "Camera Mode", flag = "listCameraMode", value = "Classic", values = {"Classic", "LockFirstPerson"}, callback = function(a)
+    if a == "Classic" then
+        game:GetService("Players")["LocalPlayer"].CameraMode = Enum.CameraMode.Classic
+    elseif a == "LockFirstPerson" then
+        game:GetService("Players")["LocalPlayer"].CameraMode = Enum.CameraMode.LockFirstPerson
+    end
+end })
 
-Global:AddColor({ text = "Color", flag = "color", color = Color3.fromRGB(255, 65, 65), callback = function(a) print(a) end })
-Global:AddColor({ text = "Color", flag = "color", color = {1, 0.2, 0.2}, callback = function(a) print(a) end })
+Global:AddLabel({ text = "Toggles" })
+Global:AddToggle({ text = "AutoJump", flag = "toggleAutoJumpEnabled", state = false, callback = function(a) 
+    if a == true then
+        game:GetService("Players")["LocalPlayer"].AutoJumpEnabled = true
+    else
+        game:GetService("Players")["LocalPlayer"].AutoJumpEnabled = false
+    end
+
+end })
+Global:AddButton({ text = "AutoScaling", flag = "buttonAutomaticScalingEnabled", callback = function() 
+    if game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutomaticScalingEnabled == true then
+        game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutomaticScalingEnabled = false
+    else
+        game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutomaticScalingEnabled = true
+    end
+
+end })
+Global:AddButton({ text = "AutoRotate", flag = "buttonAutoRotate", callback = function() 
+    if game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutoRotate == true then
+        game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutoRotate = false
+    else
+        game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutoRotate = true
+    end
+
+end })
+Global:AddButton({ text = "Ragdoll (PlatformStand)", flag = "buttonPlatformStand", callback = function() 
+    if game:GetService("Players")["LocalPlayer"].Character.Humanoid.PlatformStand == true then
+        game:GetService("Players")["LocalPlayer"].Character.Humanoid.PlatformStand = false
+    else
+        game:GetService("Players")["LocalPlayer"].Character.Humanoid.PlatformStand = true
+    end
+
+end })
+Global:AddButton({ text = "Sit", flag = "buttonSit", callback = function() 
+    if game:GetService("Players")["LocalPlayer"].Character.Humanoid.Sit == true then
+        game:GetService("Players")["LocalPlayer"].Character.Humanoid.Sit = false
+    else
+        game:GetService("Players")["LocalPlayer"].Character.Humanoid.Sit = true
+    end
+
+end })
+Global:AddToggle({ text = "Neutral (Team)", flag = "toggleNeutral", state = false, callback = function(a) 
+    if a == true then
+        game:GetService("Players")["LocalPlayer"].Neutral = true
+    else
+        game:GetService("Players")["LocalPlayer"].Neutral = false
+    end
+    
+end })
+
+Global:AddLabel({ text = "Experimental" })
+Global:AddSlider({ text = "Hitbox Height", flag = "sliderHipHeight", value = 2.72, min = 2.72, max = 100, float = 0.1, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.HipHeight = a end })
 
 local Settings = Window:AddFolder("Settings")
 Settings:AddLabel({ text = "Bind" })
@@ -58,6 +116,8 @@ Info:AddLabel({ text = "Player" })
 Info:AddButton({ text = "Name: "..game.Players.LocalPlayer.Name, flag = "buttonCopy0", callback = function() setclipboard(game.Players.LocalPlayer.Name) end })
 Info:AddButton({ text = "ID: "..game.Players.LocalPlayer.UserId, flag = "buttonCopy1", callback = function() setclipboard(game.Players.LocalPlayer.UserId) end })
 Info:AddButton({ text = "Age: "..game.Players.LocalPlayer.AccountAge.." days", flag = "buttonCopy2", callback = function() setclipboard(game.Players.LocalPlayer.AccountAge.." days") end })
+Info:AddColor({ text = "Color", flag = "color", color = Color3.fromRGB(255, 65, 65), callback = function(a) print(a) end })
+Info:AddColor({ text = "Color", flag = "color", color = {1, 0.2, 0.2}, callback = function(a) print(a) end })
 
 local Premium = Window:AddFolder("Premium")
 
@@ -71,14 +131,13 @@ wait(5)
 print("Toggle is currently:", Library.flags["toggle"])
 print("Second toggle is currently:", Library.flags["toggle1"])
 
---[[if _G.KeyInput == _G.Key or _G.KeyInput == _G.KeyP then
+--[[
+if _G.KeyInput == _G.Key or _G.KeyInput == _G.KeyP then
     wait(1)
-    Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    Window = Library.CreateLib("Hello! "..game:GetService("Players")["LocalPlayer"].DisplayName.." | FRV Hub", "Midnight")
     if f == true then
         wait(1)
         loadstring(d)()
-        loadstring(game:HttpGet(mainRaw.."UI.lua"))()
+        loadstring(game:HttpGet(mainRaw.."Library.lua"))()
     
     else
         game.StarterGui:SetCore("SendNotification", {
@@ -87,7 +146,7 @@ print("Second toggle is currently:", Library.flags["toggle1"])
             Duration = 10;
         })
         wait(1)
-        loadstring(game:HttpGet(mainRaw.."UI.lua"))()
+        loadstring(game:HttpGet(mainRaw.."Library.lua"))()
     end
 else
     loadstring(game:HttpGet(mainRaw.."Games/Key.lua"))()
