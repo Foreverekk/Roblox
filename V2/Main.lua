@@ -92,6 +92,7 @@ Global:AddToggle({ text = "AutoJump", flag = "toggleAutoJumpEnabled", state = fa
     end
 
 end })
+--[[
 Global:AddToggle({ text = "Headless", flag = "toggleHeadless", state = false, callback = function(a)
     loadstring(game:HttpGet(mainRaw.."Scripts/Headless.lua"))()
     while a do
@@ -102,6 +103,7 @@ Global:AddToggle({ text = "Headless", flag = "toggleHeadless", state = false, ca
     end)
 
 end })
+--]]
 
 Global:AddLabel({ text = "[Global] Experimental" })
 Global:AddButton({ text = "Amogus", flag = "buttonAmogus", callback = function() 
@@ -114,7 +116,7 @@ Global:AddButton({ text = "Shotgun", flag = "buttonShotgun", callback = function
     loadstring(game:HttpGet("https://pastebin.com/raw/pLdGH4h7"))()
 end })
 Global:AddButton({ text = "Better FPS / Optimize", flag = "buttonFPS", callback = function() 
-    loadstring(game:HttpGet(mainRaw.."Scripts/Amogus.lua"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/FPS.lua"))()
 end })
 Global:AddSlider({ text = "Hitbox Height", flag = "sliderHipHeight", value = game.Players.LocalPlayer.Character.Humanoid.HipHeight, min = 2.72, max = 100, float = 0.1, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.HipHeight = a end })
 
