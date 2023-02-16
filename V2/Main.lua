@@ -7,6 +7,8 @@ game.StarterGui:SetCore("SendNotification", {
 mainRaw = "https://raw.githubusercontent.com/Foreverekk/Roblox/main/V2/"
 loadingRaw = loadstring(game:HttpGet(mainRaw.."Loading.lua"))
 
+game:HttpGet(mainRaw.."Library.lua")
+
 loadstring(game:HttpGet(mainRaw.."Loading.lua"))()
 
 function bench(func)
@@ -21,8 +23,6 @@ loaded = false
 local func = pcall(function()
     game:HttpGet(mainRaw.."Games/"..game.PlaceId..".lua")
 end)
-
-game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/V2/Library.lua")
 
 local Window = Library:CreateWindow("Window")
 Window:AddFolder("Folder")
