@@ -1,5 +1,5 @@
 game.StarterGui:SetCore("SendNotification", {
     Title = "Loaded!";
-    Text = "Made by Foreverekk.#0007";
+    Text = "by Corpa Industries";
     Duration = 5;
 })
