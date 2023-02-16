@@ -1,6 +1,6 @@
 game.StarterGui:SetCore("SendNotification", {
     Title = "Loading..";
-    Text = "Made by Foreverekk.#0007";
+    Text = "by Corpa Industries";
     Duration = 1;
 })
 
@@ -21,6 +21,8 @@ loaded = false
 local func = pcall(function()
     game:HttpGet(mainRaw.."Games/"..game.PlaceId..".lua")
 end)
+
+game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/V2/Library.lua")
 
 local Window = Library:CreateWindow("Window")
 Window:AddFolder("Folder")
