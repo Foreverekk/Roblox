@@ -26,11 +26,32 @@ end)
 
 local Window = Library:CreateWindow("FRV Hub V2")
 
-Window:AddFolder("Game")
+local Game = Window:AddFolder("Game")
 
-Window:AddFolder("Global")
+local Global = Window:AddFolder("Global")
+Global:AddToggle({ text = "Toggle", flag = "toggle", state = false, callback = function(a) print(a) end })
+Global:AddToggle({ text = "Toggle1", flag = "toggle1", state = true, callback = function(a) print(a) end })
 
-Window:AddFolder("Settings")
+Global:AddToggle({ text = "Toggle2", flag = "toggle2", state = false, callback = function(a) print(a) end})
+Global:AddToggle({ text = "Toggle3", flag = "toggle3", state = true, callback = function(a) print(a) end})
+
+Global:AddList({ text = "List", flag = "list", value = "Value", values = {"Value1", "Value2", "Value3", "Value4"}, callback = function(a) print(a) end })
+Global:AddList({ text = "List1", flag = "list1", value = "Value2", values = {"Value1", "Value2", "Value3", "Value4"}, callback = function(a) print(a) end })
+
+Global:AddBox({ text = "Box", flag = "box", value = "Value", callback = function(a) print(a) end })
+Global:AddBox({ text = "Box1", flag = "box1", value = "Value", callback = function(a) print(a) end })
+
+Global:AddSlider({ text = "Slider", flag = "slider", value = 100, min = 20, max = 200, float = 0.3, callback = function(a) print(a) end })
+Global:AddSlider({ text = "Slider", flag = "slider1", value = 0, min = -50, max = 100, callback = function(a) print(a) end })
+
+Global:AddColor({ text = "Color", flag = "color", color = Color3.fromRGB(255, 65, 65), callback = function(a) print(a) end })
+Global:AddColor({ text = "Color", flag = "color", color = {1, 0.2, 0.2}, callback = function(a) print(a) end })
+
+local Settings = Window:AddFolder("Settings")
+Settings:AddLabel({ text = "Bind" })
+Settings:AddBind({ text = "Bind", flag = "bind", key = "MouseButton1", callback = function() print("pressed") end }) -- key can also be Enum.UserInputType.MouseButton1, instead of the name/string
+Settings:AddBind({ text = "Bind", flag = "bind", hold = true, key = "E" , callback = function(a) if a then print("let go") else print("holding") end end })
+Settings:AddBind({ text = "Toggle UI", key = Enum.UserInputService.PageUp, callback = function() library:Close() end })
 
 local Info = Window:AddFolder("Info")
 Info:AddLabel({ text = "Player" })
@@ -38,33 +59,11 @@ Info:AddButton({ text = "Name: "..game.Players.LocalPlayer.Name, flag = "buttonC
 Info:AddButton({ text = "ID: "..game.Players.LocalPlayer.UserId, flag = "buttonCopy1", callback = function() setclipboard(game.Players.LocalPlayer.UserId) end })
 Info:AddButton({ text = "Age: "..game.Players.LocalPlayer.AccountAge.." days", flag = "buttonCopy2", callback = function() setclipboard(game.Players.LocalPlayer.AccountAge.." days") end })
 
-Window:AddFolder("Premium")
+local Premium = Window:AddFolder("Premium")
 
-Window:AddFolder("Credits")
-Window:AddLabel({ text = "Scripts: Foreverekk.#0007" })
-Window:AddLabel({ text = "UI: alixjaffar" })
-
-Window:AddToggle({ text = "Toggle", flag = "toggle", state = false, callback = function(a) print(a) end })
-Window:AddToggle({ text = "Toggle1", flag = "toggle1", state = true, callback = function(a) print(a) end })
-
-Window:AddToggle({ text = "Toggle2", flag = "toggle2", state = false, callback = function(a) print(a) end})
-Window:AddToggle({ text = "Toggle3", flag = "toggle3", state = true, callback = function(a) print(a) end})
-
-Window:AddList({ text = "List", flag = "list", value = "Value", values = {"Value1", "Value2", "Value3", "Value4"}, callback = function(a) print(a) end })
-Window:AddList({ text = "List1", flag = "list1", value = "Value2", values = {"Value1", "Value2", "Value3", "Value4"}, callback = function(a) print(a) end })
-
-Window:AddBox({ text = "Box", flag = "box", value = "Value", callback = function(a) print(a) end })
-Window:AddBox({ text = "Box1", flag = "box1", value = "Value", callback = function(a) print(a) end })
-
-Window:AddSlider({ text = "Slider", flag = "slider", value = 100, min = 20, max = 200, float = 0.3, callback = function(a) print(a) end })
-Window:AddSlider({ text = "Slider", flag = "slider1", value = 0, min = -50, max = 100, callback = function(a) print(a) end })
-
-Window:AddBind({ text = "Bind", flag = "bind", key = "MouseButton1", callback = function() print("pressed") end }) -- key can also be Enum.UserInputType.MouseButton1, instead of the name/string
-Window:AddBind({ text = "Bind", flag = "bind", hold = true, key = "E" , callback = function(a) if a then print("let go") else print("holding") end end })
-Window:AddBind({ text = "Toggle UI", key = "RightShift", callback = function() library:Close() end })
-
-Window:AddColor({ text = "Color", flag = "color", color = Color3.fromRGB(255, 65, 65), callback = function(a) print(a) end })
-Window:AddColor({ text = "Color", flag = "color", color = {1, 0.2, 0.2}, callback = function(a) print(a) end })
+local Credits = Window:AddFolder("Credits")
+Credits:AddLabel({ text = "Scripts: Foreverekk.#0007" })
+Credits:AddLabel({ text = "UI: alixjaffar" })
 
 Library:Init()
  
