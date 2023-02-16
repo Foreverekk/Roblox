@@ -7,7 +7,7 @@ game.StarterGui:SetCore("SendNotification", {
 mainRaw = "https://raw.githubusercontent.com/Foreverekk/Roblox/main/V2/"
 loadingRaw = loadstring(game:HttpGet(mainRaw.."Loading.lua"))
 
-game:HttpGet(mainRaw.."Library.lua")
+local Library = game:HttpGet(mainRaw.."Library.lua")
 
 loadstring(game:HttpGet(mainRaw.."Loading.lua"))()
 
