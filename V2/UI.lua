@@ -1,7 +1,7 @@
 local Window = Library:CreateWindow("FRV Hub V2")
 
 local Global = Window:AddFolder("Global")
-Global:AddLabel({ text = "[Global] Player" })
+Global:AddLabel({ text = "      [Player]" })
 Global:AddSlider({ text = "WalkSpeed", flag = "sliderWalkSpeed", value = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed, min = 0, max = 500, float = 0.5, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = a end })
 Global:AddSlider({ text = "JumpPower", flag = "sliderJumpPower", value = game.Players.LocalPlayer.Character.Humanoid.JumpPower, min = 0, max = 1000, float = 0.5, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.JumpPower = a end })
 Global:AddList({ text = "Camera Mode", flag = "listCameraMode", value = "Classic", values = {"Classic", "LockFirstPerson"}, callback = function(a)
@@ -15,7 +15,7 @@ Global:AddBox({ text = "Display Name", flag = "boxDisplayName", value = game.Pla
     game.Players.LocalPlayer.DisplayName = a
 end })
 
-Global:AddLabel({ text = "[Global] Toggles" })
+Global:AddLabel({ text = "      [Toggles]" })
 Global:AddButton({ text = "AutoScaling", flag = "buttonAutomaticScalingEnabled", callback = function() 
     if game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutomaticScalingEnabled == true then
         game:GetService("Players")["LocalPlayer"].Character.Humanoid.AutomaticScalingEnabled = false
@@ -77,7 +77,7 @@ Global:AddToggle({ text = "Headless", flag = "toggleHeadless", state = false, ca
 end })
 --]]
 
-Global:AddLabel({ text = "[Global] Experimental" })
+Global:AddLabel({ text = "      [Experimental]" })
 Global:AddButton({ text = "Amogus", flag = "buttonAmogus", callback = function() 
     loadstring(game:HttpGet(mainRaw.."Scripts/Amogus.lua"))()
 end })
@@ -93,13 +93,13 @@ end })
 Global:AddSlider({ text = "Hitbox Height", flag = "sliderHipHeight", value = game.Players.LocalPlayer.Character.Humanoid.HipHeight, min = 2.72, max = 100, float = 0.1, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.HipHeight = a end })
 
 local Settings = Window:AddFolder("Settings")
-Settings:AddLabel({ text = "[Settings] Bind" })
+Settings:AddLabel({ text = "      [Bindings]" })
 Settings:AddBind({ text = "Bind", flag = "bind", key = "MouseButton1", callback = function() print("pressed") end }) -- key can also be Enum.UserInputType.MouseButton1, instead of the name/string
 Settings:AddBind({ text = "Bind", flag = "bind", hold = true, key = "E" , callback = function(a) if a then print("let go") else print("holding") end end })
 Settings:AddBind({ text = "Toggle UI", key = "PageUp", callback = function() Library:Close() end })
 
 local Info = Window:AddFolder("Info")
-Info:AddLabel({ text = "[Info] Player" })
+Info:AddLabel({ text = "      [Player]" })
 Info:AddButton({ text = "Name: "..game.Players.LocalPlayer.Name, flag = "buttonCopy0", callback = function() setclipboard(game.Players.LocalPlayer.Name) end })
 Info:AddButton({ text = "ID: "..game.Players.LocalPlayer.UserId, flag = "buttonCopy1", callback = function() setclipboard(game.Players.LocalPlayer.UserId) end })
 Info:AddButton({ text = "Age: "..game.Players.LocalPlayer.AccountAge.." days", flag = "buttonCopy2", callback = function() setclipboard(game.Players.LocalPlayer.AccountAge.." days") end })
