@@ -96,7 +96,7 @@ local Settings = Window:AddFolder("Settings")
 Settings:AddLabel({ text = "[Settings] Bind" })
 Settings:AddBind({ text = "Bind", flag = "bind", key = "MouseButton1", callback = function() print("pressed") end }) -- key can also be Enum.UserInputType.MouseButton1, instead of the name/string
 Settings:AddBind({ text = "Bind", flag = "bind", hold = true, key = "E" , callback = function(a) if a then print("let go") else print("holding") end end })
-Settings:AddBind({ text = "Toggle UI", key = "PageUp", callback = function() library:Close() end })
+Settings:AddBind({ text = "Toggle UI", key = "PageUp", callback = function() Library:Close() end })
 
 local Info = Window:AddFolder("Info")
 Info:AddLabel({ text = "[Info] Player" })
