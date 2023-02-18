@@ -143,8 +143,11 @@ end
 local Animate = game:GetService("Players")["LocalPlayer"].Character.Animate
 local autoExecAnim = readfile("FRV/Settings/Animations/autoExec.txt")
 if autoExecAnim == "true" then
+    autoExecAnim = true
     local run = readfile("FRV/Settings/Animations/run.txt")
     Animate.run.RunAnim.AnimationId = run
+else
+    autoExecAnim = false
 end
 
 Settings:AddLabel({ text = "      [Animations]" })
