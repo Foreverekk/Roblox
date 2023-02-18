@@ -155,16 +155,26 @@ if autoExecAnim == "true" then
     autoExecAnim = true
     local run = readfile("FRV/Settings/Animations/run.txt")
     Animate.run.RunAnim.AnimationId = run
+    while autoExecAnim do
+        game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
+            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
+            run = readfile("FRV/Settings/Animations/run.txt")
+            Animate.run.RunAnim.AnimationId = run
+            if not autoExecAnim then return end
+        end)
+    end
 else
     autoExecAnim = false
 end
 
 Settings:AddLabel({ text = "      [Animations]" })
-Settings:AddToggle({ text = "AutoExec", flag = "toggleAutoExec", state = autoExecAnim, callback = function(a) 
+Settings:AddToggle({ text = "AutoExec", flag = "toggleAutoExec", state = autoExecAnim, callback = function(a)
     if a == true then
         writefile("FRV/Settings/Animations/autoExec.txt", "true")
+        autoExecAnim = true
     else
         writefile("FRV/Settings/Animations/autoExec.txt", "false")
+        autoExecAnim = false
     end
     
 end })
