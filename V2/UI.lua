@@ -155,14 +155,6 @@ if autoExecAnim == "true" then
     autoExecAnim = true
     local run = readfile("FRV/Settings/Animations/run.txt")
     Animate.run.RunAnim.AnimationId = run
-    while autoExecAnim do
-        game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
-            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
-            run = readfile("FRV/Settings/Animations/run.txt")
-            Animate.run.RunAnim.AnimationId = run
-            if not autoExecAnim then return end
-        end)
-    end
 else
     autoExecAnim = false
 end
