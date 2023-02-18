@@ -66,18 +66,20 @@ Global:AddToggle({ text = "AutoJump", flag = "toggleAutoJumpEnabled", state = fa
     end
 
 end })
---[[
+local me = game:GetService("Players")["LocalPlayer"].Character
 Global:AddToggle({ text = "Headless", flag = "toggleHeadless", state = false, callback = function(a)
-    loadstring(game:HttpGet(mainRaw.."Scripts/Headless.lua"))()
-    while a do
-        game.Players.LocalPlayer.CharacterAdded:Connect(function()
-            game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-            loadstring(game:HttpGet(mainRaw.."Scripts/Headless.lua"))()
-        if not a then return end
+    headless = a
+    while headless do
+        if me:FindFirstChild("Head") and me:FindFirstChild("Humanoid") then
+            me.Head.MeshId = "rbxassetid://6686307858" or nil
+        end
+        wait(0.5)
+        game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
+            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
+            if not headless then return end
     end)
-
+end
 end })
---]]
 
 Global:AddLabel({ text = " " })
 
@@ -95,6 +97,13 @@ Global:AddButton({ text = "Better FPS / Optimize", flag = "buttonFPS", callback 
     loadstring(game:HttpGet(mainRaw.."Scripts/FPS.lua"))()
 end })
 Global:AddSlider({ text = "Hitbox Height", flag = "sliderHipHeight", value = game.Players.LocalPlayer.Character.Humanoid.HipHeight, min = 2.72, max = 100, float = 0.1, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.HipHeight = a end })
+
+Global:AddLabel({ text = " " })
+
+Global:AddLabel({ text = "      [Misc]" })
+Global:AddButton({ text = "ESP", flag = "buttonESP", callback = function() 
+    loadstring(game:HttpGet(mainRaw.."Scripts/ESP.lua"))()
+end })
 
 local Settings = Window:AddFolder("Settings")
 
