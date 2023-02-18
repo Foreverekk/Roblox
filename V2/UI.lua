@@ -86,10 +86,10 @@ Global:AddButton({ text = "Amogus", flag = "buttonAmogus", callback = function()
     loadstring(game:HttpGet(mainRaw.."Scripts/Amogus.lua"))()
 end })
 Global:AddButton({ text = "AK-47", flag = "buttonAK47", callback = function() 
-    loadstring(game:HttpGet("https://pastebin.com/raw/0hn40Zbc"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/AK47.lua"))()
 end })
 Global:AddButton({ text = "Shotgun", flag = "buttonShotgun", callback = function() 
-    loadstring(game:HttpGet("https://pastebin.com/raw/pLdGH4h7"))()
+    loadstring(game:HttpGet(mainRaw.."Scripts/Shotgun.lua"))()
 end })
 Global:AddButton({ text = "Better FPS / Optimize", flag = "buttonFPS", callback = function() 
     loadstring(game:HttpGet(mainRaw.."Scripts/FPS.lua"))()
@@ -155,10 +155,8 @@ Global:AddToggle({ text = "AutoExec", flag = "toggleAutoExec", state = autoExecA
 end })
 Settings:AddList({ text = "Run", flag = "listAnimRun", value = run, values = {"Default", "616163682"}, callback = function(a)
     Animate = game:GetService("Players")["LocalPlayer"].Character.Animate
-    if a =~ "Default" then
-        Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id="..a
-        writefile("FRV/Settings/Animations/run.txt", "http://www.roblox.com/asset/?id="..a)
-    end
+    Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id="..a
+    writefile("FRV/Settings/Animations/run.txt", "http://www.roblox.com/asset/?id="..a)
 end })
 Settings:AddButton({ text = "Reset Anim", flag = "buttonResetAnim", callback = function() 
     loadstring(game:HttpGet(mainRaw.."Scripts/FPS.lua"))()
