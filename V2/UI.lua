@@ -113,7 +113,7 @@ Info:AddColor({ text = "Color", flag = "color", color = {1, 0.2, 0.2}, callback 
 local Premium = Window:AddFolder("Premium")
 
 local Credits = Window:AddFolder("Credits")
-Credits:AddLabel({ text = "[Scripts]    Foreverekk.#0007" })
+Credits:AddLabel({ text = "[Scripts] Foreverekk.#0007" })
 Credits:AddLabel({ text = "[UI]     alixjaffar" })
 
 Library:Init()
