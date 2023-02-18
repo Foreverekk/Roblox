@@ -97,10 +97,80 @@ end })
 Global:AddSlider({ text = "Hitbox Height", flag = "sliderHipHeight", value = game.Players.LocalPlayer.Character.Humanoid.HipHeight, min = 2.72, max = 100, float = 0.1, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.HipHeight = a end })
 
 local Settings = Window:AddFolder("Settings")
+
+Settings:AddButton({ text = "Change Key", flag = "buttonChangeKey", callback = function()
+    Library:Close()
+    loadstring(game:HttpGet(mainRaw.."Key.lua"))()
+    wait(0.5)
+    loadstring(game:HttpGet(mainRaw.."UI-KeyChange.lua"))()
+end })
+
+validFolder = isfolder("FRV")
+if not validFolder then
+    makefolder("FRV")
+end
+validFolder = isfolder("FRV/Settings")
+if not validFolder then
+    makefolder("FRV/Settings")
+end
+validFolder = isfolder("FRV/Settings/Bindings")
+if not validFolder then
+    makefolder("FRV/Settings/Bindings")
+end
+validFile = isfile("FRV/Settings/Bindings/Toggle UI.txt")
+if not validFile then
+    writefile("FRV/Settings/Animations/Toggle UI.txt", "PageUp")
+end
+validFolder = isfolder("FRV/Settings/Animations")
+if not validFolder then
+    makefolder("FRV/Settings/Animations")
+end
+validFile = isfile("FRV/Settings/Animations/autoExec.txt")
+if not validFile then
+    writefile("FRV/Settings/Animations/autoExec.txt", "false")
+end
+validFile = isfile("FRV/Settings/Animations/run.txt")
+if not validFile then
+    writefile("FRV/Settings/Animations/run.txt", "None")
+end
+
+local Animate = game:GetService("Players")["LocalPlayer"].Character.Animate
+local autoExecAnim = readfile("FRV/Settings/Animations/autoExec.txt")
+if autoExecAnim then
+    print(autoExecAnim)
+    local run = readfile("FRV/Settings/Animations/run.txt")
+    Animate.run.RunAnim.AnimationId = run
+end
+print(autoExecAnim.." cos")
+
+local validFolder, validFile
+Settings:AddLabel({ text = "      [Animations]" })
+Global:AddToggle({ text = "AutoExec", flag = "toggleAutoExec", state = autoExecAnim, callback = function(a) 
+    if a == true then
+        writefile("FRV/Settings/Animations/autoExec.txt", "true")
+    else
+        writefile("FRV/Settings/Animations/autoExec.txt", "false")
+    end
+    
+end })
+Settings:AddList({ text = "Run", flag = "listAnimRun", value = run, values = {"Default", "616163682"}, callback = function(a)
+    Animate = game:GetService("Players")["LocalPlayer"].Character.Animate
+    if a =~ "Default" then
+        Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id="..a
+        writefile("FRV/Settings/Animations/run.txt", "http://www.roblox.com/asset/?id="..a)
+    end
+end })
+Settings:AddButton({ text = "Reset Anim", flag = "buttonResetAnim", callback = function() 
+    loadstring(game:HttpGet(mainRaw.."Scripts/FPS.lua"))()
+end })
+
+Settings:AddLabel({ text = " " })
+
+local ToggleUI = readfile("FRV/Settings/Bindings/Toggle UI.txt")
 Settings:AddLabel({ text = "      [Bindings]" })
 Settings:AddBind({ text = "Bind", flag = "bind", key = "MouseButton1", callback = function() print("pressed") end }) -- key can also be Enum.UserInputType.MouseButton1, instead of the name/string
 Settings:AddBind({ text = "Bind", flag = "bind", hold = true, key = "E" , callback = function(a) if a then print("let go") else print("holding") end end })
-Settings:AddBind({ text = "Toggle UI", key = "PageUp", callback = function() Library:Close() end })
+Settings:AddBind({ text = "Toggle UI", key = ToggleUI, callback = function() Library:Close() end })
 
 local Info = Window:AddFolder("Info")
 Info:AddLabel({ text = "        [Player]" })
