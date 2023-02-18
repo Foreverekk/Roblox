@@ -120,7 +120,7 @@ if not validFolder then
 end
 validFile = isfile("FRV/Settings/Bindings/Toggle UI.txt")
 if not validFile then
-    writefile("FRV/Settings/Animations/Toggle UI.txt", "PageUp")
+    writefile("FRV/Settings/Bindings/Toggle UI.txt", "PageUp")
 end
 validFolder = isfolder("FRV/Settings/Animations")
 if not validFolder then
@@ -145,7 +145,7 @@ end
 print(autoExecAnim.." cos")
 
 Settings:AddLabel({ text = "      [Animations]" })
-Global:AddToggle({ text = "AutoExec", flag = "toggleAutoExec", state = autoExecAnim, callback = function(a) 
+Settings:AddToggle({ text = "AutoExec", flag = "toggleAutoExec", state = autoExecAnim, callback = function(a) 
     if a == true then
         writefile("FRV/Settings/Animations/autoExec.txt", "true")
     else
@@ -157,9 +157,6 @@ Settings:AddList({ text = "Run", flag = "listAnimRun", value = run, values = {"D
     Animate = game:GetService("Players")["LocalPlayer"].Character.Animate
     Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id="..a
     writefile("FRV/Settings/Animations/run.txt", "http://www.roblox.com/asset/?id="..a)
-end })
-Settings:AddButton({ text = "Reset Anim", flag = "buttonResetAnim", callback = function() 
-    loadstring(game:HttpGet(mainRaw.."Scripts/FPS.lua"))()
 end })
 
 Settings:AddLabel({ text = " " })
