@@ -175,7 +175,8 @@ Settings:AddLabel({ text = "'../Settings/Bindings' folder" })
 
 local Info = Window:AddFolder("Info")
 Info:AddLabel({ text = "        [FRV Hub]" })
-Info:AddButton({ text = "Version: "..HubVersion, flag = "buttonVersion", callback = function() return end })
+Info:AddButton({ text = "Version: "..HubVersion, flag = "buttonVersion", callback = function() setclipboard(HubVersion) end })
+Info:AddButton({ text = "Key: ".._G.KeyInput, flag = "buttonVersion", callback = function() setclipboard(_G.KeyInput) end })
 
 Info:AddLabel({ text = " " })
 
