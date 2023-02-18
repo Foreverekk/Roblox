@@ -109,9 +109,6 @@ Settings:AddButton({ text = "Refresh", flag = "buttonRefresh", callback = functi
     wait(0.5)
     loadstring(game:HttpGet(mainRaw.."Main.lua"))()
 end })
-Window:AddButton({ text = "Close", flag = "buttonClose", callback = function()
-    Library:Destroy()
-end })
 
 local validFolder, validFile
 validFolder = isfolder("FRV")
@@ -186,7 +183,12 @@ Premium:AddButton({ text = "Discord.gg/RetmyBsNAV", flag = "buttonDiscord", call
 local Credits = Window:AddFolder("Credits")
 Credits:AddLabel({ text = "[Scripts] Foreverekk.#0007" })
 Credits:AddLabel({ text = "[UI]     alixjaffar" })
+
 Credits:AddLabel({ text = " " })
+
+Window:AddButton({ text = "Close", flag = "buttonClose", callback = function()
+    Library:Destroy()
+end })
 
 Library:Init()
  
