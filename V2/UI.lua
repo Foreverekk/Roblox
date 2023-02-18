@@ -174,10 +174,24 @@ Settings:AddLabel({ text = "[Saving] Change .txt file in" })
 Settings:AddLabel({ text = "'../Settings/Bindings' folder" })
 
 local Info = Window:AddFolder("Info")
+Info:AddLabel({ text = "        [FRV Hub]" })
+Info:AddButton({ text = "Version: "..HubVersion, flag = "buttonVersion", callback = function() return end })
+Info:AddButton({ text = "Check for update", flag = "buttonVersion", callback = function() text = "2.0.1" end })
+
+Info:AddLabel({ text = " " })
+
 Info:AddLabel({ text = "        [Player]" })
 Info:AddButton({ text = "Name: "..game.Players.LocalPlayer.Name, flag = "buttonCopy0", callback = function() setclipboard(game.Players.LocalPlayer.Name) end })
 Info:AddButton({ text = "ID: "..game.Players.LocalPlayer.UserId, flag = "buttonCopy1", callback = function() setclipboard(game.Players.LocalPlayer.UserId) end })
 Info:AddButton({ text = "Age: "..game.Players.LocalPlayer.AccountAge.." days", flag = "buttonCopy2", callback = function() setclipboard(game.Players.LocalPlayer.AccountAge.." days") end })
+
+Info:AddLabel({ text = " " })
+
+Info:AddLabel({ text = "        [Game]" })
+Info:AddButton({ text = "Place Version: "..game.PlaceVersion, flag = "buttonCopy3", callback = function() setclipboard(game.PlaceVersion) end })
+Info:AddButton({ text = "Place ID: "..game.PlaceId, flag = "buttonCopy4", callback = function() setclipboard(game.PlaceId) end })
+Info:AddButton({ text = "Game ID: "..game.GameId, flag = "buttonCopy5", callback = function() setclipboard(game.GameId) end })
+Info:AddButton({ text = "Job ID: "..game.JobId, flag = "buttonCopy6", callback = function() setclipboard(game.JobId) end })
 
 local Premium = Window:AddFolder("Premium")
 Premium:AddLabel({ text = "        [Click to copy]" })
