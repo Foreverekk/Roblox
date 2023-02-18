@@ -99,7 +99,7 @@ Global:AddSlider({ text = "Hitbox Height", flag = "sliderHipHeight", value = gam
 local Settings = Window:AddFolder("Settings")
 
 Settings:AddButton({ text = "Change Key", flag = "buttonChangeKey", callback = function()
-    Library:Close()
+    Library:Destroy()
     loadstring(game:HttpGet(mainRaw.."Key.lua"))()
     wait(0.5)
     loadstring(game:HttpGet(mainRaw.."UI-KeyChange.lua"))()
@@ -137,12 +137,10 @@ end
 
 local Animate = game:GetService("Players")["LocalPlayer"].Character.Animate
 local autoExecAnim = readfile("FRV/Settings/Animations/autoExec.txt")
-if autoExecAnim then
-    print(autoExecAnim)
+if autoExecAnim == "true" then
     local run = readfile("FRV/Settings/Animations/run.txt")
     Animate.run.RunAnim.AnimationId = run
 end
-print(autoExecAnim.." cos")
 
 Settings:AddLabel({ text = "      [Animations]" })
 Settings:AddToggle({ text = "AutoExec", flag = "toggleAutoExec", state = autoExecAnim, callback = function(a) 
@@ -163,19 +161,18 @@ Settings:AddLabel({ text = " " })
 
 local ToggleUI = readfile("FRV/Settings/Bindings/Toggle UI.txt")
 Settings:AddLabel({ text = "      [Bindings]" })
-Settings:AddBind({ text = "Bind", flag = "bind", key = "MouseButton1", callback = function() print("pressed") end }) -- key can also be Enum.UserInputType.MouseButton1, instead of the name/string
-Settings:AddBind({ text = "Bind", flag = "bind", hold = true, key = "E" , callback = function(a) if a then print("let go") else print("holding") end end })
 Settings:AddBind({ text = "Toggle UI", key = ToggleUI, callback = function() Library:Close() end })
+Settings:AddLabel({ text = "[Saving] Change .txt file in 'Bindings' folder" })
 
 local Info = Window:AddFolder("Info")
 Info:AddLabel({ text = "        [Player]" })
 Info:AddButton({ text = "Name: "..game.Players.LocalPlayer.Name, flag = "buttonCopy0", callback = function() setclipboard(game.Players.LocalPlayer.Name) end })
 Info:AddButton({ text = "ID: "..game.Players.LocalPlayer.UserId, flag = "buttonCopy1", callback = function() setclipboard(game.Players.LocalPlayer.UserId) end })
 Info:AddButton({ text = "Age: "..game.Players.LocalPlayer.AccountAge.." days", flag = "buttonCopy2", callback = function() setclipboard(game.Players.LocalPlayer.AccountAge.." days") end })
-Info:AddColor({ text = "Color", flag = "color", color = Color3.fromRGB(255, 65, 65), callback = function(a) print(a) end })
-Info:AddColor({ text = "Color", flag = "color", color = {1, 0.2, 0.2}, callback = function(a) print(a) end })
 
 local Premium = Window:AddFolder("Premium")
+Premium:AddLabel({ text = "        [Click to copy]" })
+Premium:AddButton({ text = "Discord.gg/RetmyBsNAV", flag = "buttonDiscord", callback = function() setclipboard("https://discord.gg/RetmyBsNAV") end })
 
 local Credits = Window:AddFolder("Credits")
 Credits:AddLabel({ text = "[Scripts] Foreverekk.#0007" })

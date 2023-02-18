@@ -1650,6 +1650,19 @@ function library:Close()
 	end
 end
 
+function library:Destroy()
+	self.open = not self.open
+	self.cursor.Visible = self.open
+	if self.activePopup then
+		self.activePopup:Close()
+	end
+	for _, window in next, self.windows do
+		if window.main then
+			window.main:Destroy()
+		end
+	end
+end
+
 inputService.InputBegan:connect(function(input)
 	if input.UserInputType == Enum.UserInputType.MouseButton1 then
 		if library.activePopup then
