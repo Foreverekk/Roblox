@@ -105,6 +105,7 @@ Settings:AddButton({ text = "Change Key", flag = "buttonChangeKey", callback = f
     loadstring(game:HttpGet(mainRaw.."UI-KeyChange.lua"))()
 end })
 
+local validFolder, validFile
 validFolder = isfolder("FRV")
 if not validFolder then
     makefolder("FRV")
@@ -143,7 +144,6 @@ if autoExecAnim then
 end
 print(autoExecAnim.." cos")
 
-local validFolder, validFile
 Settings:AddLabel({ text = "      [Animations]" })
 Global:AddToggle({ text = "AutoExec", flag = "toggleAutoExec", state = autoExecAnim, callback = function(a) 
     if a == true then
