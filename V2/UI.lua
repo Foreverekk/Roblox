@@ -104,6 +104,14 @@ Settings:AddButton({ text = "Change Key", flag = "buttonChangeKey", callback = f
     wait(0.5)
     loadstring(game:HttpGet(mainRaw.."UI-KeyChange.lua"))()
 end })
+Settings:AddButton({ text = "Refresh", flag = "buttonRefresh", callback = function()
+    Library:Destroy()
+    wait(0.5)
+    loadstring(game:HttpGet(mainRaw.."Main.lua"))()
+end })
+Window:AddButton({ text = "Close", flag = "buttonClose", callback = function()
+    Library:Destroy()
+end })
 
 local validFolder, validFile
 validFolder = isfolder("FRV")
@@ -162,7 +170,8 @@ Settings:AddLabel({ text = " " })
 local ToggleUI = readfile("FRV/Settings/Bindings/Toggle UI.txt")
 Settings:AddLabel({ text = "      [Bindings]" })
 Settings:AddBind({ text = "Toggle UI", key = ToggleUI, callback = function() Library:Close() end })
-Settings:AddLabel({ text = "[Saving] Change .txt file in 'Bindings' folder" })
+Settings:AddLabel({ text = "[Saving] Change .txt file in" })
+Settings:AddLabel({ text = "'../Settings/Bindings' folder" })
 
 local Info = Window:AddFolder("Info")
 Info:AddLabel({ text = "        [Player]" })
@@ -177,6 +186,7 @@ Premium:AddButton({ text = "Discord.gg/RetmyBsNAV", flag = "buttonDiscord", call
 local Credits = Window:AddFolder("Credits")
 Credits:AddLabel({ text = "[Scripts] Foreverekk.#0007" })
 Credits:AddLabel({ text = "[UI]     alixjaffar" })
+Credits:AddLabel({ text = " " })
 
 Library:Init()
  
