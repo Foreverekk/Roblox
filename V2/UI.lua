@@ -273,6 +273,14 @@ Info:AddButton({ text = "Key: ".._G.KeyInput, flag = "buttonVersion", callback =
 
 Info:AddLabel({ text = " " })
 
+Info:AddLabel({ text = "        [Web]" })
+Info:AddButton({ text = "Discord", flag = "buttonDiscord", callback = function() setclipboard("https://discord.gg/RetmyBsNAV/") end })
+Info:AddButton({ text = "Roblox Group", flag = "buttonRobloxGroup", callback = function() setclipboard("https://www.roblox.com/groups/15460868/Corpa/") end })
+Info:AddButton({ text = "Badgers of Robloxia", flag = "buttonBadgersofRobloxia", callback = function() setclipboard("https://www.roblox.com/groups/5587275/Badgers-of-Robloxia/") end })
+Info:AddLabel({ text = "        (Click to copy)" })
+
+Info:AddLabel({ text = " " })
+
 Info:AddLabel({ text = "        [Player]" })
 Info:AddButton({ text = "Name: "..game.Players.LocalPlayer.Name, flag = "buttonCopy0", callback = function() setclipboard(game.Players.LocalPlayer.Name) end })
 Info:AddButton({ text = "ID: "..game.Players.LocalPlayer.UserId, flag = "buttonCopy1", callback = function() setclipboard(game.Players.LocalPlayer.UserId) end })
