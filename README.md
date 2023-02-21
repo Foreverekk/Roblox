@@ -1,5 +1,10 @@
 # Corpa Inc.
 
+###### Main Script:
+```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/V2/Main.lua", true))()
+```
+
 ###### Supported Games:
 ```
 ▶ 189707 Natural Disaster Survival
