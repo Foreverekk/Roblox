@@ -1,6 +1,7 @@
 # Corpa Inc.
 
-Games:
+###### Supported Games:
+```
 ▶ 189707 Natural Disaster Survival
 ▶ 28586816 Get Eaten!
 ▶ 148763243 Player Badges
@@ -30,3 +31,4 @@ Games:
 ▶ 9704893711 Dha Hood
 ▶ 10534443549 Bloody Ragdolls
 ▶ 11563635596 Car Wash Tycoon
+```
