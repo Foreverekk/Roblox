@@ -5,6 +5,33 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/main/V2/Main.lua", true))()
 ```
 
+###### Universal Features:
+```lua
+[Player]
++ WalkSpeed / JumpPower
++ Camera Mode
++ Display Name
++ AutoScaling
++ AutoRotate
++ Ragdoll
++ Sit
++ Neutral (Change Team)
++ AutoJump
++ Headless
+
+[Experimental]
++ Amogus
++ AK-47 (Client)
++ Shotgun (Client)
++ FPS / Optimize
++ RTX on
++ Synapse X
++ Hitbox Height
+
+[Misc]
++ ESP
+```
+
 ###### About 🔵⚫🔴:
 ```lua
 🔵 Online/Working
