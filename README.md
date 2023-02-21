@@ -67,8 +67,9 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/mai
 🔵 9284097280 Apartment Tycoon
 ⚫ 9414511685 Drive Cars Down A Hill!
 🔴 9524757503 iHeartLand: Music Tycoon
+🔵 9625096419 Tapper Simulator!
 ⚫ 9704893711 Dha Hood
-⚫ 10534443549 Bloody Ragdolls
+🔵 10534443549 Bloody Ragdolls
 🔵 11563635596 Car Wash Tycoon
 🔵 12331842898 Blocks Every Second
 ```
