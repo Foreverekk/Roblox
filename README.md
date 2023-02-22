@@ -50,6 +50,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/mai
 🔵 2396588044 Adopt and Raise
 🔵 2817130270 Digging Simulator
 🔵 3571215756 House Tycoon
+🔵 5244411056 Bloxy Bingo
 🔵 5702593762 Climb 1,000 Stairs
 🔵 5926644314 Climb 1,000 Stairs [2]
 🔵 5989426850 Transfur Infection 2
