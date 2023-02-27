@@ -54,6 +54,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/mai
 🔵 4760217946 [1815] LIMITEDS BADGE WALK
 🔵 5166670285 12,003 Badge Walk
 🔵 5244411056 Bloxy Bingo
+🔵 5534174456 Tropical Resort Tycoon 🌴
 🔵 5702593762 Climb 1,000 Stairs
 🔵 5926644314 Climb 1,000 Stairs [2]
 🔵 5989426850 Transfur Infection 2
@@ -78,6 +79,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/mai
 🔴 9524757503 iHeartLand: Music Tycoon
 🔵 9625096419 Tapper Simulator!
 ⚫ 9704893711 Dha Hood
+🔵 9898710720 Money Tycoon!
 🔵 10534443549 Bloody Ragdolls
 🔵 11216791462 Hungry Pig `Open Source`
 🔵 11298617267 +1 Strong Every Second
