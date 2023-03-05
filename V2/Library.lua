@@ -192,7 +192,7 @@ local function createLabel(option, parent)
 		TextSize = 17,
 		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
-		TextXAlignment = Enum.TextXAlignment.Left,
+		TextXAlignment = option.textxalignment,
 		Parent = parent.content
 	})
 	
