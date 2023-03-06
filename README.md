@@ -30,6 +30,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/mai
 
 [Misc]
 + ESP
++ AutoClicker
 ```
 
 ###### About 🔵⚫🔴:
@@ -66,26 +67,38 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/mai
 🔵 6878438976 Developer Inc.
 🔵 6939849554 Cart Ride Tycoon thru a Cave 2
 🔵 7232779505 Type Race!
+🔵 7900732986 Find The Animals (102)
 🔵 8003084678 oMega Obby 625 Stages!
 🔵 8507479511 Higher Jump Every Second
 🔵 8508161757 Raise An Albert
 🔵 8726743209 Refinery Caves
 🔵 8884433153 Collect All Pets!
+🔵 8891045283 Find The Bacons (180)
 🔵 9053336747 Extreme Fun Obby!
 🔵 9088582530 raise a doggo
 🔵 9247388724 Find The Cats!
 🔵 9284097280 Apartment Tycoon
+🔵 9307189592 Find The Cupcakes [168]
 ⚫ 9414511685 Drive Cars Down A Hill!
 🔴 9524757503 iHeartLand: Music Tycoon
 🔵 9625096419 Tapper Simulator!
+🔵 9660733037 Raise a Peter
 ⚫ 9704893711 Dha Hood
+🔵 9753406153 Find The Plugs! (270)
+🔵 9862832367 Never-Ending Cart Ride
 🔵 9898710720 Money Tycoon!
 🔵 10534443549 Bloody Ragdolls
+🔵 10726371567 Find The Simpsons [241]
+🔵 10893141806 Truck Factory Tycoon
 🔵 11216791462 Hungry Pig `Open Source`
 🔵 11298617267 +1 Strong Every Second
+🔵 11544799867 Hollywood Mansion Tycoon
 🔵 11563635596 Car Wash Tycoon 🧼
+🔵 11689178347 Super Store Tycoon 🛍️
 ⚫ 11803266841 Cotton Farming Simulator 2
 🔵 11806348769 Cart Ride Simulator
+🔵 11818704485 +1 Damage Every Second
+🔵 11989217843 Find The Family Guy [165]
 🔵 12331842898 Blocks Every Second
 🔵 12371411124 Every Second You Fart More
 ```
