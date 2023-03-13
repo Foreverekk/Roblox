@@ -140,6 +140,7 @@ Settings:AddButton({ text = "Change Key", flag = "buttonChangeKey", callback = f
     loadstring(game:HttpGet(mainRaw.."UI-KeyChange.lua"))()
 end })
 Settings:AddButton({ text = "Reload", flag = "buttonReload", callback = function()
+    _G.Scripts = false
     Library:Destroy()
     wait(0.5)
     loadstring(game:HttpGet(mainRaw.."Main.lua"))()
