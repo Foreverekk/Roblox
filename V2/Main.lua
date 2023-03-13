@@ -4,7 +4,7 @@ game.StarterGui:SetCore("SendNotification", {
     Duration = 1;
 })
 
-HubVersion = "2.0.X"
+HubVersion = "2.1.X"
 
 mainRaw = "https://raw.githubusercontent.com/Foreverekk/Roblox/main/V2/"
 loadingRaw = loadstring(game:HttpGet(mainRaw.."Loading.lua"))

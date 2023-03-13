@@ -5,6 +5,8 @@ local daysoftheweek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", 
 local day = daysoftheweek[os.date("*t").wday]
 Window:AddLabel({ text = "Have a great "..day.."!", TextScaled = true })
 
+_G.Scripts = true
+
 local Global = Window:AddFolder("Global")
 Global:AddLabel({ text = "[Player]" })
 Global:AddSlider({ text = "WalkSpeed", flag = "sliderWalkSpeed", value = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed, min = 0, max = 500, float = 0.5, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = a end })
@@ -39,7 +41,7 @@ Global:AddButton({ text = "AutoRotate", flag = "buttonAutoRotate", callback = fu
     end
 
 end })
-Global:AddButton({ text = "Ragdoll (PlatformStand)", flag = "buttonPlatformStand", callback = function() 
+Global:AddButton({ text = "Ragdoll", flag = "buttonPlatformStand", callback = function() 
     if game:GetService("Players")["LocalPlayer"].Character.Humanoid.PlatformStand == true then
         game:GetService("Players")["LocalPlayer"].Character.Humanoid.PlatformStand = false
     else
@@ -55,7 +57,7 @@ Global:AddButton({ text = "Sit", flag = "buttonSit", callback = function()
     end
 
 end })
-Global:AddToggle({ text = "Neutral (Team)", flag = "toggleNeutral", state = false, callback = function(a) 
+Global:AddToggle({ text = "Neutral Team", flag = "toggleNeutral", state = game:GetService("Players")["LocalPlayer"].Neutral, callback = function(a) 
     if a == true then
         game:GetService("Players")["LocalPlayer"].Neutral = true
     else
@@ -63,13 +65,25 @@ Global:AddToggle({ text = "Neutral (Team)", flag = "toggleNeutral", state = fals
     end
     
 end })
-Global:AddToggle({ text = "AutoJump", flag = "toggleAutoJumpEnabled", state = false, callback = function(a) 
+Global:AddToggle({ text = "AutoJump", flag = "toggleAutoJumpEnabled", state = game:GetService("Players")["LocalPlayer"].AutoJumpEnabled, callback = function(a) 
     if a == true then
         game:GetService("Players")["LocalPlayer"].AutoJumpEnabled = true
     else
         game:GetService("Players")["LocalPlayer"].AutoJumpEnabled = false
     end
 
+end })
+Global:AddToggle({ text = "AutoClicker", flag = "toggleAutoClicker", state = false, callback = function(a)
+    autoclicker = a
+    while autoclicker do
+        VirtualInputManager:SendMouseButtonEvent(0, 10, 0, true, game, 1)
+        VirtualInputManager:SendMouseButtonEvent(0, 10, 0, false, game, 1)
+        wait(0.05)
+        game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
+            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
+            if not autoclicker then return end
+        end)
+    end
 end })
 local me = game:GetService("Players")["LocalPlayer"].Character
 Global:AddToggle({ text = "Headless", flag = "toggleHeadless", state = false, callback = function(a)
@@ -93,27 +107,18 @@ Global:AddLabel({ text = "[Misc]" })
 Global:AddButton({ text = "ESP", flag = "buttonESP", callback = function() 
     loadstring(game:HttpGet(mainRaw.."Scripts/ESP.lua"))()
 end })
-Global:AddToggle({ text = "AutoClicker", flag = "toggleAutoClicker", state = false, callback = function(a)
-    autoclicker = a
-    while autoclicker do
-        VirtualInputManager:SendMouseButtonEvent(0, 10, 0, true, game, 1)
-        VirtualInputManager:SendMouseButtonEvent(0, 10, 0, false, game, 1)
-        wait(0.05)
-        game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
-            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
-            if not autoclicker then return end
-        end)
-    end
+Global:AddButton({ text = "Rejoin", flag = "buttonRejoin", callback = function() 
+    loadstring(game:HttpGet(mainRaw.."Scripts/Rejoin.lua"))()
 end })
 
 local Experimental = Window:AddFolder("Experimental")
 Experimental:AddButton({ text = "Amogus", flag = "buttonAmogus", callback = function() 
     loadstring(game:HttpGet(mainRaw.."Scripts/Amogus.lua"))()
 end })
-Experimental:AddButton({ text = "AK-47", flag = "buttonAK47", callback = function() 
+Experimental:AddButton({ text = "AK-47 [FE]", flag = "buttonAK47", callback = function() 
     loadstring(game:HttpGet(mainRaw.."Scripts/AK47.lua"))()
 end })
-Experimental:AddButton({ text = "Shotgun", flag = "buttonShotgun", callback = function() 
+Experimental:AddButton({ text = "Shotgun [FE]", flag = "buttonShotgun", callback = function() 
     loadstring(game:HttpGet(mainRaw.."Scripts/Shotgun.lua"))()
 end })
 Experimental:AddButton({ text = "FPS / Optimize", flag = "buttonFPS", callback = function() 
@@ -134,7 +139,7 @@ Settings:AddButton({ text = "Change Key", flag = "buttonChangeKey", callback = f
     wait(0.5)
     loadstring(game:HttpGet(mainRaw.."UI-KeyChange.lua"))()
 end })
-Settings:AddButton({ text = "Refresh", flag = "buttonRefresh", callback = function()
+Settings:AddButton({ text = "Reload", flag = "buttonReload", callback = function()
     Library:Destroy()
     wait(0.5)
     loadstring(game:HttpGet(mainRaw.."Main.lua"))()
@@ -158,6 +163,14 @@ end
 validFile = isfile("FRV/Settings/Bindings/Toggle UI.txt")
 if not validFile then
     writefile("FRV/Settings/Bindings/Toggle UI.txt", "PageUp")
+end
+validFile = isfile("FRV/Settings/Bindings/ESP.txt")
+if not validFile then
+    writefile("FRV/Settings/Bindings/ESP.txt", "KeypadMultiply")
+end
+validFile = isfile("FRV/Settings/Bindings/AutoClicker.txt")
+if not validFile then
+    writefile("FRV/Settings/Bindings/AutoClicker.txt", "KeypadMinus")
 end
 validFolder = isfolder("FRV/Settings/Animations")
 if not validFolder then
@@ -201,9 +214,78 @@ end })
 
 Settings:AddLabel({ text = " " })
 
+local espHighlight, espDisplayName, espDisplayNameText
+local toggleESP = false
+local toggleAutoClicker = false
 local ToggleUI = readfile("FRV/Settings/Bindings/Toggle UI.txt")
+local ToggleESP = readfile("FRV/Settings/Bindings/ESP.txt")
+local ToggleAutoClicker = readfile("FRV/Settings/Bindings/AutoClicker.txt")
 Settings:AddLabel({ text = "[Bindings]" })
-Settings:AddBind({ text = "Toggle UI", key = ToggleUI, callback = function() Library:Close() end })
+Settings:AddBind({ text = "Toggle UI", key = ToggleUI, callback = function()
+    if _G.Scripts then
+        Library:Close()
+    end
+end })
+Settings:AddBind({ text = "Simple ESP", key = ToggleESP, callback = function()
+    toggleESP = not toggleESP
+    if toggleESP and _G.Scripts then
+        for _, player in ipairs(game:GetService("Players"):GetChildren()) do
+            if player.Character then
+                espHighlight = Instance.new("Highlight")
+                espHighlight.Name = player.Name
+                espHighlight.Parent = player.Character
+                espHighlight.FillColor = Color3.new(0, 0, 0)
+                espHighlight.OutlineColor = Color3.new(255, 0, 0)
+                espHighlight.OutlineTransparency = 0
+                espHighlight.FillTransparency = 0.5
+
+                espDisplayName = Instance.new("BillboardGui")
+                espDisplayName.Adornee = player.Character.Head
+                espDisplayName.Name = "DisplayName"
+                espDisplayName.Size = UDim2.new(3,0,1.5,0)
+                espDisplayName.StudsOffset = Vector3.new(0,2,0)
+                
+                espDisplayNameText = Instance.new("TextLabel")
+                espDisplayNameText.Text = player.Name
+                espDisplayNameText.Font = "GothamBold"
+                espDisplayNameText.TextSize = 12
+                espDisplayNameText.TextColor3 = Color3.new(1,1,1)
+                espDisplayNameText.BackgroundTransparency = 1
+                espDisplayNameText.Size = UDim2.new(1,0,1,0)
+                espDisplayNameText.Parent = espDisplayName
+                espDisplayName.Parent = player.Character
+            end
+        end
+    else
+        for _, player in ipairs(game:GetService("Players"):GetChildren()) do
+            if player.Character then
+                espHighlight = player.Character:FindFirstChild(player.Name)
+                espDisplayName = player.Character:FindFirstChild("DisplayName")
+                if espHighlight then
+                    espHighlight:Destroy()
+                end
+                if espDisplayName then
+                    espDisplayName:Destroy()
+                end
+            end
+        end
+    end
+end })
+Settings:AddBind({ text = "AutoClicker", key = ToggleAutoClicker, callback = function()
+    toggleAutoClicker = not toggleAutoClicker
+    while toggleAutoClicker and _G.Scripts do
+        VirtualInputManager:SendMouseButtonEvent(0, 10, 0, true, game, 1)
+        VirtualInputManager:SendMouseButtonEvent(0, 10, 0, false, game, 1)
+        wait(0.05)
+        game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
+            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
+            if not toggleAutoClicker or _G.Scripts then return end
+        end)
+    end
+end })
+
+Settings:AddLabel({ text = " " })
+
 Settings:AddLabel({ text = "[Saving] Change .txt file in" })
 Settings:AddLabel({ text = "'../Settings/Bindings' folder" })
 
@@ -235,6 +317,116 @@ Info:AddButton({ text = "Place ID: "..game.PlaceId, flag = "buttonCopy4", callba
 Info:AddButton({ text = "Game ID: "..game.GameId, flag = "buttonCopy5", callback = function() setclipboard(game.GameId) end })
 Info:AddButton({ text = "Job ID: "..game.JobId, flag = "buttonCopy6", callback = function() setclipboard(game.JobId) end })
 
+local Players = Window:AddFolder("Players")
+local selected = game:GetService("Players")["LocalPlayer"]
+local part = selected.Character:WaitForChild("HumanoidRootPart")
+local where = part.Position
+local players = {}
+local watch, pos, spos, startPos
+for i, v in ipairs(game:GetService("Players"):GetChildren()) do
+    table.insert(players, v.Name)
+end
+local method = "Instant"
+
+Players:AddLabel({ text = table.getn(players).." players" })
+Players:AddLabel({ text = "Reloaded on "..os.date("%X") })
+
+Players:AddLabel({ text = " " })
+
+Players:AddList({ text = "Player", flag = "listTeleport", value = players[0], values = players, callback = function(a)
+    if game:GetService("Players"):FindFirstChild(a) then
+        selected = game:GetService("Players"):FindFirstChild(a)
+        part = selected.Character:WaitForChild("HumanoidRootPart")
+        where = part.Position
+    end
+end })
+Players:AddToggle({ text = "Watch", flag = "toggleWatch", state = false, callback = function(a)
+    watch = a
+    if not watch then
+        startPos = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
+    end
+    while watch and game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart") and selected.Character:FindFirstChild("HumanoidRootPart") do
+        pos = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
+        spos = selected.Character:FindFirstChild("HumanoidRootPart").Position
+        if selected == game:GetService("Players")["LocalPlayer"] then return end
+        if not watch then
+            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame = startPos
+            return
+        end
+        game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart"):PivotTo(CFrame.new(spos.X - 0.5, spos.Y - 1, spos.Z - 0.5))
+        wait(0.08)
+        game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
+            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
+            if not watch then
+                game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame = startPos
+                return
+            end
+        end)
+    end
+    game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame = startPos
+end })
+
+Players:AddLabel({ text = " " })
+
+Players:AddButton({ text = "Print Info", flag = "buttonPrintInfo", callback = function()
+    print("                  [ CORPA INDUSTRIES ]                  ")
+    print("Player "..tostring(selected.Name))
+    print("ID "..tostring(selected.UserId))
+    print(" ")
+    print("AccountAge: "..tostring(selected.AccountAge).. " days")
+    print("Archivable: "..tostring(selected.Archivable))
+    print("AutoJumpEnabled: "..tostring(selected.AutoJumpEnabled))
+    print("CameraMaxZoomDistance: "..tostring(selected.CameraMaxZoomDistance))
+    print("CameraMinZoomDistance: "..tostring(selected.CameraMinZoomDistance))
+    print("CameraMode: "..tostring(selected.CameraMode))
+    print("CanLoadCharacterAppearance"..tostring(selected.CanLoadCharacterAppearance))
+    print("Character: "..tostring(selected.Character))
+    print("CharacterAppearance: "..tostring(selected.CharacterAppearance))
+    print("ChatMode: "..tostring(selected.ChatMode))
+    print("ClassName: "..tostring(selected.ClassName))
+    print("DataCost: "..tostring(selected.DataCost))
+    print("DevCameraOcclusionMode: "..tostring(selected.DevCameraOcclusionMode))
+    --print("DevComputerCameraMovementMode: "..tostring(selected.DevComputerCameraMovementMode))
+    --print("DevComputerMovement: "..tostring(selected.DevComputerMovement))
+    print("DevEnableMouseLock: "..tostring(selected.DevEnableMouseLock))
+    print("DevTouchCameraMode: "..tostring(selected.DevTouchCameraMode))
+    print("DevTouchMovementMode: "..tostring(selected.DevTouchMovementMode))
+    print("DisplayName: "..tostring(selected.DisplayName))
+    print("FollowUserId: "..tostring(selected.FollowUserId))
+    print("Guest: "..tostring(selected.Guest))
+    print("HealthDisplayDistance: "..tostring(selected.HealthDisplayDistance))
+    --print("MaximumSimulationRange: "..tostring(selected.MaximumSimulationRange))
+    print("MembershipType: "..tostring(selected.MembershipType))
+    print("Name: "..tostring(selected.Name))
+    print("NameDisplayDistance: "..tostring(selected.NameDisplayDistance))
+    print("Neutral: "..tostring(selected.Neutral))
+    print("OsPlatform: "..tostring(selected.OsPlatform))
+    print("Parent: "..tostring(selected.Parent))
+    print("ReplicationFocus: "..tostring(selected.ReplicationFocus))
+    print("RespawnLocation: "..tostring(selected.RespawnLocation))
+    print("RobloxLocked: "..tostring(selected.RobloxLocked))
+    print("Team: "..tostring(selected.Team))
+    print("TeamColor: "..tostring(selected.TeamColor))
+    print("TeleportedIn: "..tostring(selected.TeleportedIn))
+    print("UserId: "..tostring(selected.UserId))
+    print("VRDevice: "..tostring(selected.VRDevice))
+end })
+Players:AddButton({ text = "Teleport", flag = "buttonTeleport", callback = function()
+    part = selected.Character:WaitForChild("HumanoidRootPart")
+    where = part.Position
+    if method == "Instant" then
+        game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(where.X, where.Y + 3, where.Z)
+    elseif method == "FlyTo" then
+        tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(1, Enum.EasingStyle.Linear)
+        Tween1 = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart"), tweenInfo, { CFrame = CFrame.new(where.X, where.Y + 3, where.Z) })
+        Tween1:Play()
+        Tween1.Completed:Wait()
+    end
+end })
+Players:AddList({ text = "Teleport (Method)", flag = "listMethod", value = "Instant", values = {"Instant", "FlyTo"}, callback = function(a)
+    method = a
+end })
+
 local Premium = Window:AddFolder("Premium")
 Premium:AddLabel({ text = "[Click to copy]" })
 Premium:AddButton({ text = "Discord.gg/RetmyBsNAV", flag = "buttonDiscord", callback = function() setclipboard("https://discord.gg/RetmyBsNAV") end })
@@ -246,6 +438,7 @@ Credits:AddLabel({ text = "[UI]         alixjaffar" })
 Credits:AddLabel({ text = " " })
 
 Window:AddButton({ text = "Close", flag = "buttonClose", callback = function()
+    _G.Scripts = false
     Library:Destroy()
 end })
 

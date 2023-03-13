@@ -31,6 +31,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/mai
 [Misc]
 + ESP
 + AutoClicker
++ Bindings
++ Teleport / Watch / Print info about Players (ID etc.)
 ```
 
 ###### About 🔵⚫🔴:
