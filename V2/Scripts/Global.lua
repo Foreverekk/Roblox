@@ -1,45 +1,45 @@
 printInfoPlayer = function(Player)
     print("                  [ CORPA INDUSTRIES ]                  ")
-    print("Player "..tostring(Player.Name))
-    print("ID "..tostring(Player.UserId))
+    if Player["Name"] then print("Player "..tostring(Player.Name)) end
+    if Player["UserId"] then print("ID "..tostring(Player.UserId)) end
     print(" ")
-    print("AccountAge: "..tostring(Player.AccountAge).. " days")
-    print("Archivable: "..tostring(Player.Archivable))
-    print("AutoJumpEnabled: "..tostring(Player.AutoJumpEnabled))
-    print("CameraMaxZoomDistance: "..tostring(Player.CameraMaxZoomDistance))
-    print("CameraMinZoomDistance: "..tostring(Player.CameraMinZoomDistance))
-    print("CameraMode: "..tostring(Player.CameraMode))
-    print("CanLoadCharacterAppearance"..tostring(Player.CanLoadCharacterAppearance))
-    print("Character: "..tostring(Player.Character))
-    print("CharacterAppearance: "..tostring(Player.CharacterAppearance))
-    print("ChatMode: "..tostring(Player.ChatMode))
-    print("ClassName: "..tostring(Player.ClassName))
-    print("DataCost: "..tostring(Player.DataCost))
-    if selected.DevCameraOcclusionMode then print("DevCameraOcclusionMode: "..tostring(selected.DevCameraOcclusionMode)) end
-    --print("DevComputerCameraMovementMode: "..tostring(Player.DevComputerCameraMovementMode))
-    --print("DevComputerMovement: "..tostring(Player.DevComputerMovement))
-    print("DevEnableMouseLock: "..tostring(Player.DevEnableMouseLock))
-    print("DevTouchCameraMode: "..tostring(Player.DevTouchCameraMode))
-    print("DevTouchMovementMode: "..tostring(Player.DevTouchMovementMode))
-    print("DisplayName: "..tostring(Player.DisplayName))
-    print("FollowUserId: "..tostring(Player.FollowUserId))
-    print("Guest: "..tostring(Player.Guest))
-    print("HealthDisplayDistance: "..tostring(Player.HealthDisplayDistance))
-    --print("MaximumSimulationRange: "..tostring(Player.MaximumSimulationRange))
-    print("MembershipType: "..tostring(Player.MembershipType))
-    print("Name: "..tostring(Player.Name))
-    print("NameDisplayDistance: "..tostring(Player.NameDisplayDistance))
-    print("Neutral: "..tostring(Player.Neutral))
-    print("OsPlatform: "..tostring(Player.OsPlatform))
-    print("Parent: "..tostring(Player.Parent))
-    print("ReplicationFocus: "..tostring(Player.ReplicationFocus))
-    print("RespawnLocation: "..tostring(Player.RespawnLocation))
-    print("RobloxLocked: "..tostring(Player.RobloxLocked))
-    print("Team: "..tostring(Player.Team))
-    print("TeamColor: "..tostring(Player.TeamColor))
-    print("TeleportedIn: "..tostring(Player.TeleportedIn))
-    print("UserId: "..tostring(Player.UserId))
-    print("VRDevice: "..tostring(Player.VRDevice))
+    if Player["AccountAge"] then print("AccountAge: "..tostring(Player.AccountAge).. " days") end
+    if Player["Archivable"] then print("Archivable: "..tostring(Player.Archivable)) end
+    if Player["AutoJumpEnabled"] then print("AutoJumpEnabled: "..tostring(Player.AutoJumpEnabled)) end
+    if Player["CameraMaxZoomDistance"] then print("CameraMaxZoomDistance: "..tostring(Player.CameraMaxZoomDistance)) end
+    if Player["CameraMinZoomDistance"] then print("CameraMinZoomDistance: "..tostring(Player.CameraMinZoomDistance)) end
+    if Player["CameraMode"] then print("CameraMode: "..tostring(Player.CameraMode)) end
+    if Player["CanLoadCharacterAppearance"] then print("CanLoadCharacterAppearance"..tostring(Player.CanLoadCharacterAppearance)) end
+    if Player["Character"] then print("Character: "..tostring(Player.Character)) end
+    if Player["CharacterAppearance"] then print("CharacterAppearance: "..tostring(Player.CharacterAppearance)) end
+    if Player["ChatMode"] then print("ChatMode: "..tostring(Player.ChatMode)) end
+    if Player["ClassName"] then print("ClassName: "..tostring(Player.ClassName)) end
+    if Player["DataCost"] then print("DataCost: "..tostring(Player.DataCost)) end
+    if Player["DevCameraOcclusionMode"] then print("DevCameraOcclusionMode: "..tostring(Player.DevCameraOcclusionMode)) end
+    -- if Player["DevComputerCameraMovementMode"] then print("DevComputerCameraMovementMode: "..tostring(Player.DevComputerCameraMovementMode)) end
+    -- if Player["DevComputerMovement"] then print("DevComputerMovement: "..tostring(Player.DevComputerMovement)) end
+    if Player["DevEnableMouseLock"] then print("DevEnableMouseLock: "..tostring(Player.DevEnableMouseLock)) end
+    if Player["DevTouchCameraMode"] then print("DevTouchCameraMode: "..tostring(Player.DevTouchCameraMode)) end
+    if Player["DevTouchMovementMode"] then print("DevTouchMovementMode: "..tostring(Player.DevTouchMovementMode)) end
+    if Player["DisplayName"] then print("DisplayName: "..tostring(Player.DisplayName)) end
+    if Player["FollowUserId"] then print("FollowUserId: "..tostring(Player.FollowUserId)) end
+    if Player["Guest"] then print("Guest: "..tostring(Player.Guest)) end
+    if Player["HealthDisplayDistance"] then print("HealthDisplayDistance: "..tostring(Player.HealthDisplayDistance)) end
+    -- if Player["MaximumSimulationRange"] then print("MaximumSimulationRange: "..tostring(Player.MaximumSimulationRange)) end
+    if Player["MembershipType"] then print("MembershipType: "..tostring(Player.MembershipType)) end
+    if Player["Name"] then print("Name: "..tostring(Player.Name)) end
+    if Player["NameDisplayDistance"] then print("NameDisplayDistance: "..tostring(Player.NameDisplayDistance)) end
+    if Player["Neutral"] then print("Neutral: "..tostring(Player.Neutral)) end
+    if Player["OsPlatform"] then print("OsPlatform: "..tostring(Player.OsPlatform)) end
+    if Player["Parent"] then print("Parent: "..tostring(Player.Parent)) end
+    if Player["ReplicationFocus"] then print("ReplicationFocus: "..tostring(Player.ReplicationFocus)) end
+    if Player["RespawnLocation"] then print("RespawnLocation: "..tostring(Player.RespawnLocation)) end
+    if Player["RobloxLocked"] then print("RobloxLocked: "..tostring(Player.RobloxLocked)) end
+    if Player["Team"] then print("Team: "..tostring(Player.Team)) end
+    if Player["TeamColor"] then print("TeamColor: "..tostring(Player.TeamColor)) end
+    if Player["TeleportedIn"] then print("TeleportedIn: "..tostring(Player.TeleportedIn)) end
+    if Player["UserId"] then print("UserId: "..tostring(Player.UserId)) end
+    if Player["VRDevice"] then print("VRDevice: "..tostring(Player.VRDevice)) end
 end
 
 getDay = function()
