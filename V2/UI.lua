@@ -1,6 +1,7 @@
 -- LOADING
 
 _G.GlobalLoaded = false
+loadstring(game:HttpGet(mainRaw.."Scripts/Global.lua"))()
 while not _G.GlobalLoaded do
     wait(0.05)
 end
