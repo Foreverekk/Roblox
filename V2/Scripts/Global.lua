@@ -15,7 +15,7 @@ printInfoPlayer = function(Player)
     print("ChatMode: "..tostring(Player.ChatMode))
     print("ClassName: "..tostring(Player.ClassName))
     print("DataCost: "..tostring(Player.DataCost))
-    print("DevCameraOcclusionMode: "..tostring(selected.DevCameraOcclusionMode))
+    if selected.DevCameraOcclusionMode then print("DevCameraOcclusionMode: "..tostring(selected.DevCameraOcclusionMode)) end
     --print("DevComputerCameraMovementMode: "..tostring(Player.DevComputerCameraMovementMode))
     --print("DevComputerMovement: "..tostring(Player.DevComputerMovement))
     print("DevEnableMouseLock: "..tostring(Player.DevEnableMouseLock))
