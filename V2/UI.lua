@@ -1,16 +1,23 @@
+-- LOADING
+
+_G.GlobalLoaded = false
+while not _G.GlobalLoaded do
+    wait(0.05)
+end
+_G.Scripts = true
+
+
+-- MAIN
+
 local Window = Library:CreateWindow("FRV Hub V2")
 
 local VirtualInputManager = game:GetService("VirtualInputManager")
-local daysoftheweek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday" }
-local day = daysoftheweek[os.date("*t").wday]
-Window:AddLabel({ text = "Have a great "..day.."!", TextScaled = true })
-
-_G.Scripts = true
+Window:AddLabel({ text = "Have a great "..getDay().."!", TextScaled = true })
 
 local Global = Window:AddFolder("Global")
 Global:AddLabel({ text = "[Player]" })
-Global:AddSlider({ text = "WalkSpeed", flag = "sliderWalkSpeed", value = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed, min = 0, max = 500, float = 0.5, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = a end })
-Global:AddSlider({ text = "JumpPower", flag = "sliderJumpPower", value = game.Players.LocalPlayer.Character.Humanoid.JumpPower, min = 0, max = 1000, float = 0.5, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.JumpPower = a end })
+Global:AddSlider({ text = "WalkSpeed", flag = "sliderWalkSpeed", value = game:GetService("Players")["LocalPlayer"].Character.Humanoid.WalkSpeed, min = 0, max = 500, float = 0.5, callback = function(a) game:GetService("Players")["LocalPlayer"].Character.Humanoid.WalkSpeed = a end })
+Global:AddSlider({ text = "JumpPower", flag = "sliderJumpPower", value = game:GetService("Players")["LocalPlayer"].Character.Humanoid.JumpPower, min = 0, max = 1000, float = 0.5, callback = function(a) game:GetService("Players")["LocalPlayer"].Character.Humanoid.JumpPower = a end })
 Global:AddList({ text = "Camera Mode", flag = "listCameraMode", value = "Classic", values = {"Classic", "LockFirstPerson"}, callback = function(a)
     if a == "Classic" then
         game:GetService("Players")["LocalPlayer"].CameraMode = Enum.CameraMode.Classic
@@ -18,8 +25,8 @@ Global:AddList({ text = "Camera Mode", flag = "listCameraMode", value = "Classic
         game:GetService("Players")["LocalPlayer"].CameraMode = Enum.CameraMode.LockFirstPerson
     end
 end })
-Global:AddBox({ text = "Display Name", flag = "boxDisplayName", value = game.Players.LocalPlayer.DisplayName, callback = function(a)
-    game.Players.LocalPlayer.DisplayName = a
+Global:AddBox({ text = "Display Name", flag = "boxDisplayName", value = game:GetService("Players")["LocalPlayer"].DisplayName, callback = function(a)
+    game:GetService("Players")["LocalPlayer"].DisplayName = a
 end })
 
 Global:AddLabel({ text = " " })
@@ -57,22 +64,6 @@ Global:AddButton({ text = "Sit", flag = "buttonSit", callback = function()
     end
 
 end })
-Global:AddToggle({ text = "Neutral Team", flag = "toggleNeutral", state = game:GetService("Players")["LocalPlayer"].Neutral, callback = function(a) 
-    if a == true then
-        game:GetService("Players")["LocalPlayer"].Neutral = true
-    else
-        game:GetService("Players")["LocalPlayer"].Neutral = false
-    end
-    
-end })
-Global:AddToggle({ text = "AutoJump", flag = "toggleAutoJumpEnabled", state = game:GetService("Players")["LocalPlayer"].AutoJumpEnabled, callback = function(a) 
-    if a == true then
-        game:GetService("Players")["LocalPlayer"].AutoJumpEnabled = true
-    else
-        game:GetService("Players")["LocalPlayer"].AutoJumpEnabled = false
-    end
-
-end })
 Global:AddToggle({ text = "AutoClicker", flag = "toggleAutoClicker", state = false, callback = function(a)
     autoclicker = a
     while autoclicker do
@@ -85,13 +76,18 @@ Global:AddToggle({ text = "AutoClicker", flag = "toggleAutoClicker", state = fal
         end)
     end
 end })
-local me = game:GetService("Players")["LocalPlayer"].Character
+Global:AddToggle({ text = "AutoJump", flag = "toggleAutoJumpEnabled", state = game:GetService("Players")["LocalPlayer"].AutoJumpEnabled, callback = function(a) 
+    if a == true then
+        game:GetService("Players")["LocalPlayer"].AutoJumpEnabled = true
+    else
+        game:GetService("Players")["LocalPlayer"].AutoJumpEnabled = false
+    end
+
+end })
 Global:AddToggle({ text = "Headless", flag = "toggleHeadless", state = false, callback = function(a)
     headless = a
     while headless do
-        if me:FindFirstChild("Head") and me:FindFirstChild("Humanoid") then
-            me.Head.MeshId = "rbxassetid://6686307858" or nil
-        end
+        headlessScript()
         wait(0.5)
         game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
             game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
@@ -99,38 +95,46 @@ Global:AddToggle({ text = "Headless", flag = "toggleHeadless", state = false, ca
         end)
     end
 end })
+Global:AddToggle({ text = "Neutral Team", flag = "toggleNeutral", state = game:GetService("Players")["LocalPlayer"].Neutral, callback = function(a) 
+    if a == true then
+        game:GetService("Players")["LocalPlayer"].Neutral = true
+    else
+        game:GetService("Players")["LocalPlayer"].Neutral = false
+    end
+    
+end })
 
 Global:AddLabel({ text = " " })
 
 local autoclicker
 Global:AddLabel({ text = "[Misc]" })
 Global:AddButton({ text = "ESP", flag = "buttonESP", callback = function() 
-    loadstring(game:HttpGet(mainRaw.."Scripts/ESP.lua"))()
+    NMespScript()
 end })
 Global:AddButton({ text = "Rejoin", flag = "buttonRejoin", callback = function() 
-    loadstring(game:HttpGet(mainRaw.."Scripts/Rejoin.lua"))()
+    rejoinScript()
 end })
 
 local Experimental = Window:AddFolder("Experimental")
 Experimental:AddButton({ text = "Amogus", flag = "buttonAmogus", callback = function() 
-    loadstring(game:HttpGet(mainRaw.."Scripts/Amogus.lua"))()
+    amogusScript()
 end })
 Experimental:AddButton({ text = "AK-47 [FE]", flag = "buttonAK47", callback = function() 
-    loadstring(game:HttpGet(mainRaw.."Scripts/AK47.lua"))()
+    ak47Script()
 end })
 Experimental:AddButton({ text = "Shotgun [FE]", flag = "buttonShotgun", callback = function() 
-    loadstring(game:HttpGet(mainRaw.."Scripts/Shotgun.lua"))()
+    shotgunScript()
 end })
 Experimental:AddButton({ text = "FPS / Optimize", flag = "buttonFPS", callback = function() 
-    loadstring(game:HttpGet(mainRaw.."Scripts/FPS.lua"))()
+    fpsScript()
 end })
 Experimental:AddButton({ text = "RTX on", flag = "buttonRTX", callback = function() 
-    loadstring(game:HttpGet(mainRaw.."Scripts/RTX.lua"))()
+    rtxScript()
 end })
 Experimental:AddButton({ text = "Synapse X", flag = "buttonSynapse", callback = function() 
-    loadstring(game:HttpGet(mainRaw.."Scripts/Synapse.lua"))()
+    synapseScript()
 end })
-Experimental:AddSlider({ text = "Hitbox Height", flag = "sliderHipHeight", value = game.Players.LocalPlayer.Character.Humanoid.HipHeight, min = 2.72, max = 100, float = 0.1, callback = function(a) game.Players.LocalPlayer.Character.Humanoid.HipHeight = a end })
+Experimental:AddSlider({ text = "Hitbox Height", flag = "sliderHipHeight", value = game:GetService("Players")["LocalPlayer"].Character.Humanoid.HipHeight, min = 2.72, max = 100, float = 0.1, callback = function(a) game:GetService("Players")["LocalPlayer"].Character.Humanoid.HipHeight = a end })
 
 local Settings = Window:AddFolder("Settings")
 Settings:AddButton({ text = "Change Key", flag = "buttonChangeKey", callback = function()
@@ -370,47 +374,7 @@ end })
 Players:AddLabel({ text = " " })
 
 Players:AddButton({ text = "Print Info", flag = "buttonPrintInfo", callback = function()
-    print("                  [ CORPA INDUSTRIES ]                  ")
-    print("Player "..tostring(selected.Name))
-    print("ID "..tostring(selected.UserId))
-    print(" ")
-    print("AccountAge: "..tostring(selected.AccountAge).. " days")
-    print("Archivable: "..tostring(selected.Archivable))
-    print("AutoJumpEnabled: "..tostring(selected.AutoJumpEnabled))
-    print("CameraMaxZoomDistance: "..tostring(selected.CameraMaxZoomDistance))
-    print("CameraMinZoomDistance: "..tostring(selected.CameraMinZoomDistance))
-    print("CameraMode: "..tostring(selected.CameraMode))
-    print("CanLoadCharacterAppearance"..tostring(selected.CanLoadCharacterAppearance))
-    print("Character: "..tostring(selected.Character))
-    print("CharacterAppearance: "..tostring(selected.CharacterAppearance))
-    print("ChatMode: "..tostring(selected.ChatMode))
-    print("ClassName: "..tostring(selected.ClassName))
-    print("DataCost: "..tostring(selected.DataCost))
-    print("DevCameraOcclusionMode: "..tostring(selected.DevCameraOcclusionMode))
-    --print("DevComputerCameraMovementMode: "..tostring(selected.DevComputerCameraMovementMode))
-    --print("DevComputerMovement: "..tostring(selected.DevComputerMovement))
-    print("DevEnableMouseLock: "..tostring(selected.DevEnableMouseLock))
-    print("DevTouchCameraMode: "..tostring(selected.DevTouchCameraMode))
-    print("DevTouchMovementMode: "..tostring(selected.DevTouchMovementMode))
-    print("DisplayName: "..tostring(selected.DisplayName))
-    print("FollowUserId: "..tostring(selected.FollowUserId))
-    print("Guest: "..tostring(selected.Guest))
-    print("HealthDisplayDistance: "..tostring(selected.HealthDisplayDistance))
-    --print("MaximumSimulationRange: "..tostring(selected.MaximumSimulationRange))
-    print("MembershipType: "..tostring(selected.MembershipType))
-    print("Name: "..tostring(selected.Name))
-    print("NameDisplayDistance: "..tostring(selected.NameDisplayDistance))
-    print("Neutral: "..tostring(selected.Neutral))
-    print("OsPlatform: "..tostring(selected.OsPlatform))
-    print("Parent: "..tostring(selected.Parent))
-    print("ReplicationFocus: "..tostring(selected.ReplicationFocus))
-    print("RespawnLocation: "..tostring(selected.RespawnLocation))
-    print("RobloxLocked: "..tostring(selected.RobloxLocked))
-    print("Team: "..tostring(selected.Team))
-    print("TeamColor: "..tostring(selected.TeamColor))
-    print("TeleportedIn: "..tostring(selected.TeleportedIn))
-    print("UserId: "..tostring(selected.UserId))
-    print("VRDevice: "..tostring(selected.VRDevice))
+    printInfoPlayer(selected)
 end })
 Players:AddButton({ text = "Teleport", flag = "buttonTeleport", callback = function()
     part = selected.Character:WaitForChild("HumanoidRootPart")

@@ -1,3 +1,5 @@
+-- MAIN
+
 game.StarterGui:SetCore("SendNotification", {
     Title = "Loading..";
     Text = "by Corpa Industries";
