@@ -1,1 +1,93 @@
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v8,v9)local v11={};for v17=1, #v8 do v6(v11,v0(v4(v1(v2(v8,v17,v17 + 1 )),v1(v2(v9,1 + ((v17-1)% #v9) ,1 + ((v17-1)% #v9) + 1 )))%256 ));end return v5(v11);end _G[v7("\94\49\208\178\67\101\178\72\44\233\176\86\85\185\92","\46\67\185\220\55\44\220")]=function(v10)print("                  [ CORPA INDUSTRIES ]                  ");print("Player "   .. tostring(v10.Name) );print("ID "   .. tostring(v10.UserId) );print(" ");print("AccountAge: "   .. tostring(v10.AccountAge)   .. " days" );print("Archivable: "   .. tostring(v10.Archivable) );print("AutoJumpEnabled: "   .. tostring(v10.AutoJumpEnabled) );print("CameraMaxZoomDistance: "   .. tostring(v10.CameraMaxZoomDistance) );print("CameraMinZoomDistance: "   .. tostring(v10.CameraMinZoomDistance) );print("CameraMode: "   .. tostring(v10.CameraMode) );print("CanLoadCharacterAppearance"   .. tostring(v10.CanLoadCharacterAppearance) );print("Character: "   .. tostring(v10.Character) );print("CharacterAppearance: "   .. tostring(v10.CharacterAppearance) );print("ChatMode: "   .. tostring(v10.ChatMode) );print("ClassName: "   .. tostring(v10.ClassName) );print("DataCost: "   .. tostring(v10.DataCost) );print("DevCameraOcclusionMode: "   .. tostring(selected.DevCameraOcclusionMode) );print("DevEnableMouseLock: "   .. tostring(v10.DevEnableMouseLock) );print("DevTouchCameraMode: "   .. tostring(v10.DevTouchCameraMode) );print("DevTouchMovementMode: "   .. tostring(v10.DevTouchMovementMode) );print("DisplayName: "   .. tostring(v10.DisplayName) );print("FollowUserId: "   .. tostring(v10.FollowUserId) );print("Guest: "   .. tostring(v10.Guest) );print("HealthDisplayDistance: "   .. tostring(v10.HealthDisplayDistance) );print("MembershipType: "   .. tostring(v10.MembershipType) );print("Name: "   .. tostring(v10.Name) );print("NameDisplayDistance: "   .. tostring(v10.NameDisplayDistance) );print("Neutral: "   .. tostring(v10.Neutral) );print("OsPlatform: "   .. tostring(v10.OsPlatform) );print("Parent: "   .. tostring(v10.Parent) );print("ReplicationFocus: "   .. tostring(v10.ReplicationFocus) );print("RespawnLocation: "   .. tostring(v10.RespawnLocation) );print("RobloxLocked: "   .. tostring(v10.RobloxLocked) );print("Team: "   .. tostring(v10.Team) );print("TeamColor: "   .. tostring(v10.TeamColor) );print("TeleportedIn: "   .. tostring(v10.TeleportedIn) );print("UserId: "   .. tostring(v10.UserId) );print("VRDevice: "   .. tostring(v10.VRDevice) );end;_G[v7("\172\166\86\95\186\23","\203\195\34\27\219\110")]=function()local v12={"Sunday","Monday","Tuesday","Wednesday","Thrusday","Friday","Saturday"};local v13=v12[os.date("*t").wday];return tostring(v13);end;_G[v7("\10\241\222\91\233\29\17\231\236\92\247\17\18\224","\98\148\191\63\133\120")]=function()if (game:GetService("Players")['LocalPlayer'].Character:FindFirstChild("Head") and game:GetService("Players")['LocalPlayer'].Character:FindFirstChild("Humanoid")) then game:GetService("Players")['LocalPlayer'].Character:FindFirstChild("Head").MeshId="rbxassetid://6686307858" or nil ;end end;_G[v7("\194\11\126\81\181\113\239\52\114\82\177","\140\70\27\34\197\34")]=function()loadstring(game:HttpGet(mainRaw   .. "Scripts/ESP.lua" ))();end;_G[v7("\53\218\78\200\243\160\124\36\205\77\215\238","\71\191\36\167\154\206\47")]=function()local v14=0 -0 ;local v15;local v16;while true do if (v14==0) then v15=game:GetService("TeleportService");v16=game:GetService("Players")['LocalPlayer'];v14=1 -0 ;end if (v14==(1047 -(230 + 816))) then v15:Teleport(game.PlaceId,v16);break;end end end;_G[v7("\73\138\189\211\59\223\12\251\90\142\162\192","\40\231\210\180\78\172\95\152")]=function()loadstring(game:HttpGet(mainRaw   .. "Scripts/Amogus.lua" ))();end;_G[v7("\248\143\178\82\135\250\150\239\21\160","\153\228\134\101\212")]=function()loadstring(game:HttpGet(mainRaw   .. "Scripts/AK47.lua" ))();end;_G[v7("\109\23\202\7\121\10\203\32\125\13\204\3\106","\30\127\165\115")]=function()loadstring(game:HttpGet(mainRaw   .. "Scripts/Shotgun.lua" ))();end;_G[v7("\198\99\94\204\26\197\227\208\103","\160\19\45\159\121\183\138")]=function()loadstring(game:HttpGet(mainRaw   .. "Scripts/FPS.lua" ))();end;_G[v7("\160\195\71\199\177\197\86\228\166","\210\183\63\148")]=function()loadstring(game:HttpGet(mainRaw   .. "Scripts/RTX.lua" ))();end;_G[v7("\198\38\214\209\83\169\3\230\60\202\217\83\174","\181\95\184\176\35\218\102")]=function()loadstring(game:HttpGet(mainRaw   .. "Scripts/Synapse.lua" ))();end;_G.GlobalLoaded=true;
+printInfoPlayer = function(Player)
+    print("                  [ CORPA INDUSTRIES ]                  ")
+    print("Player "..tostring(Player.Name))
+    print("ID "..tostring(Player.UserId))
+    print(" ")
+    print("AccountAge: "..tostring(Player.AccountAge).. " days")
+    print("Archivable: "..tostring(Player.Archivable))
+    print("AutoJumpEnabled: "..tostring(Player.AutoJumpEnabled))
+    print("CameraMaxZoomDistance: "..tostring(Player.CameraMaxZoomDistance))
+    print("CameraMinZoomDistance: "..tostring(Player.CameraMinZoomDistance))
+    print("CameraMode: "..tostring(Player.CameraMode))
+    print("CanLoadCharacterAppearance"..tostring(Player.CanLoadCharacterAppearance))
+    print("Character: "..tostring(Player.Character))
+    print("CharacterAppearance: "..tostring(Player.CharacterAppearance))
+    print("ChatMode: "..tostring(Player.ChatMode))
+    print("ClassName: "..tostring(Player.ClassName))
+    print("DataCost: "..tostring(Player.DataCost))
+    print("DevCameraOcclusionMode: "..tostring(selected.DevCameraOcclusionMode))
+    --print("DevComputerCameraMovementMode: "..tostring(Player.DevComputerCameraMovementMode))
+    --print("DevComputerMovement: "..tostring(Player.DevComputerMovement))
+    print("DevEnableMouseLock: "..tostring(Player.DevEnableMouseLock))
+    print("DevTouchCameraMode: "..tostring(Player.DevTouchCameraMode))
+    print("DevTouchMovementMode: "..tostring(Player.DevTouchMovementMode))
+    print("DisplayName: "..tostring(Player.DisplayName))
+    print("FollowUserId: "..tostring(Player.FollowUserId))
+    print("Guest: "..tostring(Player.Guest))
+    print("HealthDisplayDistance: "..tostring(Player.HealthDisplayDistance))
+    --print("MaximumSimulationRange: "..tostring(Player.MaximumSimulationRange))
+    print("MembershipType: "..tostring(Player.MembershipType))
+    print("Name: "..tostring(Player.Name))
+    print("NameDisplayDistance: "..tostring(Player.NameDisplayDistance))
+    print("Neutral: "..tostring(Player.Neutral))
+    print("OsPlatform: "..tostring(Player.OsPlatform))
+    print("Parent: "..tostring(Player.Parent))
+    print("ReplicationFocus: "..tostring(Player.ReplicationFocus))
+    print("RespawnLocation: "..tostring(Player.RespawnLocation))
+    print("RobloxLocked: "..tostring(Player.RobloxLocked))
+    print("Team: "..tostring(Player.Team))
+    print("TeamColor: "..tostring(Player.TeamColor))
+    print("TeleportedIn: "..tostring(Player.TeleportedIn))
+    print("UserId: "..tostring(Player.UserId))
+    print("VRDevice: "..tostring(Player.VRDevice))
+end
+
+getDay = function()
+    local daysoftheweek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday" }
+    local day = daysoftheweek[os.date("*t").wday]
+
+    return tostring(day)
+end
+
+headlessScript = function()
+    if game:GetService("Players")["LocalPlayer"].Character:FindFirstChild("Head") and game:GetService("Players")["LocalPlayer"].Character:FindFirstChild("Humanoid") then
+        game:GetService("Players")["LocalPlayer"].Character:FindFirstChild("Head").MeshId = "rbxassetid://6686307858" or nil
+    end
+end
+
+NMespScript = function()
+    loadstring(game:HttpGet(mainRaw.."Scripts/ESP.lua"))()
+end
+
+rejoinScript = function()
+    local TeleportService = game:GetService("TeleportService")
+    local LocalPlayer = game:GetService("Players")["LocalPlayer"]
+    
+    TeleportService:Teleport(game.PlaceId, LocalPlayer)    
+end
+
+amogusScript = function()
+    loadstring(game:HttpGet(mainRaw.."Scripts/Amogus.lua"))()
+end
+
+ak47Script = function()
+    loadstring(game:HttpGet(mainRaw.."Scripts/AK47.lua"))()
+end
+
+shotgunScript = function()
+    loadstring(game:HttpGet(mainRaw.."Scripts/Shotgun.lua"))()
+end
+
+fpsScript = function()
+    loadstring(game:HttpGet(mainRaw.."Scripts/FPS.lua"))()
+end
+
+rtxScript = function()
+    loadstring(game:HttpGet(mainRaw.."Scripts/RTX.lua"))()
+end
+
+synapseScript = function()
+    loadstring(game:HttpGet(mainRaw.."Scripts/Synapse.lua"))()
+end
+
+_G.GlobalLoaded = true
