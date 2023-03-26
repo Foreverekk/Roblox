@@ -40,7 +40,7 @@ local title_4 = Instance.new("ImageLabel")
 local scriptselected = "none"
 local injected = false
 
---Properties:
+-- Properties:
 
 SynapseXreal.Name = "Synapse X (real)"
 SynapseXreal.Parent = game.CoreGui

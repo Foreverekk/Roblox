@@ -178,6 +178,10 @@ validFile = isfile("FRV/Settings/Bindings/AutoClicker.txt")
 if not validFile then
     writefile("FRV/Settings/Bindings/AutoClicker.txt", "KeypadMinus")
 end
+validFile = isfile("FRV/Settings/Bindings/Noclip.txt")
+if not validFile then
+    writefile("FRV/Settings/Bindings/Noclip.txt", "KeypadPlus")
+end
 validFolder = isfolder("FRV/Settings/Animations")
 if not validFolder then
     makefolder("FRV/Settings/Animations")
@@ -226,6 +230,7 @@ local toggleAutoClicker = false
 local ToggleUI = readfile("FRV/Settings/Bindings/Toggle UI.txt")
 local ToggleESP = readfile("FRV/Settings/Bindings/ESP.txt")
 local ToggleAutoClicker = readfile("FRV/Settings/Bindings/AutoClicker.txt")
+local ToggleNoclip = readfile("FRV/Settings/Bindings/Noclip.txt")
 Settings:AddLabel({ text = "[Bindings]" })
 Settings:AddBind({ text = "Toggle UI", key = ToggleUI, callback = function()
     if _G.Scripts then
@@ -286,6 +291,16 @@ Settings:AddBind({ text = "AutoClicker", key = ToggleAutoClicker, callback = fun
         game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
             game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
             if not toggleAutoClicker or _G.Scripts then return end
+        end)
+    end
+end })
+Settings:AddBind({ text = "Noclip", key = ToggleNoclip, callback = function()
+    toggleNoclip = not toggleNoclip
+    while toggleNoclip and _G.Scripts do
+        toggleNoclip()
+        game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
+            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
+            if not toggleNoclip or _G.Scripts then return end
         end)
     end
 end })
