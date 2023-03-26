@@ -90,6 +90,22 @@ synapseScript = function()
     loadstring(game:HttpGet(mainRaw.."Scripts/Synapse.lua"))()
 end
 
+toggleNoclip = function()
+    if _G.Walking == false then
+        _G.Walking = true
+        game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = true
+        game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CanCollide = false
+        game:GetService("Workspace").CurrentCamera.CFrame = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
+        game:GetService("Workspace").CurrentCamera.CameraType = "Custom"
+    else
+        _G.Walking = false
+        game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = false
+        game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CanCollide = true
+        game:GetService("Workspace").CurrentCamera.CFrame = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
+        game:GetService("Workspace").CurrentCamera.CameraType = "Follow"
+    end
+end
+
 noclipScript = function()
     local player = game.Players.LocalPlayer
     local character = player.Character
@@ -97,22 +113,6 @@ noclipScript = function()
     local camera = workspace.CurrentCamera
     _G.Walking = false
     local UserInputService = game:GetService("UserInputService")
-
-    toggleNoclip = function()
-        if _G.Walking == false then
-            _G.Walking = true
-            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = true
-            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CanCollide = false
-            game:GetService("Workspace").CurrentCamera.CFrame = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
-            game:GetService("Workspace").CurrentCamera.CameraType = "Custom"
-        else
-            _G.Walking = false
-            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = false
-            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CanCollide = true
-            game:GetService("Workspace").CurrentCamera.CFrame = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
-            game:GetService("Workspace").CurrentCamera.CameraType = "Follow"
-        end
-    end
 
     local function Fly()
         if UserInputService:IsKeyDown(Enum.KeyCode.W) and _G.Walking == true then
