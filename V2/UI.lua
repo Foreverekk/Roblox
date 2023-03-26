@@ -296,7 +296,7 @@ Settings:AddBind({ text = "AutoClicker", key = ToggleAutoClicker, callback = fun
 end })
 Settings:AddBind({ text = "Noclip", key = ToggleNoclip, callback = function()
     toggleNoclip = not toggleNoclip
-    while toggleNoclip and _G.Scripts do
+    if toggleNoclip and _G.Scripts then
         toggleNoclip()
         game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
             game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
