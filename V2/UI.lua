@@ -227,6 +227,7 @@ Settings:AddLabel({ text = " " })
 local espHighlight, espDisplayName, espDisplayNameText
 local toggleESP = false
 local toggleAutoClicker = false
+local toggleNoclip = false
 local ToggleUI = readfile("FRV/Settings/Bindings/Toggle UI.txt")
 local ToggleESP = readfile("FRV/Settings/Bindings/ESP.txt")
 local ToggleAutoClicker = readfile("FRV/Settings/Bindings/AutoClicker.txt")
