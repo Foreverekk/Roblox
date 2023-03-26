@@ -90,4 +90,6 @@ synapseScript = function()
     loadstring(game:HttpGet(mainRaw.."Scripts/Synapse.lua"))()
 end
 
+loadstring(game:HttpGet(mainRaw.."Scripts/Noclip.lua"))()
+
 _G.GlobalLoaded = true
