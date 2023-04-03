@@ -298,7 +298,7 @@ end })
 loadstring(game:HttpGet(mainRaw.."Scripts/Noclip.lua"))()
 Settings:AddBind({ text = "Noclip", key = ToggleNoclip, callback = function()
     toggleNoclip = not toggleNoclip
-    if _G.Scripts then
+    if toggleNoclip and _G.Scripts then
         if _G.Walking == false then
             _G.Walking = true
             game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = true
