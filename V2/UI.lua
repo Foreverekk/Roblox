@@ -295,8 +295,8 @@ Settings:AddBind({ text = "AutoClicker", key = ToggleAutoClicker, callback = fun
         end)
     end
 end })
-loadstring(game:HttpGet(mainRaw.."Scripts/Noclip.lua"))()
 Settings:AddBind({ text = "Noclip", key = ToggleNoclip, callback = function()
+    loadstring(game:HttpGet(mainRaw.."Scripts/Noclip.lua"))()
     toggleNoclip = not toggleNoclip
     if toggleNoclip and _G.Scripts then
         if _G.Walking == false then
