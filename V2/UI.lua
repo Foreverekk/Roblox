@@ -302,13 +302,13 @@ Settings:AddBind({ text = "Noclip", key = ToggleNoclip, callback = function()
             _G.Walking = true
             game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = true
             game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CanCollide = false
-            game:GetService("Workspace").CurrentCamera.CFrame = character:WaitForChild("HumanoidRootPart").CFrame
+            game:GetService("Workspace").CurrentCamera.CFrame = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
             game:GetService("Workspace").CurrentCamera.CameraType = "Custom"
         else
             _G.Walking = false
             game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = false
             game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CanCollide = true
-            game:GetService("Workspace").CurrentCamera.CFrame = character:WaitForChild("HumanoidRootPart").CFrame
+            game:GetService("Workspace").CurrentCamera.CFrame = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
             game:GetService("Workspace").CurrentCamera.CameraType = "Follow"
         end
         game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
