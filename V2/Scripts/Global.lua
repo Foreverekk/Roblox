@@ -43,7 +43,7 @@ printInfoPlayer = function(Player)
 end
 
 getDay = function()
-    local daysoftheweek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday" }
+    local daysoftheweek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" }
     local day = daysoftheweek[os.date("*t").wday]
 
     return tostring(day)

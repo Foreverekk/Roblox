@@ -104,4 +104,5 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Foreverekk/Roblox/mai
 🔵 12202678406 TWICE Square
 🔵 12331842898 Blocks Every Second
 🔵 12371411124 Every Second You Fart More
+🔵 12802235086 Infinite Rarities
 ```
