@@ -2,7 +2,6 @@ local player = game.Players.LocalPlayer
 local character = player.Character
 local humanoid = character:WaitForChild("Humanoid")
 local camera = workspace.CurrentCamera
-_G.Walking = false
 local UserInputService = game:GetService("UserInputService")
 
 local function Fly()
