@@ -312,35 +312,34 @@ Settings:AddBind({ text = "Noclip", key = ToggleNoclip, callback = function()
             game:GetService("Workspace").CurrentCamera.CFrame = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
             game:GetService("Workspace").CurrentCamera.CameraType = "Follow"
         end
-        local player = game.Players.LocalPlayer
-        local character = player.Character
-        local humanoid = character:WaitForChild("Humanoid")
-        local camera = workspace.CurrentCamera
+        local Character = game:GetService("Players")["LocalPlayer"].Character
+        local Camera = game:GetService("Workspace").CurrentCamera
         local UserInputService = game:GetService("UserInputService")
         FlyN = function()
+            if not _G.Scripts then return
             if UserInputService:IsKeyDown(Enum.KeyCode.W) and _G.Walking == true then
-                camera.CFrame = camera.CFrame + camera.CFrame.lookVector * 10
-                character:WaitForChild("HumanoidRootPart").CFrame = character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, 0, 1)
+                Camera.CFrame = Camera.CFrame + Camera.CFrame.lookVector * 10
+                Character:WaitForChild("HumanoidRootPart").CFrame = Character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, 0, 1)
             end
             if UserInputService:IsKeyDown(Enum.KeyCode.S) and _G.Walking == true then
-                camera.CFrame = camera.CFrame - camera.CFrame.lookVector * 10
-                character:WaitForChild("HumanoidRootPart").CFrame = character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, 0, -1)
+                Camera.CFrame = Camera.CFrame - Camera.CFrame.lookVector * 10
+                Character:WaitForChild("HumanoidRootPart").CFrame = Character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, 0, -1)
             end
             if UserInputService:IsKeyDown(Enum.KeyCode.A) and _G.Walking == true then
-                camera.CFrame = camera.CFrame * CFrame.new(0, 0, 10)
-                character:WaitForChild("HumanoidRootPart").CFrame = character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(-1, 0, 0)
+                Camera.CFrame = Camera.CFrame * CFrame.new(0, 0, 10)
+                Character:WaitForChild("HumanoidRootPart").CFrame = Character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(-1, 0, 0)
             end
             if UserInputService:IsKeyDown(Enum.KeyCode.D) and _G.Walking == true then
-                camera.CFrame = camera.CFrame * CFrame.new(0, 0, -10)
-                character:WaitForChild("HumanoidRootPart").CFrame = character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(1, 0, 0)
+                Camera.CFrame = Camera.CFrame * CFrame.new(0, 0, -10)
+                Character:WaitForChild("HumanoidRootPart").CFrame = Character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(1, 0, 0)
             end
             if UserInputService:IsKeyDown(Enum.KeyCode.Space) and _G.Walking == true then
-                camera.CFrame = camera.CFrame * CFrame.new(0, 10, 0)
-                character:WaitForChild("HumanoidRootPart").CFrame = character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, 1, 0)
+                Camera.CFrame = Camera.CFrame * CFrame.new(0, 10, 0)
+                Character:WaitForChild("HumanoidRootPart").CFrame = Character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, 1, 0)
             end
             if UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) and _G.Walking == true then
-                camera.CFrame = camera.CFrame * CFrame.new(0, -10, 0)
-                character:WaitForChild("HumanoidRootPart").CFrame = character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, -1, 0)
+                Camera.CFrame = Camera.CFrame * CFrame.new(0, -10, 0)
+                Character:WaitForChild("HumanoidRootPart").CFrame = Character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, -1, 0)
             end
         end
         while toggleNoclip and _G.Scripts and _G.Walking == true do
