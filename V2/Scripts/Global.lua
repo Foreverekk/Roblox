@@ -90,7 +90,7 @@ synapseScript = function()
     loadstring(game:HttpGet(mainRaw.."Scripts/Synapse.lua"))()
 end
 
-toggleNoclip = function()
+toggleNoclipScript = function()
     if _G.Walking == false then
         _G.Walking = true
         game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = true
