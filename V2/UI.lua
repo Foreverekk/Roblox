@@ -343,7 +343,7 @@ Settings:AddBind({ text = "Noclip", key = ToggleNoclip, callback = function()
                 character:WaitForChild("HumanoidRootPart").CFrame = character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, -1, 0)
             end
         end
-        while toggleNoclip and _G.Scripts and _G.Walking == true then
+        while toggleNoclip and _G.Scripts and _G.Walking == true do
             FlyN()
             wait(0.01)
         end
