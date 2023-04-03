@@ -316,7 +316,7 @@ Settings:AddBind({ text = "Noclip", key = ToggleNoclip, callback = function()
         local Camera = game:GetService("Workspace").CurrentCamera
         local UserInputService = game:GetService("UserInputService")
         FlyN = function()
-            if not _G.Scripts then return
+            if not _G.Scripts then return end
             if UserInputService:IsKeyDown(Enum.KeyCode.W) and _G.Walking == true then
                 Camera.CFrame = Camera.CFrame + Camera.CFrame.lookVector * 10
                 Character:WaitForChild("HumanoidRootPart").CFrame = Character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, 0, 1)
