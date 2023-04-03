@@ -302,7 +302,8 @@ local camera = workspace.CurrentCamera
 _G.Walking = false
 local UserInputService = game:GetService("UserInputService")
 
-while wait(0.01) and _G.Scripts do
+while _G.Scripts do
+    wait(0.01)
     if UserInputService:IsKeyDown(Enum.KeyCode.W) and _G.Walking == true then
         camera.CFrame = camera.CFrame + camera.CFrame.lookVector * 10
         character:WaitForChild("HumanoidRootPart").CFrame = character:WaitForChild("HumanoidRootPart").CFrame + Vector3.new(0, 0, 1)
