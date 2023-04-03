@@ -297,6 +297,7 @@ Settings:AddBind({ text = "AutoClicker", key = ToggleAutoClicker, callback = fun
 end })
 _G.Walking = false
 Settings:AddBind({ text = "Noclip", key = ToggleNoclip, callback = function()
+    if not _G.Scripts then return end
     toggleNoclip = not toggleNoclip
     if toggleNoclip and _G.Scripts then
         if _G.Walking == false then
