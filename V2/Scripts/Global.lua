@@ -146,6 +146,5 @@ noclipScript = function()
         wait(0.01)
     end
 end
-noclipScript()
 
 _G.GlobalLoaded = true

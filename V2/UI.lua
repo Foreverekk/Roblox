@@ -295,22 +295,11 @@ Settings:AddBind({ text = "AutoClicker", key = ToggleAutoClicker, callback = fun
         end)
     end
 end })
+noclipScript()
 Settings:AddBind({ text = "Noclip", key = ToggleNoclip, callback = function()
     toggleNoclip = not toggleNoclip
     if toggleNoclip and _G.Scripts then
-        if _G.Walking == false then
-            _G.Walking = true
-            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = true
-            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CanCollide = false
-            game:GetService("Workspace").CurrentCamera.CFrame = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
-            game:GetService("Workspace").CurrentCamera.CameraType = "Custom"
-        else
-            _G.Walking = false
-            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = false
-            game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CanCollide = true
-            game:GetService("Workspace").CurrentCamera.CFrame = game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").CFrame
-            game:GetService("Workspace").CurrentCamera.CameraType = "Follow"
-        end
+        toggleNoclipScript()
         game:GetService("Players")["LocalPlayer"].CharacterAdded:Connect(function()
             game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart")
             if not toggleNoclip or _G.Scripts then return end

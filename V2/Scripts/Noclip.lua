@@ -5,7 +5,7 @@ local camera = workspace.CurrentCamera
 _G.Walking = false
 local UserInputService = game:GetService("UserInputService")
 
-toggleNoclip = function()
+toggleNoclipScript = function()
 	if _G.Walking == false then
 		_G.Walking = true
         game:GetService("Players")["LocalPlayer"].Character:WaitForChild("HumanoidRootPart").Anchored = true
